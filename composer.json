@@ -1,0 +1,55 @@
+{
+  "name": "ffaas/php-sdk",
+  "description": "Feature Flags As A Service PHP SDK.",
+  "keywords": [
+    "psr-11"
+  ],
+  "type": "library",
+  "license": "BSD-2-Clause",
+  "authors": [
+    {
+      "name": "kpicaza"
+    }
+  ],
+  "require": {
+    "php": "^7.4.0|^8.0.0",
+    "psr/container": "^1.0.0|^2.0.0"
+  },
+  "require-dev": {
+    "infection/infection": "^0.20.2",
+    "phpro/grumphp": "~0.17 || ~1.0",
+    "phpstan/phpstan": "^0.11.5 || ^0.12.0",
+    "phpunit/phpunit": "^8.0 || ^9.0",
+    "squizlabs/php_codesniffer": "^3.4",
+    "symfony/var-dumper": "^4.2 || ^5.0",
+    "vimeo/psalm": "^4.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ffaas\\Sdk\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test\\Ffaas\\Sdk\\": "test"
+    }
+  },
+  "scripts": {
+    "check-all": [
+      "@cs-check",
+      "@test",
+      "@inspect",
+      "@psalm",
+      "@infection"
+    ],
+    "cs-check": "phpcs src --colors",
+    "cs-fix": "phpcbf src --colors",
+    "infection": "XDEBUG_MODE=coverage infection",
+    "inspect": "phpstan analyse src -l7 --ansi",
+    "psalm": "psalm",
+    "test": "phpunit --colors=always"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
