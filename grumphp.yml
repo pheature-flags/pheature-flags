@@ -1,0 +1,8 @@
+grumphp:
+    hooks_dir: .
+    hooks_preset: local
+    tasks:
+        composer_script:
+            script: check-all
+            triggered_by: [php, phtml]
+            working_directory: ~
