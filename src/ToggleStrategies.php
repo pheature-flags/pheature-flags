@@ -4,7 +4,13 @@ declare(strict_types=1);
 
 namespace Pheature\Core\Toggle;
 
-final class ToggleStrategies
+use Generator;
+use IteratorAggregate;
+
+/**
+ * @implements IteratorAggregate<ToggleStrategy>
+ */
+final class ToggleStrategies implements IteratorAggregate
 {
     /** @var ToggleStrategy[] */
     private array $strategies;
@@ -15,10 +21,10 @@ final class ToggleStrategies
     }
 
     /**
-     * @return ToggleStrategy[]
+     * @return Generator<ToggleStrategy>
      */
-    public function get(): array
+    public function getIterator(): Generator
     {
-        return $this->strategies;
+        yield from $this->strategies;
     }
 }

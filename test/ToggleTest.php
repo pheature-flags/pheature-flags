@@ -42,8 +42,30 @@ final class ToggleTest extends TestCase
         }
         $feature = $this->createMock(Feature::class);
         $feature->expects(static::once())
+            ->method('isEnabled')
+            ->willReturn(true);
+        $feature->expects(static::once())
             ->method('strategies')
             ->willReturn(new ToggleStrategies(...$strategies));
+        $this->finder->expects(static::once())
+            ->method('get')
+            ->with(self::FEATURE_ID)
+            ->willReturn($feature);
+
+        $this->assertFalse($this->toggle->isEnabled(self::FEATURE_ID, $identity));
+    }
+
+    /**
+     * @param ToggleStrategy|MockObject[] $strategies
+     * @dataProvider getStrategies
+     */
+    public function testItShouldNotBeEnabledWithDisabledFeature(array $strategies): void
+    {
+        $identity = $this->createMock(ConsumerIdentity::class);
+        $feature = $this->createMock(Feature::class);
+        $feature->expects(static::once())
+            ->method('isEnabled')
+            ->willReturn(false);
         $this->finder->expects(static::once())
             ->method('get')
             ->with(self::FEATURE_ID)
@@ -71,6 +93,9 @@ final class ToggleTest extends TestCase
         }
         $strategies[] = $applicableStrategy;
         $feature = $this->createMock(Feature::class);
+        $feature->expects(static::once())
+            ->method('isEnabled')
+            ->willReturn(true);
         $feature->expects(static::once())
             ->method('strategies')
             ->willReturn(new ToggleStrategies(...$strategies));

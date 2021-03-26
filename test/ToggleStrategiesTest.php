@@ -21,9 +21,11 @@ final class ToggleStrategiesTest extends TestCase
             $strategy3
         );
 
-        $obtainedToggleStrategies = $toggleStrategies->get();
-        $this->assertSame($strategy1, $obtainedToggleStrategies[0]);
-        $this->assertSame($strategy2, $obtainedToggleStrategies[1]);
-        $this->assertSame($strategy3, $obtainedToggleStrategies[2]);
+        $obtainedToggleStrategies = $toggleStrategies->getIterator();
+        $this->assertSame($strategy1, $obtainedToggleStrategies->current());
+        $obtainedToggleStrategies->next();
+        $this->assertSame($strategy2, $obtainedToggleStrategies->current());
+        $obtainedToggleStrategies->next();
+        $this->assertSame($strategy3, $obtainedToggleStrategies->current());
     }
 }

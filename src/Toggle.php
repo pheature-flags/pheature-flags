@@ -17,7 +17,11 @@ final class Toggle
     {
         $feature = $this->featureFinder->get($featureId);
 
-        foreach ($feature->strategies()->get() as $strategy) {
+        if (false === $feature->isEnabled()) {
+            return false;
+        }
+
+        foreach ($feature->strategies() as $strategy) {
             if ($strategy->isSatisfiedBy($identity)) {
                 return true;
             }
