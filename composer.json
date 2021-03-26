@@ -1,6 +1,6 @@
 {
-    "name": "pheature/core",
-    "description": "Pheature flags core library.",
+    "name": "pheature/toggle-core",
+    "description": "Pheature flags toggle core library.",
     "keywords": [
         "feature-toggle",
         "feature-flags"
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Pheature\\Core\\": "src"
+            "Pheature\\Core\\Toggle\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Pheature\\Test\\Core\\": "test"
+            "Pheature\\Test\\Core\\Toggle\\": "test"
         }
     },
     "scripts": {

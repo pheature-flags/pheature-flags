@@ -1,13 +1,13 @@
-# Pheature Flags Core
+# Pheature Flags Toggle Core
 
-Pheature flags core library
+Pheature flags toggle core library
 
 ## Installation
 
 Describe package installation
 
 ```php
-composer require pheature/core
+composer require pheature/toggle-core
 ```
 
 ## Contributing
