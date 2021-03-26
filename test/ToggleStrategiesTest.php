@@ -21,6 +21,7 @@ final class ToggleStrategiesTest extends TestCase
             $strategy3
         );
 
+        $this->assertSame(3, $toggleStrategies->count());
         $obtainedToggleStrategies = $toggleStrategies->getIterator();
         $this->assertSame($strategy1, $obtainedToggleStrategies->current());
         $obtainedToggleStrategies->next();

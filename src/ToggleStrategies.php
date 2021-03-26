@@ -7,6 +7,8 @@ namespace Pheature\Core\Toggle;
 use Generator;
 use IteratorAggregate;
 
+use function count;
+
 /**
  * @implements IteratorAggregate<ToggleStrategy>
  */
@@ -18,6 +20,11 @@ final class ToggleStrategies implements IteratorAggregate
     public function __construct(ToggleStrategy ...$strategies)
     {
         $this->strategies = $strategies;
+    }
+
+    public function count(): int
+    {
+        return count($this->strategies);
     }
 
     /**

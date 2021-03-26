@@ -55,11 +55,7 @@ final class ToggleTest extends TestCase
         $this->assertFalse($this->toggle->isEnabled(self::FEATURE_ID, $identity));
     }
 
-    /**
-     * @param ToggleStrategy|MockObject[] $strategies
-     * @dataProvider getStrategies
-     */
-    public function testItShouldNotBeEnabledWithDisabledFeature(array $strategies): void
+    public function testItShouldNotBeEnabledWithDisabledFeature(): void
     {
         $identity = $this->createMock(ConsumerIdentity::class);
         $feature = $this->createMock(Feature::class);
@@ -72,6 +68,24 @@ final class ToggleTest extends TestCase
             ->willReturn($feature);
 
         $this->assertFalse($this->toggle->isEnabled(self::FEATURE_ID, $identity));
+    }
+
+    public function testItShouldBeEnabledWithEnabledFeature(): void
+    {
+        $identity = $this->createMock(ConsumerIdentity::class);
+        $feature = $this->createMock(Feature::class);
+        $feature->expects(static::once())
+            ->method('isEnabled')
+            ->willReturn(true);
+        $feature->expects(static::once())
+            ->method('strategies')
+            ->willReturn(new ToggleStrategies());
+        $this->finder->expects(static::once())
+            ->method('get')
+            ->with(self::FEATURE_ID)
+            ->willReturn($feature);
+
+        $this->assertTrue($this->toggle->isEnabled(self::FEATURE_ID, $identity));
     }
 
     /**
@@ -110,18 +124,18 @@ final class ToggleTest extends TestCase
     public function getStrategies(): array
     {
         return [
-            [
+            '1 disabled strategy' => [
                 [
                     $this->createMock(ToggleStrategy::class),
                 ],
             ],
-            [
+            '2 disabled strategies' => [
                 [
                     $this->createMock(ToggleStrategy::class),
                     $this->createMock(ToggleStrategy::class),
                 ],
             ],
-            [
+            '3 disabled strategies' => [
                 [
                     $this->createMock(ToggleStrategy::class),
                     $this->createMock(ToggleStrategy::class),
