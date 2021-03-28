@@ -11,14 +11,14 @@ between them.
 ## What do we need?
 
 This is our open roadmap, here are listed our current work in progress, todos, and general project development status.
-In the next [milestones](), you can find the more important things where you can contribute, also we have created 
-an [open canvas board]() where are every [issue]() and each status.
-Please check out our [contribution guidelines]() to help us in any way, and don't hesitate to ask everything, 
+In the next [milestones](https://github.com/pheature-flags/pheature-flags/milestones), you can find the more important things where you can contribute, also we have created 
+an [open kanvan board](https://github.com/pheature-flags/pheature-flags/projects/1) where are every [issue](https://github.com/pheature-flags/pheature-flags/issues) and each status.
+Please check out our [contribution guidelines](https://github.com/pheature-flags/pheature-flags/blob/main/CONTRIBUTING.md) to help us in any way, and don't hesitate to ask everything, 
 we are wiling to hear you.
 
 ## Milestones
 
-**Milestone:** [Toggle management system]()
+**Milestone:** [Toggle management system](https://github.com/pheature-flags/pheature-flags/milestone/1)
 
 > The toggle system allows both developers and managers setting up features enabled or disabled, and applying 
 > different rollout strategies based in segmentation and environments.
@@ -34,7 +34,7 @@ we are wiling to hear you.
 * [](): DBal toggle infra templates
 * [](): Toggle Cache package
 
-**Milestone:** [Client API]()
+**Milestone:** [Client API](https://github.com/pheature-flags/pheature-flags/milestone/2)
 
 > Crazy fast Client API, gets enabled and disabled features for each user in a system. 
 
@@ -42,7 +42,7 @@ we are wiling to hear you.
 * [](): Async server
 * [](): Client traffic Event-store
 
-**Milestone:** [SDKs]()
+**Milestone:** [SDKs](https://github.com/pheature-flags/pheature-flags/milestone/3)
 
 > Integrate Pheature flags in any distributed software system.
 
@@ -53,7 +53,7 @@ we are wiling to hear you.
 * [](): IOS SDK
 * [](): Terraform SDK?
 
-**Milestone:** [Community packages]()
+**Milestone:** [Community packages](https://github.com/pheature-flags/pheature-flags/milestone/4)
 
 > Use Pheature flags out of the box in you favourite PHP framework.
 
@@ -69,7 +69,7 @@ we are wiling to hear you.
 * [](): Drupal module
 * [](): Drupal prototype
 
-**Milestone:** [Team management system]()
+**Milestone:** [Team management system](https://github.com/pheature-flags/pheature-flags/milestone/5)
 
 > The team management system allows managing Pheature toggles in a more structured way, by adding members and 
 > permission based roles
@@ -84,7 +84,7 @@ we are wiling to hear you.
 * [](): DBal team package
 * [](): DBal team infra templates
 
-**Milestone:** [Security implementations]()
+**Milestone:** [Security implementations](https://github.com/pheature-flags/pheature-flags/milestone/6)
 
 > Authentication strategies to consume client API from untrusted networks.
 
