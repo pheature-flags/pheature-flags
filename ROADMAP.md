@@ -38,9 +38,9 @@ we are wiling to hear you.
 
 > Crazy fast Client API, gets enabled and disabled features for each user in a system. 
 
-* [](): REST API
-* [](): Async server
-* [](): Client traffic Event-store
+* [#11](https://github.com/pheature-flags/pheature-flags/issues/11): REST API
+* [#12](https://github.com/pheature-flags/pheature-flags/issues/12): Async server
+* [#13](https://github.com/pheature-flags/pheature-flags/issues/13): Client traffic Event-store
 
 **Milestone:** [SDKs](https://github.com/pheature-flags/pheature-flags/milestone/3)
 
