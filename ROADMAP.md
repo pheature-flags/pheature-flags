@@ -46,12 +46,11 @@ we are wiling to hear you.
 
 > Integrate Pheature flags in any distributed software system.
 
-* [](): PHP SKD
-* [](): Node SDK
-* [](): Vanilla JS SDK
-* [](): Android SDK
-* [](): IOS SDK
-* [](): Terraform SDK?
+* [#14](https://github.com/pheature-flags/pheature-flags/issues/14): PHP SKD
+* [#15](https://github.com/pheature-flags/pheature-flags/issues/15): Node SDK
+* [#16](https://github.com/pheature-flags/pheature-flags/issues/16): Vanilla JS SDK
+* [#17](https://github.com/pheature-flags/pheature-flags/issues/17): Android SDK
+* [#18](https://github.com/pheature-flags/pheature-flags/issues/18): IOS SDK
 
 **Milestone:** [Community packages](https://github.com/pheature-flags/pheature-flags/milestone/4)
 
