@@ -64,6 +64,16 @@ we are wiling to hear you.
 * [#24](https://github.com/pheature-flags/pheature-flags/issues/24): Laminas and Mezzio package
 * [#25](https://github.com/pheature-flags/pheature-flags/issues/25): Laminas and Mezzio Prototypes
 
+**Milestone:** [Security implementations](https://github.com/pheature-flags/pheature-flags/milestone/6)
+
+> Authentication strategies to consume client API from untrusted networks.
+
+* [#26](https://github.com/pheature-flags/pheature-flags/issues/26): Security core package
+* [#27](https://github.com/pheature-flags/pheature-flags/issues/27): Security model package
+* [#28](https://github.com/pheature-flags/pheature-flags/issues/28): Security Basic auth package
+* [#29](https://github.com/pheature-flags/pheature-flags/issues/29): Security JWT package
+* [#30](https://github.com/pheature-flags/pheature-flags/issues/30): Security OAuth package
+
 **Milestone:** [Team management system](https://github.com/pheature-flags/pheature-flags/milestone/5)
 
 > The team management system allows managing Pheature toggles in a more structured way, by adding members and 
@@ -78,13 +88,3 @@ we are wiling to hear you.
 * [](): Team Event-Sourced package
 * [](): DBal team package
 * [](): DBal team infra templates
-
-**Milestone:** [Security implementations](https://github.com/pheature-flags/pheature-flags/milestone/6)
-
-> Authentication strategies to consume client API from untrusted networks.
-
-* [](): Security core package
-* [](): Security model package
-* [](): Security Basic auth package
-* [](): Security JWT package
-* [](): Security OAuth package
