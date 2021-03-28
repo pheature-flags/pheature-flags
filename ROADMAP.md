@@ -23,16 +23,16 @@ we are wiling to hear you.
 > The toggle system allows both developers and managers setting up features enabled or disabled, and applying 
 > different rollout strategies based in segmentation and environments.
 
-* [](): Toggle core package
-* [](): Toggle model package
-* [](): In Memory toggle package
-* [](): Toggle CRUD package
-* [](): Toggle API package
-* [](): Toggle UI
-* [](): Toggle Event-Sourced package
-* [](): DBal toggle package
-* [](): DBal toggle infra templates
-* [](): Toggle Cache package
+* [#1](https://github.com/pheature-flags/pheature-flags/issues/1): Toggle core package
+* [#2](https://github.com/pheature-flags/pheature-flags/issues/2): Toggle model package
+* [#3](https://github.com/pheature-flags/pheature-flags/issues/3): In Memory toggle package
+* [#4](https://github.com/pheature-flags/pheature-flags/issues/4): Toggle CRUD package
+* [#5](https://github.com/pheature-flags/pheature-flags/issues/5): Toggle API package
+* [#9](https://github.com/pheature-flags/pheature-flags/issues/9): Toggle UI
+* [#7](https://github.com/pheature-flags/pheature-flags/issues/7): Toggle Event-Sourced package
+* [#6](https://github.com/pheature-flags/pheature-flags/issues/6): DBal toggle package
+* [#10](https://github.com/pheature-flags/pheature-flags/issues/10): DBal toggle infra templates
+* [#8](https://github.com/pheature-flags/pheature-flags/issues/8): Toggle Cache package
 
 **Milestone:** [Client API](https://github.com/pheature-flags/pheature-flags/milestone/2)
 
