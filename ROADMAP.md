@@ -56,17 +56,13 @@ we are wiling to hear you.
 
 > Use Pheature flags out of the box in you favourite PHP framework.
 
-* [](): Standalone Prototype
-* [](): Laravel Package
-* [](): Laravel Prototype
-* [](): Symfony Bundle
-* [](): Symfony Prototype
-* [](): Laminas and Mezzio package
-* [](): Laminas and Mezzio Prototypes
-* [](): Wordpress plugin
-* [](): Wordpress prototype
-* [](): Drupal module
-* [](): Drupal prototype
+* [#19](https://github.com/pheature-flags/pheature-flags/issues/19): Standalone Prototype
+* [#20](https://github.com/pheature-flags/pheature-flags/issues/20): Laravel Package
+* [#21](https://github.com/pheature-flags/pheature-flags/issues/21): Laravel Prototype
+* [#22](https://github.com/pheature-flags/pheature-flags/issues/22): Symfony Bundle
+* [#23](https://github.com/pheature-flags/pheature-flags/issues/23): Symfony Prototype
+* [#24](https://github.com/pheature-flags/pheature-flags/issues/24): Laminas and Mezzio package
+* [#25](https://github.com/pheature-flags/pheature-flags/issues/25): Laminas and Mezzio Prototypes
 
 **Milestone:** [Team management system](https://github.com/pheature-flags/pheature-flags/milestone/5)
 
