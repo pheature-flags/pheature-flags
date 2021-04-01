@@ -15,11 +15,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:feature-flags/toggle-core.git"
+            "url": "git@github.com:pheature-flags/toggle-core.git"
         },
         {
             "type": "vcs",
-            "url": "git@github.com:feature-flags/toggle-model.git"
+            "url": "git@github.com:pheature-flags/toggle-model.git"
         }
     ],
     "require": {
