@@ -33,12 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Pheature\\Core\\Toggle\\": "src"
+            "Pheature\\Model\\Toggle\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Pheature\\Test\\Core\\Toggle\\": "test"
+            "Pheature\\Test\\Model\\Toggle\\": "test"
         }
     },
     "scripts": {
