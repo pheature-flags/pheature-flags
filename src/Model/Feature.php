@@ -15,10 +15,17 @@ final class Feature implements IFeature
     /** @var Strategy[] */
     private array $strategies = [];
 
-    public function __construct(FeatureId $featureId, bool $enabled)
+    /**
+     * Feature constructor.
+     * @param FeatureId $featureId
+     * @param bool $enabled
+     * @param Strategy[] $strategies
+     */
+    public function __construct(FeatureId $featureId, bool $enabled, array $strategies = [])
     {
         $this->featureId = $featureId;
         $this->enabled = $enabled;
+        $this->strategies = $strategies;
     }
 
     public static function withId(FeatureId $featureId): self
