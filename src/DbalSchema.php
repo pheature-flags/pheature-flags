@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 namespace Pheature\Dbal\Toggle;
 
-use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Schema\Schema;
 
 final class DbalSchema
 {
     private Schema $schema;
 
-    public function __construct(Connection $connection)
+    public function __construct(Schema $schema)
     {
-        $this->schema = $connection->getSchemaManager()->createSchema();
+        $this->schema = $schema;
     }
 
     public function __invoke(): void
