@@ -20,12 +20,18 @@
         {
             "type": "vcs",
             "url": "git@github.com:pheature-flags/toggle-model.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/toggle-crud.git"
         }
     ],
     "require": {
         "php": "^7.4|^8.0",
         "doctrine/dbal": "^3.0.0",
-        "pheature/inmemory-toggle": "@dev"
+        "pheature/toggle-core": "@dev",
+        "pheature/toggle-model": "@dev",
+        "pheature/toggle-crud": "@dev"
     },
     "require-dev": {
         "infection/infection": "^0.21.0",
