@@ -6,6 +6,8 @@ namespace Pheature\Core\Toggle\Write;
 
 interface Feature
 {
+    public function addStrategy(Strategy $strategy): void;
+
     public function enable(): void;
 
     public function disable(): void;
