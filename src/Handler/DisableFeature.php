@@ -7,7 +7,7 @@ namespace Pheature\Crud\Toggle\Handler;
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Toggle\Command\DisableFeature as DisableFeatureCommand;
 
-class DisableFeature
+final class DisableFeature
 {
     private FeatureRepository $featureRepository;
 

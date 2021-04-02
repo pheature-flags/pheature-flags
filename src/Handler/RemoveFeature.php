@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Pheature\Crud\Toggle\Handler;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Toggle\Command\EnableFeature as EnableFeatureCommand;
+use Pheature\Crud\Toggle\Command\RemoveFeature as RemoveFeatureCommand;
 
-final class EnableFeature
+final class RemoveFeature
 {
     private FeatureRepository $featureRepository;
 
@@ -16,12 +16,8 @@ final class EnableFeature
         $this->featureRepository = $repository;
     }
 
-    public function handle(EnableFeatureCommand $command): void
+    public function handle(RemoveFeatureCommand $command): void
     {
-        $feature = $this->featureRepository->get($command->featureId());
-
-        $feature->enable();
-
-        $this->featureRepository->save($feature);
+        $this->featureRepository->remove($command->featureId());
     }
 }

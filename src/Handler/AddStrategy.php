@@ -8,7 +8,7 @@ use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Core\Toggle\Write\StrategyFactory;
 use Pheature\Crud\Toggle\Command\AddStrategy as AddStrategyCommand;
 
-class AddStrategy
+final class AddStrategy
 {
     private FeatureRepository $featureRepository;
     private StrategyFactory $strategyFactory;
