@@ -13,4 +13,9 @@ interface Feature
     public function isEnabled(): bool;
 
     public function id(): string;
+
+    /**
+     * @return Strategy[]
+     */
+    public function strategies(): array;
 }
