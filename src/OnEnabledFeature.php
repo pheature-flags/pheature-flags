@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\Sdk;
 
-final class OnDisabledFeature implements OnFeatureState
+final class OnEnabledFeature implements OnFeatureState
 {
     /** @var callable */
     private $callback;
