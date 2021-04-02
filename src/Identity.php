@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\Model\Toggle;
 
-use Pheature\Core\Toggle\ConsumerIdentity;
+use Pheature\Core\Toggle\Read\ConsumerIdentity;
 
 final class Identity implements ConsumerIdentity
 {

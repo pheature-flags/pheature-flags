@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Pheature\Model\Toggle;
 
-use Pheature\Core\Toggle\Feature as IFeature;
-use Pheature\Core\Toggle\ToggleStrategies;
+use Pheature\Core\Toggle\Read\Feature as IFeature;
+use Pheature\Core\Toggle\Read\ToggleStrategies;
 
 final class Feature implements IFeature
 {

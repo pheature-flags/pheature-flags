@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Pheature\Test\Model\Toggle;
 
-use Pheature\Core\Toggle\ToggleStrategies;
-use Pheature\Core\Toggle\ToggleStrategy;
+use Pheature\Core\Toggle\Read\ToggleStrategies;
+use Pheature\Core\Toggle\Read\ToggleStrategy;
 use Pheature\Model\Toggle\Feature;
 use PHPUnit\Framework\TestCase;
 
