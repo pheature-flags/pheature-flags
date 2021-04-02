@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Pheature\Model\Toggle;
 
+use JsonSerializable;
 use Pheature\Core\Toggle\Read\Feature as IFeature;
 use Pheature\Core\Toggle\Read\ToggleStrategies;
 
-final class Feature implements IFeature
+final class Feature implements IFeature, JsonSerializable
 {
     private string $id;
     private ToggleStrategies $strategies;
@@ -36,5 +37,14 @@ final class Feature implements IFeature
     public function isEnabled(): bool
     {
         return $this->enabled;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'id' => $this->id,
+            'strategies' => $this->strategies,
+            'enabled' => $this->enabled,
+        ];
     }
 }
