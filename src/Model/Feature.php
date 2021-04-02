@@ -4,10 +4,16 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Toggle\Model;
 
-final class Feature
+use Pheature\Core\Toggle\Write\Feature as IFeature;
+use Pheature\Core\Toggle\Write\FeatureId;
+use Pheature\Core\Toggle\Write\Strategy;
+
+final class Feature implements IFeature
 {
     private FeatureId $featureId;
     private bool $enabled;
+    /** @var Strategy[] */
+    private array $strategies = [];
 
     public function __construct(FeatureId $featureId, bool $enabled)
     {
@@ -18,6 +24,11 @@ final class Feature
     public static function withId(FeatureId $featureId): self
     {
         return new self($featureId, false);
+    }
+
+    public function addStrategy(Strategy $strategy): void
+    {
+        $this->strategies[] = $strategy;
     }
 
     public function enable(): void
@@ -38,5 +49,10 @@ final class Feature
     public function id(): string
     {
         return $this->featureId->value();
+    }
+
+    public function strategies(): array
+    {
+        return $this->strategies;
     }
 }

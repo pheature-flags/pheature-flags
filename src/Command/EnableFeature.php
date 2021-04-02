@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Toggle\Command;
 
-use Pheature\Crud\Toggle\Model\FeatureId;
+use Pheature\Core\Toggle\Write\FeatureId;
 
 final class EnableFeature
 {

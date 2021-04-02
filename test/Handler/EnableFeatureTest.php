@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Test\Crud\Toggle\Command;
+namespace Pheature\Test\Crud\Toggle\Handler;
 
+use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Toggle\Command\EnableFeature as EnableFeatureCommand;
-use Pheature\Crud\Toggle\FeatureRepository;
 use Pheature\Crud\Toggle\Handler\EnableFeature;
 use Pheature\Crud\Toggle\Model\Feature;
-use Pheature\Crud\Toggle\Model\FeatureId;
+use Pheature\Core\Toggle\Write\FeatureId;
 use PHPUnit\Framework\TestCase;
 
 final class EnableFeatureTest extends TestCase

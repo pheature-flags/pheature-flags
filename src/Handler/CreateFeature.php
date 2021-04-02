@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Toggle\Handler;
 
+use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Toggle\Command\CreateFeature as CreateFeatureCommand;
-use Pheature\Crud\Toggle\FeatureRepository;
 use Pheature\Crud\Toggle\Model\Feature;
 
 final class CreateFeature

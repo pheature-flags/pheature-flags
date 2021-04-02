@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Pheature\Test\Crud\Toggle\Model;
 
 use Pheature\Crud\Toggle\Model\Feature;
-use Pheature\Crud\Toggle\Model\FeatureId;
+use Pheature\Core\Toggle\Write\FeatureId;
 use PHPUnit\Framework\TestCase;
 
 final class FeatureTest extends TestCase
