@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Test\Core\Toggle;
+namespace Pheature\Test\Core\Toggle\Read;
 
-use Pheature\Core\Toggle\ToggleStrategies;
-use Pheature\Core\Toggle\ToggleStrategy;
+use Pheature\Core\Toggle\Read\ToggleStrategies;
+use Pheature\Core\Toggle\Read\ToggleStrategy;
 use PHPUnit\Framework\TestCase;
 
 final class ToggleStrategiesTest extends TestCase

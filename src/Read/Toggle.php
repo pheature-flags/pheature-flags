@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Core\Toggle;
+namespace Pheature\Core\Toggle\Read;
 
 final class Toggle
 {

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Test\Core\Toggle;
+namespace Pheature\Test\Core\Toggle\Read;
 
-use Pheature\Core\Toggle\ConsumerIdentity;
-use Pheature\Core\Toggle\Feature;
-use Pheature\Core\Toggle\FeatureFinder;
-use Pheature\Core\Toggle\Toggle;
-use Pheature\Core\Toggle\ToggleStrategies;
-use Pheature\Core\Toggle\ToggleStrategy;
+use Pheature\Core\Toggle\Read\ConsumerIdentity;
+use Pheature\Core\Toggle\Read\Feature;
+use Pheature\Core\Toggle\Read\FeatureFinder;
+use Pheature\Core\Toggle\Read\Toggle;
+use Pheature\Core\Toggle\Read\ToggleStrategies;
+use Pheature\Core\Toggle\Read\ToggleStrategy;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 

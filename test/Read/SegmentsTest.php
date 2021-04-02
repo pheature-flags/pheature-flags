@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Test\Core\Toggle;
+namespace Pheature\Test\Core\Toggle\Read;
 
-use Pheature\Core\Toggle\Segment;
-use Pheature\Core\Toggle\Segments;
+use Pheature\Core\Toggle\Read\Segment;
+use Pheature\Core\Toggle\Read\Segments;
 use PHPUnit\Framework\TestCase;
 
 final class SegmentsTest extends TestCase

@@ -1,14 +1,18 @@
 # Pheature Flags Toggle Core
 
-Pheature flags toggle core library
+Pheature flags toggle core library, take a look to our [main package]() to see our roadmap and project status.
 
 ## Installation
 
-Describe package installation
+Install using composer
 
 ```php
 composer require pheature/toggle-core
 ```
+
+## Getting started
+
+See the docks at main [docs site]().
 
 ## Contributing
 
