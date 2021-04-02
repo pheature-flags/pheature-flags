@@ -9,7 +9,7 @@ use Pheature\Core\Toggle\Write\Feature;
 use Pheature\Core\Toggle\Write\FeatureId;
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Toggle\Model\Feature as WriteModelFeature;
-use Safe\DateTimeImmutable;
+use DateTimeImmutable;
 
 final class DbalFeatureRepository implements FeatureRepository
 {
@@ -28,16 +28,17 @@ final class DbalFeatureRepository implements FeatureRepository
         if (null === $this->findFeature($feature->id())) {
             $this->connection->insert(self::TABLE, [
                 'feature_id' => $feature->id(),
-                'enabled' => $feature->isEnabled(),
-                'strategies' => $feature->strategies(),
+                'name' => $feature->id(),
+                'enabled' => (int)$feature->isEnabled(),
+                'strategies' => json_encode($feature->strategies(), JSON_THROW_ON_ERROR),
                 'created_at' => $now->format('Y-m-d H:i:s'),
             ]);
             return;
         }
 
         $this->connection->update(self::TABLE, [
-            'enabled' => $feature->isEnabled(),
-            'strategies' => $feature->strategies(),
+            'enabled' => (int)$feature->isEnabled(),
+            'strategies' => json_encode($feature->strategies(), JSON_THROW_ON_ERROR),
             'updated_at' => $now->format('Y-m-d H:i:s'),
         ], [
             'feature_id' => $feature->id(),

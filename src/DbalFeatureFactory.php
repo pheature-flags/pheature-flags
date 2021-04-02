@@ -12,10 +12,12 @@ final class DbalFeatureFactory
 {
     public function create(array $data): IFeature
     {
+        $strategies = json_decode($data['strategies'], true, 12, JSON_THROW_ON_ERROR);
+
         return new Feature(
-            $data['id'],
-            new ToggleStrategies(...$data['strategies']),
-            $data['enabled']
+            $data['feature_id'],
+            new ToggleStrategies(...$strategies),
+            (bool)(int)$data['enabled']
         );
     }
 }

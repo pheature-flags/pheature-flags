@@ -4,15 +4,21 @@ declare(strict_types=1);
 
 namespace Pheature\Dbal\Toggle;
 
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\Schema;
 
 final class DbalSchema
 {
     private Schema $schema;
+    private AbstractPlatform $platform;
+    private Connection $connection;
 
-    public function __construct(Schema $schema)
+    public function __construct(Connection $connection)
     {
-        $this->schema = $schema;
+        $this->schema = $connection->getSchemaManager()->createSchema();
+        $this->platform = $connection->getDatabasePlatform();
+        $this->connection = $connection;
     }
 
     public function __invoke(): void
@@ -36,8 +42,13 @@ final class DbalSchema
         $table->addColumn('created_at', 'datetime_immutable');
         $table->addIndex(['created_at']);
         $table->addColumn('updated_at', 'datetime_immutable', [
-            'nullable' => true,
+            'notnull' => false,
             'default' => null,
         ]);
+
+        $queries = $this->schema->toSql($this->platform);
+        foreach ($queries as $query) {
+            $this->connection->executeQuery($query);
+        }
     }
 }
