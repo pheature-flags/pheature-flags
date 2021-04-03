@@ -12,9 +12,20 @@
             "name": "kpicaza"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/toggle-core.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/toggle-model.git"
+        }
+    ],
     "require": {
         "php": "^7.4|^8.0",
-        "pheature/inmemory-toggle": "@dev"
+        "pheature/toggle-core": "@dev",
+        "pheature/toggle-model": "@dev"
     },
     "require-dev": {
         "infection/infection": "^0.21.0",
