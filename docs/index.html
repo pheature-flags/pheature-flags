@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Antidot Framework Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="PHP full featured micro-framework designed to allow you to write 100% framework agnostic code.">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@antidotframewo1" />
+  <meta name="twitter:creator" content="@kpickaza" />
+  <meta property="og:url" content="https://antidotfw.io" />
+  <meta property="og:title" content="Antidot Framework Docs" />
+  <meta property="og:description" content="PHP full featured micro-framework designed to allow you to write 100% framework agnostic code." />
+  <meta property="og:image" content="https://antidotfw.io//images/antidot-big.jpeg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/cs s/theme-simple-dark.css">-->
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root {
+      --theme-hue: 354;
+      --link-text-decoration: none;
+      --link-color: var(--theme-color);
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script>
+    window.$docsify = {
+      coverpage: false,
+      name: 'Pheature flags',
+      repo: 'https://github.com/pheature-flags/pheature-flags.git',
+      auto2top: true,
+      executeScript: true,
+      loadSidebar: true,
+      subMaxLevel: 3,
+      paths: 'auto',
+      tabs: {
+        persist    : true,      // default
+        sync       : true,      // default
+        tabComments: true,      // default
+        tabHeadings: true       // default
+      },
+      themeable: {
+        readyTransition : true, // default
+        responsiveTables: true  // default
+      },
+      plugins: [
+        EditOnGithubPlugin.create(
+                'https://github.com/pheature-flags/pheature-flags/blob/main/docs/'
+        ),
+      ]
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-yaml.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+</body>
+</html>
