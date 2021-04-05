@@ -1,0 +1,13 @@
+<!-- docs/_sidebar.md -->
+- [Getting started](/getting-started/)
+- [Architecture](/architecture/)
+- [Packages](/packages/)
+    - [Toggle Core](/packages/toggle-core)
+    - [Toggle Model](/packages/toggle-model)
+    - [Toggle CRUD](/packages/toggle-crud)
+    - [InMemory Toggle](/packages/inmemory-toggle)
+    - [DBAL Toggle](/packages/dbal-toggle)
+- [SDKs](/sdks/)
+- [Contributing](/CONTRIBUTING.md)
+- [API Docs](https://goolge.es)
+- [Need More?](https://goolge.es)
