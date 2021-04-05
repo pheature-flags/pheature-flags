@@ -1,7 +1,7 @@
 <!-- docs/_sidebar.md -->
 - [Getting started](/getting-started/)
-    - [Laravel package](/getting-started/laravel-package)
-    - [Symfony Bundle](/getting-started/symfony-bundle)
+    - [Laravel packages](/getting-started/laravel-package)
+    - [Symfony Bundles](/getting-started/symfony-bundle)
     - [Laminas & Mezzio packages](/getting-started/laminas-and-mezzio-package)
 - [Architecture](/architecture/)
 - [Packages](/packages/)
