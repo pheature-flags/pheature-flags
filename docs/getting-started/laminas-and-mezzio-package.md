@@ -72,9 +72,7 @@ final class TestRequestHandler implements RequestHandlerInterface
     {
         $result = $this->toggle->inFeature(
             'feature_1',
-            new Identity('my_id', [
-                'location' => 'bilbao',
-            ]),
+            new Identity('my_id'),
             OnEnabledFeature::make(static fn(string $argument) => $argument, ['Feature Enabled!!!']),
             OnDisabledFeature::make(static fn(string $argument) => $argument, ['Feature Disabled :-S'])
         );
