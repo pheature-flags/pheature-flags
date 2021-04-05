@@ -6,5 +6,3 @@ Also we have Pheature Toggles available out of the box for the most popular PHP 
 - [Laravel package](/getting-started/laravel-package)
 - [Symfony Bundle](/getting-started/symfony-bundle)
 - [Laminas & Mezzio packages](/getting-started/laminas-and-mezzio-package)
-
-## 
