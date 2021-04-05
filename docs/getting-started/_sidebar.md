@@ -7,5 +7,5 @@
 - [Packages](/packages/)
 - [SDKs](/sdks/)
 - [Contributing](/CONTRIBUTING.md)
-- [API Docs](https://goolge.es)
-- [Need More?](https://goolge.es)
+- [API Docs](#)
+- [Need More?](#)
