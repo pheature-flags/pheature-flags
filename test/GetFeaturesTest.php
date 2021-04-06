@@ -12,7 +12,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
 
-class GetFeaturesTest extends TestCase
+final class GetFeaturesTest extends TestCase
 {
     public function testItShouldHandleRequestAndPrepareGetFeaturesResponse(): void
     {
