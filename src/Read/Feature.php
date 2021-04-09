@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Pheature\Core\Toggle\Read;
 
-interface Feature
+use JsonSerializable;
+
+interface Feature extends JsonSerializable
 {
     public function id(): string;
     public function strategies(): ToggleStrategies;

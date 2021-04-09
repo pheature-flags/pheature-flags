@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Pheature\Core\Toggle\Read;
 
-interface Segment
+use JsonSerializable;
+
+interface Segment extends JsonSerializable
 {
     public function id(): string;
     /** @return array<string, mixed> */

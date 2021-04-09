@@ -6,13 +6,14 @@ namespace Pheature\Core\Toggle\Read;
 
 use Generator;
 use IteratorAggregate;
+use JsonSerializable;
 
 use function count;
 
 /**
  * @implements IteratorAggregate<ToggleStrategy>
  */
-final class ToggleStrategies implements IteratorAggregate
+final class ToggleStrategies implements IteratorAggregate, JsonSerializable
 {
     /** @var ToggleStrategy[] */
     private array $strategies;
@@ -33,5 +34,16 @@ final class ToggleStrategies implements IteratorAggregate
     public function getIterator(): Generator
     {
         yield from $this->strategies;
+    }
+
+    /**
+     * @return array<array<mixed>>
+     */
+    public function jsonSerialize(): array
+    {
+        return array_map(
+            static fn (ToggleStrategy $strategy): array => $strategy->toArray(),
+            $this->strategies
+        );
     }
 }
