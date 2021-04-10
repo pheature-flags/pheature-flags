@@ -15,6 +15,14 @@
     "repositories": [
         {
             "type": "vcs",
+            "url": "git@github.com:pheature-flags/dbal-toggle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/inmemory-toggle.git"
+        },
+        {
+            "type": "vcs",
             "url": "git@github.com:pheature-flags/toggle-core.git"
         },
         {
@@ -39,6 +47,8 @@
     },
     "require-dev": {
         "infection/infection": "^0.21.0",
+        "pheature/dbal-toggle": "@dev",
+        "pheature/inmemory-toggle": "@dev",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^8.0 || ^9.0",
@@ -73,5 +83,9 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "suggest": {
+        "pheature/dbal-toggle": "Dbal toggle implementation",
+        "pheature/inmemory-toggle": "In memory toggle implementation"
     }
 }
