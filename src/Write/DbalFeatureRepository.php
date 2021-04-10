@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Dbal\Toggle;
+namespace Pheature\Dbal\Toggle\Write;
 
 use Doctrine\DBAL\Connection;
 use Pheature\Core\Toggle\Write\Feature;
 use Pheature\Core\Toggle\Write\FeatureId;
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Toggle\Model\Feature as WriteModelFeature;
 use DateTimeImmutable;
 
 final class DbalFeatureRepository implements FeatureRepository
@@ -49,11 +48,7 @@ final class DbalFeatureRepository implements FeatureRepository
     {
         $featureData = $this->findFeature($featureId->value());
 
-        return new WriteModelFeature(
-            FeatureId::fromString($featureData['feature_id']),
-            (bool)$featureData['enabled'],
-            $featureData['strategies']
-        );
+        return DbalFeatureFactory::createFromDbalRepresentation($featureData);
     }
 
     public function remove(FeatureId $featureId): void
@@ -75,6 +70,6 @@ final class DbalFeatureRepository implements FeatureRepository
         $statement->execute();
         $result = $statement->fetchAssociative();
 
-        return $result ? $result : null;
+        return $result ?: null;
     }
 }

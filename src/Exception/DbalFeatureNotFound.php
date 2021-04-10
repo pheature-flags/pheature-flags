@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Dbal\Toggle;
+namespace Pheature\Dbal\Toggle\Exception;
 
 use InvalidArgumentException;
 use Pheature\Core\Toggle\Exception\FeatureNotFoundException;

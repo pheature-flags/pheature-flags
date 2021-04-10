@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Dbal\Toggle;
+namespace Pheature\Dbal\Toggle\Read;
 
 use Doctrine\DBAL\Connection;
 use Pheature\Core\Toggle\Read\Feature;
@@ -15,8 +15,8 @@ final class DbalFeatureFinder implements FeatureFinder
 
     public function __construct(Connection $connection, DbalFeatureFactory $featureFactory)
     {
-        $this->featureFactory = $featureFactory;
         $this->connection = $connection;
+        $this->featureFactory = $featureFactory;
     }
 
     public function get(string $featureId): Feature

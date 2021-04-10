@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Dbal\Toggle;
+namespace Pheature\Dbal\Toggle\Read;
 
 use Pheature\Core\Toggle\Read\Feature as IFeature;
 use Pheature\Core\Toggle\Read\ToggleStrategies;
