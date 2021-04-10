@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Pheature\Core\Toggle\Write;
 
-use InvalidArgumentException;
-
 use function json_decode;
 
 final class Payload

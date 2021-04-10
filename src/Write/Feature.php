@@ -7,6 +7,7 @@ namespace Pheature\Core\Toggle\Write;
 use JsonSerializable;
 
 use function array_map;
+use function array_values;
 
 final class Feature implements JsonSerializable
 {
@@ -25,7 +26,9 @@ final class Feature implements JsonSerializable
     {
         $this->featureId = $featureId;
         $this->enabled = $enabled;
-        $this->strategies = $strategies;
+        foreach ($strategies as $strategy) {
+            $this->strategies[$strategy->id()->value()] = $strategy;
+        }
     }
 
     public static function withId(FeatureId $featureId): self
@@ -35,7 +38,12 @@ final class Feature implements JsonSerializable
 
     public function addStrategy(Strategy $strategy): void
     {
-        $this->strategies[] = $strategy;
+        $this->strategies[$strategy->id()->value()] = $strategy;
+    }
+
+    public function removeStrategy(StrategyId $strategyId): void
+    {
+        unset($this->strategies[$strategyId->value()]);
     }
 
     public function enable(): void
@@ -63,7 +71,7 @@ final class Feature implements JsonSerializable
      */
     public function strategies(): array
     {
-        return $this->strategies;
+        return array_values($this->strategies);
     }
 
     /**
