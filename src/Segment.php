@@ -52,4 +52,23 @@ final class Segment implements ISegment
 
         return $match;
     }
+
+    /**
+     * @return array<string, string|array>
+     */
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'criteria' => $this->criteria,
+        ];
+    }
+
+    /**
+     * @return array<string, string|array>
+     */
+    public function jsonSerialize(): array
+    {
+        return $this->toArray();
+    }
 }

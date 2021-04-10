@@ -9,7 +9,7 @@ use Pheature\Core\Toggle\Read\Segment as ISegment;
 use Pheature\Core\Toggle\Read\Segments;
 use Pheature\Core\Toggle\Read\ToggleStrategy;
 
-final class EnableByMatchingSegment implements ToggleStrategy
+final class EnableByMatchingIdentityId implements ToggleStrategy
 {
     private Segments $segments;
 
@@ -21,7 +21,7 @@ final class EnableByMatchingSegment implements ToggleStrategy
     public function isSatisfiedBy(ConsumerIdentity $identity): bool
     {
         foreach ($this->segments->all() as $segment) {
-            if ($segment->match($identity->payload())) {
+            if ($segment->match(['identity_id' => $identity->id()])) {
                 return true;
             }
         }
@@ -35,7 +35,7 @@ final class EnableByMatchingSegment implements ToggleStrategy
     public function toArray(): array
     {
         return [
-            'type' => 'enable_by_matching_segment',
+            'type' => 'enable_by_matching_identity_id',
             'segments' => array_map(
                 static fn(ISegment $segment): array => $segment->toArray(),
                 $this->segments->all()

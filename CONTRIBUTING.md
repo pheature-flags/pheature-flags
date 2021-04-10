@@ -2,8 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/antidot-fw/container).
-
+We accept contributions via Pull Requests on [Github](https://github.com/pheature-flags/toggle-model).
 
 ## Pull Requests
 
