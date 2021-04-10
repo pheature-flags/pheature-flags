@@ -15,9 +15,8 @@ final class FeatureRepositoryFactory
 {
     public function __invoke(ContainerInterface $container): FeatureRepository
     {
-        $config = $container->get('config');
-
-        $driver = $config['pheature_flags']['driver'];
+        $config = $container->get(ToggleConfig::class);
+        $driver = $config->driver();
 
         if ('inmemory' === $driver) {
             return new InMemoryFeatureRepository(
