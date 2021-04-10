@@ -70,5 +70,10 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "extra": {
+        "laminas": {
+            "config-provider": "Pheature\\Test\\Dbal\\Toggle\\Container\\ConfigProvider"
+        }
     }
 }

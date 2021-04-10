@@ -25,9 +25,7 @@ final class DbalFeatureFinder implements FeatureFinder
             SELECT * FROM pheature_toggles WHERE feature_id = :feature_id
         SQL;
 
-        $statement = $this->connection->prepare($sql);
-        $statement->bindValue('feature_id', $featureId);
-        $statement->execute();
+        $statement = $this->connection->executeQuery($sql, ['feature_id' => $featureId]);
 
         $feature = $statement->fetchAssociative();
 
@@ -40,8 +38,7 @@ final class DbalFeatureFinder implements FeatureFinder
             SELECT * FROM pheature_toggles ORDER BY created_at DESC
         SQL;
 
-        $statement = $this->connection->prepare($sql);
-        $statement->execute();
+        $statement = $this->connection->executeQuery($sql);
 
         $features = $statement->fetchAllAssociative();
 

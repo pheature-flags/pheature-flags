@@ -10,6 +10,8 @@ use Pheature\Core\Toggle\Write\FeatureId;
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use DateTimeImmutable;
 
+use function json_encode;
+
 final class DbalFeatureRepository implements FeatureRepository
 {
     private const TABLE = 'pheature_toggles';
@@ -65,9 +67,7 @@ final class DbalFeatureRepository implements FeatureRepository
             SELECT * FROM $table WHERE feature_id = :feature_id
         SQL;
 
-        $statement = $this->connection->prepare($sql);
-        $statement->bindValue('feature_id', $id);
-        $statement->execute();
+        $statement = $this->connection->executeQuery($sql, ['feature_id' => $id]);
         $result = $statement->fetchAssociative();
 
         return $result ?: null;
