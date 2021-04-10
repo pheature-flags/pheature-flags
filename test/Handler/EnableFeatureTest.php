@@ -7,7 +7,7 @@ namespace Pheature\Test\Crud\Toggle\Handler;
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Toggle\Command\EnableFeature as EnableFeatureCommand;
 use Pheature\Crud\Toggle\Handler\EnableFeature;
-use Pheature\Crud\Toggle\Model\Feature;
+use Pheature\Core\Toggle\Write\Feature;
 use Pheature\Core\Toggle\Write\FeatureId;
 use PHPUnit\Framework\TestCase;
 

@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Toggle\Handler;
 
-use Pheature\Core\Toggle\Write\Feature;
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Toggle\Command\CreateFeature as CreateFeatureCommand;
+use Pheature\Crud\Toggle\Command\RemoveStrategy as RemoveStrategyCommand;
 
-final class CreateFeature
+final class RemoveStrategy
 {
     private FeatureRepository $featureRepository;
 
@@ -17,9 +16,12 @@ final class CreateFeature
         $this->featureRepository = $featureRepository;
     }
 
-    public function handle(CreateFeatureCommand $command): void
+    public function handle(RemoveStrategyCommand $command): void
     {
-        $feature = Feature::withId($command->featureId());
+        $feature = $this->featureRepository->get($command->featureId());
+
+        $feature->removeStrategy($command->strategyId());
+
         $this->featureRepository->save($feature);
     }
 }

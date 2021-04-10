@@ -7,7 +7,7 @@ namespace Pheature\Test\Crud\Toggle\Handler;
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Toggle\Command\DisableFeature as DisableFeatureCommand;
 use Pheature\Crud\Toggle\Handler\DisableFeature;
-use Pheature\Crud\Toggle\Model\Feature;
+use Pheature\Core\Toggle\Write\Feature;
 use Pheature\Core\Toggle\Write\FeatureId;
 use PHPUnit\Framework\TestCase;
 
