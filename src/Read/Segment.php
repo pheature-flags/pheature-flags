@@ -16,4 +16,8 @@ interface Segment extends JsonSerializable
      * @return bool
      */
     public function match(array $payload): bool;
+    /**
+     * @return array<string, string|array>
+     */
+    public function toArray(): array;
 }

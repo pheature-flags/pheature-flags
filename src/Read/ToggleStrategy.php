@@ -9,7 +9,6 @@ use JsonSerializable;
 interface ToggleStrategy extends JsonSerializable
 {
     public function isSatisfiedBy(ConsumerIdentity $identity): bool;
-
     /**
      * @return array<string, string|array>
      */
