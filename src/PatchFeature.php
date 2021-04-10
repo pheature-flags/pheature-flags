@@ -31,8 +31,7 @@ final class PatchFeature implements RequestHandlerInterface
         EnableFeature $enableFeature,
         DisableFeature $disableFeature,
         ResponseFactoryInterface $responseFactory
-    )
-    {
+    ) {
         $this->addStrategy = $addStrategy;
         $this->removeStrategy = $removeStrategy;
         $this->enableFeature = $enableFeature;
@@ -42,61 +41,61 @@ final class PatchFeature implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $featureId = $request->getAttribute('toggle_id');
+        $featureId = $request->getAttribute('feature_id');
         $body = $request->getParsedBody();
 
         $action = $body['action'];
-        $value = $body['value'];
+        $value = $body['value'] ?? null;
 
-        $this->addStrategy($action, $featureId, $value);
-        $this->removeStrategy($action, $featureId, $value);
-        $this->enableFeature($action, $featureId);
-        $this->disableFeature($action, $featureId);
+        if ('add_strategy' === $action) {
+            $this->addStrategy($action, $featureId, $value);
+        }
+        if ('remove_strategy' === $action) {
+            $this->removeStrategy($action, $featureId, $value);
+        }
+        if ('enable_feature' === $action) {
+            $this->enableFeature($action, $featureId);
+        }
+        if ('disable_feature' === $action) {
+            $this->disableFeature($action, $featureId);
+        }
 
         return $this->responseFactory->createResponse(202, 'Processed');
     }
 
     private function addStrategy(string $action, string $featureId, array $strategy): void
     {
-        if ('add_strategy' === $action) {
-            $this->addStrategy->handle(
-                AddStrategyCommand::withIdAndType(
-                    $featureId,
-                    $strategy['id'],
-                    $strategy['type']
-                )
-            );
-        }
+        $this->addStrategy->handle(
+            AddStrategyCommand::withIdAndType(
+                $featureId,
+                $strategy['id'],
+                $strategy['type']
+            )
+        );
     }
 
     private function removeStrategy(string $action, string $featureId, string $strategyId): void
     {
-        if ('remove_strategy' === $action) {
-            $this->removeStrategy->handle(
-                RemoveStrategyCommand::withFeatureAndStrategyId(
-                    $featureId,
-                    $strategyId
-                )
-            );
-        }
+        $this->removeStrategy->handle(
+            RemoveStrategyCommand::withFeatureAndStrategyId(
+                $featureId,
+                $strategyId
+            )
+        );
     }
 
     private function enableFeature(string $action, string $featureId): void
     {
-        if ('enable_feature' === $action) {
-            $this->enableFeature->handle(
-                EnableFeatureCommand::withId($featureId)
-            );
-        }
+        $this->enableFeature->handle(
+            EnableFeatureCommand::withId($featureId)
+        );
     }
 
     private function disableFeature(string $action, string $featureId): void
     {
-        if ('disable_feature' === $action) {
-            $this->disableFeature->handle(
-                DisableFeatureCommand::withId($featureId)
-            );
-        }
+        $this->disableFeature->handle(
+            DisableFeatureCommand::withId($featureId)
+        );
     }
 }
     
