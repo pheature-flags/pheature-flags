@@ -4,6 +4,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Type coverage][ico-psalm]][link-psalm]
 [![Test Coverage][ico-coverage]][link-coverage]
+[![Mutation testing badge][ico-mutant]][link-mutant]
 [![Maintainability][ico-mantain]][link-mantain]
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -38,3 +39,5 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-downloads]: https://packagist.org/packages/pheature/toggle-model
 [ico-psalm]: https://shepherd.dev/github/pheature-flags/toggle-model/coverage.svg
 [link-psalm]: https://shepherd.dev/github/pheature-flags/toggle-model
+[ico-mutant]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fpheature-flags%2Ftoggle-model%2F1.0.x
+[link-mutant]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/toggle-model/1.0.x
