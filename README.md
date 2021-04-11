@@ -3,6 +3,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Type coverage][ico-psalm]][link-psalm]
 [![Test Coverage][ico-coverage]][link-coverage]
+[![Mutation testing coverage][ico-mutant]][link-mutant]
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -39,3 +40,5 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/toggle-core/badges/coverage.png?b=master
 [ico-downloads]: https://img.shields.io/packagist/dt/pheature/toggle-core.svg?style=flat-square
 [link-downloads]: https://packagist.org/packages/pheature/toggle-core
+[ico-mutant]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fpheature-flags%2Ftoggle-core%2F1.0.x
+[link-mutant]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/toggle-core/1.0.x
