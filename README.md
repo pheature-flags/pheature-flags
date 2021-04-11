@@ -3,7 +3,7 @@
 Hi there! Welcome to our project 👋 We are a group of online business professionals who want to learn, grow and enjoy
 making our jobs a better place. We’re excited that you’re here to learn more about it and grow together 😉 .
 
-> We are in early development stage, every contribution of every type will be welcome and properly attributed.
+> We are at early development stage, every contribution of every type will be welcome and properly attributed.
 
 Pheature Flags is a software release management system that allows to activate and deactivate specific features in controlled conditions:
 
@@ -41,10 +41,10 @@ Open a browser at http://127.0.0.1:3000
 ## Contributing
 
 Feel free to check out the [roadmap](), [open an issue]() to request new features or report a bug, sharing or writing about. Don't forget to read
-our [contribution guidelines](/CONTRIBUTING) and our [code of conduct](/CODE_OF_CONDUCT). We are happy to hear everybody,
-receive feedback and learn from the different point of view.
+our [contribution guidelines](/CONTRIBUTING) and our [code of conduct](/CODE_OF_CONDUCT). We are happy to listen to everybody, 
+receive feedback, and learn from different approaches.
 
 ## License
 
 We really believe in the Open Source Software, we built our carers around it, and we feel that we need to return our
-knowledge to the community. For this reason we release all our packages under [BSD-3-Clause licence](). 
+knowledge to the community. For this reason we release all our packages under [BSD-3-Clause licence](/LICENSE.md). 
