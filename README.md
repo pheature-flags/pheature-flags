@@ -19,7 +19,7 @@ composer require pheature/toggle-core
 
 ## Getting started
 
-See the docs at main [docs site](https://featureflags.io).
+See the docs at main [docs site](https://pheatureflags.io).
 
 ## Contributing
 
