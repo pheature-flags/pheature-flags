@@ -1,6 +1,7 @@
 # Pheature Flags Toggle CRUD
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
+[![Test Coverage][ico-coverage]][link-coverage]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 Pheature flags toggle CRUD implementation
@@ -26,3 +27,5 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-packagist]: https://packagist.org/packages/pheature/toggle-crud
 [ico-downloads]: https://img.shields.io/packagist/dt/pheature/toggle-crud.svg?style=flat-square
 [link-downloads]: https://packagist.org/packages/pheature/toggle-crud
+[ico-coverage]: https://codecov.io/gh/pheature-flags/toggle-crud/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106
+[link-coverage]: https://codecov.io/gh/pheature-flags/toggle-crud
