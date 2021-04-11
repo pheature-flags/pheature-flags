@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Quality Score][ico-code-quality]][link-code-quality]
+[![Type coverage][ico-psalm]][link-psalm]
 [![Test Coverage][ico-coverage]][link-coverage]
 [![Maintainability][ico-maintain]][link-maintain]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -35,3 +36,5 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-maintain]: https://codeclimate.com/github/pheature-flags/toggle-crud/maintainability
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/pheature-flags/toggle-crud.svg?style=flat-square
 [link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/toggle-crud/badges/coverage.png?b=master
+[ico-psalm]: https://shepherd.dev/github/pheature-flags/toggle-crud/coverage.svg
+[link-psalm]: https://shepherd.dev/github/pheature-flags/toggle-crud
