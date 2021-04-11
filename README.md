@@ -1,7 +1,7 @@
 # Pheature Flags Toggle Core
 
 [![Type coverage][ico-psalm]][link-psalm]
-[![Maintainability][ico-mantain]][link-mantain]
+[![Test Coverage][ico-coverage]][link-coverage]
 
 Pheature flags toggle core library, take a look to our [main package]() to see our roadmap and project status.
 
@@ -28,5 +28,5 @@ knowledge to the community. For this reason we release all our packages under [B
 
 [ico-psalm]: https://shepherd.dev/github/pheature-flags/toggle-core/coverage.svg
 [link-psalm]: https://shepherd.dev/github/pheature-flags/toggle-core
-[ico-mantain]: https://codecov.io/gh/pheature-flags/toggle-core/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106 
-[link-mantain]: https://codecov.io/gh/pheature-flags/toggle-core
+[ico-coverage]: https://codecov.io/gh/pheature-flags/toggle-core/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106 
+[link-coverage]: https://codecov.io/gh/pheature-flags/toggle-core
