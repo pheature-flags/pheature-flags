@@ -93,3 +93,32 @@ $result = $toggle->inFeature(
 echo $result->getData(); // Feature Disabled :-S
 
 ```
+
+### Callables
+
+As shown above, we must pass the action we want to execute encapsulated as an anon function or as a callable class.
+
+Look at the following example.
+
+```php
+<?php
+
+class TestFeatureHandler {
+    public function __invoke(TestFeatureCommand $command)
+    {
+        // do complex stuff
+    }
+}    
+
+$testFeature = new TestFeatureHandler();
+$command = new TestFeatureCommand();
+$onEnabledFeature = OnEnabledFeature::make($testFeature, [$command]),
+$result = $toggle->inFeature(
+    'feature_1',
+    new Identity('my_id'),
+    $onEnabledFeature
+);
+
+
+```
+
