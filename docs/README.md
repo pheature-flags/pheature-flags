@@ -5,7 +5,7 @@ making our jobs a better place. We’re excited that you’re here to learn more
 
 > We are at early development stage, every contribution of every type will be welcome and properly attributed.
 
-Pheature Flags is a software release management system that allows to activate and deactivate specific features in controlled conditions:
+Pheature Flags is a release management system that allows to activate and deactivate specific features in controlled conditions:
 
 **Key Features**
 
