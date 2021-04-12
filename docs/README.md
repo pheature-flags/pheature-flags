@@ -26,9 +26,9 @@ Check our [getting started guide](/getting-started/) to get Pheature Flags up an
 
 ## Contributing
 
-Feel free to check out the [roadmap](), [open an issue]() to request new features or report a bug, sharing or writing about. Don't forget to read
-our [contribution guidelines](/CONTRIBUTING) and our [code of conduct](/CODE_OF_CONDUCT). We are happy to hear everybody, 
-receive feedback and learn from the different point of view. 
+Feel free to check out the [roadmap](https://github.com/pheature-flags/pheature-flags/issues/40), [open an issue](https://github.com/pheature-flags/pheature-flags/issues/new/choose) to request new features or report a bug, sharing or writing about. Don't forget to read
+our [contribution guidelines](/CONTRIBUTING) and our [code of conduct](/CODE_OF_CONDUCT). We are happy to listen to everybody,
+receive feedback, and learn from different approaches.
 
 ## License
 

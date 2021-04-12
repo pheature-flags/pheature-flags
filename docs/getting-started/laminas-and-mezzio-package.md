@@ -2,7 +2,7 @@
 
 ## Toggle package
 
-Feature toggle implementation out of the box for our [Laminas]() or [Mezzio Framework]() applications.
+Feature toggle implementation out of the box for our [Laminas](https://getlaminas.org/) or [Mezzio Framework](https://docs.mezzio.dev/) applications.
 
 > [Checkout official repository](https://github.com/pheature-flags/mezzio-toggle)
 

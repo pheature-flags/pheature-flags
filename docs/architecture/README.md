@@ -1,7 +1,7 @@
 # Architecture
 
 Pheature flags is a framework based on several components, that allows creating more or less complex feature releasing systems. 
-Because of its modular design, you can use it in a [monolith](/architecture/monolith) or [distributed architectures](/architecture/distributed).
+Because of its modular design, you can use it in a monolith or distributed architectures.
 
 ## Toggle
 

@@ -2,7 +2,7 @@
 
 ## Toggle package
 
-Feature toggle implementation out of the box for our [Laravel Framework]() applications.
+Feature toggle implementation out of the box for our [Laravel Framework](https://laravel.com/) applications.
 
 > [Checkout official repository](https://github.com/pheature-flags/laravel-toggle)
 
