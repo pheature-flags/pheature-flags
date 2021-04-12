@@ -2,7 +2,7 @@
 
 ## Toggle Bundle
 
-Feature toggle implementation out of the box for our [Symfony Framework]() applications.
+Feature toggle implementation out of the box for our [Symfony Framework](https://symfony.com/) applications.
 
 > [Checkout official repository](https://github.com/pheature-flags/symfony-toggle)
 
