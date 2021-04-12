@@ -11,7 +11,7 @@ Pheature Flags is a software release management system that allows to activate a
 
 * Rollback any part of the code when it is not working as expected.
 * Target specific audiences with dynamic versions of a product to get real insights
-* Enable/disable A/B test probes in real time.
+* Enable/disable AB testing.
 * Start/pause pre-set marketing campaigns.
 * Develop rollout strategies.
 * Decrease the technical debt on applying complex business experiments.
