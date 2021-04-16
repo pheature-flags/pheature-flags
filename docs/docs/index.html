@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pheature Flags Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="Pheature Flags is a software release management system that allows to activate and deactivate specific features">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@PheatureFlags" />
+  <meta name="twitter:creator" content="@PheatureFlags" />
+  <meta property="og:url" content="https://pheatureflags.io" />
+  <meta property="og:title" content="Pheature Flags Docs" />
+  <meta property="og:description" content="Pheature Flags is a release management system that allows to activate and deactivate specific features in controlled conditions" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/80790762?s=400&u=5b4bd47866160a1b57c71f001f52da224331d39b&v=4" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/cs s/theme-simple-dark.css">-->
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root {
+      --theme-hue: 354;
+      --link-text-decoration: none;
+      --link-color: var(--theme-color);
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script>
+    window.$docsify = {
+      coverpage: false,
+      name: 'Pheature flags',
+      repo: 'https://github.com/pheature-flags/pheature-flags.git',
+      auto2top: true,
+      executeScript: true,
+      loadSidebar: true,
+      subMaxLevel: 3,
+      paths: 'auto',
+      tabs: {
+        persist    : true,      // default
+        sync       : true,      // default
+        tabComments: true,      // default
+        tabHeadings: true       // default
+      },
+      themeable: {
+        readyTransition : true, // default
+        responsiveTables: true  // default
+      },
+      plugins: [
+        EditOnGithubPlugin.create(
+                'https://github.com/pheature-flags/pheature-flags/blob/main/docs/'
+        ),
+      ]
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-yaml.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+</body>
+</html>

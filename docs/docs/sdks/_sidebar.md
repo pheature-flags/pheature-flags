@@ -1,0 +1,10 @@
+<!-- docs/_sidebar.md -->
+- [Getting started](/getting-started/)
+- [Architecture](/architecture/)
+- [Packages](/packages/)
+- [SDKs](/sdks/)
+    - [PHP SDK](/sdks/php-sdk)
+    - [JS Client Side SDK](/sdks/js-client-side-sdk)
+- [Contributing](/CONTRIBUTING.md)
+- [API Docs](#)
+- [Need More?](#)
