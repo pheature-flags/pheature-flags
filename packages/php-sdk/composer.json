@@ -12,12 +12,6 @@
       "name": "kpicaza"
     }
   ],
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:pheature-flags/toggle-core.git"
-    }
-  ],
   "require": {
     "php": "^7.4|^8.0",
     "psr/container": "^1.0.0|^2.0.0"

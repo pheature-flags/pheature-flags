@@ -12,40 +12,6 @@
             "name": "kpicaza"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:pheature-flags/toggle-core.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:pheature-flags/toggle-crud.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:pheature-flags/toggle-crud-psr7-api.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:pheature-flags/toggle-crud-psr11-factories.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:pheature-flags/toggle-model.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:pheature-flags/dbal-toggle.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:pheature-flags/inmemory-toggle.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:pheature-flags/php-sdk.git"
-        }
-    ],
     "require": {
         "php": "^7.4|^8.0",
         "nyholm/psr7": "^1.4",
