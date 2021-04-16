@@ -1,6 +1,6 @@
 # Pheature Flags
 
-Hi there! Welcome to our project 👋 We are a group of online business professionals who want to learn, grow and enjoy
+Hi there! Welcome to our project 👋 We are a group of online business professionals who want to learn, grow and enjoy 
 making our jobs a better place. We’re excited that you’re here to learn more about it and grow together 😉 .
 
 > We are at early development stage, every contribution of every type will be welcome and properly attributed.
@@ -11,7 +11,7 @@ Pheature Flags is a release management system that allows to activate and deacti
 
 * Rollback any part of the code when it is not working as expected.
 * Target specific audiences with dynamic versions of a product to get real insights
-* Enable/disable AB testing.
+* Enable/disable A/B test probes in real time.
 * Start/pause pre-set marketing campaigns.
 * Develop rollout strategies.
 * Decrease the technical debt on applying complex business experiments.
@@ -22,21 +22,7 @@ Want to learn more?
 
 ## Getting started
 
-Check our [getting started guide](/docs/getting-started) to get Pheature Flags up and running in minutes.
-
-## Build The Docs
-
-**Requirements**
-
-* [Docsify](https://docsify.js.org/#/quickstart)
-
-**Usage**
-
-```bash
-docsify serve docs
-```
-
-Open a browser at http://127.0.0.1:3000
+Check our [getting started guide](/getting-started/) to get Pheature Flags up and running in minutes.
 
 ## Contributing
 
@@ -46,5 +32,5 @@ receive feedback, and learn from different approaches.
 
 ## License
 
-We really believe in the Open Source Software, we built our carers around it, and we feel that we need to return our
-knowledge to the community. For this reason we release all our packages under [BSD-3-Clause licence](/LICENSE.md). 
+We really believe in the Open Source Software, we built our carers around it, and we feel that we need to return our 
+knowledge to the community. For this reason we release all our packages under [BSD-3-Clause licence](/LICENSE). 
