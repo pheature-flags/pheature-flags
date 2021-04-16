@@ -1,0 +1,67 @@
+{
+    "name": "pheature/inmemory-toggle",
+    "description": "Pheature flags In Memory toggle implementation library.",
+    "keywords": [
+        "feature-toggle",
+        "feature-flags"
+    ],
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "kpicaza"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/toggle-core.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/toggle-model.git"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "pheature/toggle-core": "@dev",
+        "pheature/toggle-model": "@dev"
+    },
+    "require-dev": {
+        "infection/infection": "^0.21.0",
+        "phpro/grumphp": "^1.0",
+        "phpstan/phpstan": "^0.12",
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "squizlabs/php_codesniffer": "^3.4",
+        "symfony/var-dumper": "^4.2 || ^5.0",
+        "vimeo/psalm": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pheature\\InMemory\\Toggle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pheature\\Test\\InMemory\\Toggle\\": "test"
+        }
+    },
+    "scripts": {
+        "check-all": [
+            "@cs-check",
+            "@test",
+            "@inspect",
+            "@psalm",
+            "@infection"
+        ],
+        "cs-check": "phpcs src --colors",
+        "cs-fix": "phpcbf src --colors",
+        "inspect": "phpstan analyse src -l7 --ansi",
+        "test": "phpunit --colors=always",
+        "psalm": "psalm",
+        "infection": "XDEBUG_MODE=coverage infection"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
