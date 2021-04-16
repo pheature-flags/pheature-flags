@@ -1,0 +1,91 @@
+{
+    "name": "pheature/toggle-crud-psr11-factories",
+    "description": "Pheature flags toggle CRUD PSR-11 Factories.",
+    "keywords": [
+        "feature-toggle",
+        "feature-flags"
+    ],
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "kpicaza"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/dbal-toggle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/inmemory-toggle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/toggle-core.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/toggle-crud.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/toggle-crud-psr7-api.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:pheature-flags/toggle-model.git"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "pheature/toggle-core": "@dev",
+        "pheature/toggle-model": "@dev",
+        "pheature/toggle-crud": "@dev",
+        "pheature/toggle-crud-psr7-api": "@dev"
+    },
+    "require-dev": {
+        "infection/infection": "^0.21.0",
+        "pheature/dbal-toggle": "@dev",
+        "pheature/inmemory-toggle": "@dev",
+        "phpro/grumphp": "^1.0",
+        "phpstan/phpstan": "^0.12",
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "squizlabs/php_codesniffer": "^3.4",
+        "symfony/var-dumper": "^4.2 || ^5.0",
+        "vimeo/psalm": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pheature\\Crud\\Psr11\\Toggle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pheature\\Test\\Crud\\Psr11\\Toggle\\": "test"
+        }
+    },
+    "scripts": {
+        "check-all": [
+            "@cs-check",
+            "@test",
+            "@inspect",
+            "@psalm",
+            "@infection"
+        ],
+        "cs-check": "phpcs src --colors",
+        "cs-fix": "phpcbf src --colors",
+        "inspect": "phpstan analyse src -l7 --ansi",
+        "test": "phpunit --colors=always",
+        "psalm": "psalm",
+        "infection": "XDEBUG_MODE=coverage infection"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "suggest": {
+        "pheature/dbal-toggle": "Dbal toggle implementation",
+        "pheature/inmemory-toggle": "In memory toggle implementation"
+    }
+}
