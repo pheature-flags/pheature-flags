@@ -2,7 +2,8 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/pheature-flags/toggle-core).
+We accept contributions via Pull Requests on [Github](https://github.com/pheature-flags/pheature-flags).
+
 
 ## Pull Requests
 
