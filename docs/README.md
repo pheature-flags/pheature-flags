@@ -3,7 +3,7 @@
 Hi there! Welcome to our project 👋 We are a group of online business professionals who want to learn, grow and enjoy 
 making our jobs a better place. We’re excited that you’re here to learn more about it and grow together 😉 .
 
-> We are at early development stage, every contribution of every type will be welcome and properly attributed.
+> 🚧 We are at early development stage, every contribution of every type will be welcome and properly attributed.
 
 Pheature Flags is a release management system that allows to activate and deactivate specific features in controlled conditions:
 
