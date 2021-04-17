@@ -1,0 +1,88 @@
+{
+    "name": "pheature/pheature-flags",
+    "description": "Pheature flags project main repository",
+    "authors": [
+        {
+            "name": "kpicaza"
+        }
+    ],
+    "require": {
+        "doctrine/dbal": ">=2.5 || ^3.0.0",
+        "nyholm/psr7": "^1.4",
+        "pheature/php-sdk": "@dev",
+        "php": "^7.4|^8.0",
+        "psr/container": "^1.0.0|^2.0.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.0",
+        "psr/http-server-handler": "^1.0",
+        "symfony/psr-http-message-bridge": "^2.1"
+    },
+    "require-dev": {
+        "infection/infection": "^0.21.0",
+        "phpro/grumphp": "^1.0",
+        "phpstan/phpstan": "^0.12",
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "squizlabs/php_codesniffer": "^3.4",
+        "symfony/console": "^4.2 || ^5.0",
+        "symfony/var-dumper": "^4.2 || ^5.0",
+        "symplify/monorepo-builder": "^9.2",
+        "vimeo/psalm": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pheature\\Community\\Laravel\\": "packages/laravel-toggle/src",
+            "Pheature\\Community\\Mezzio\\": "packages/mezzio-toggle/src",
+            "Pheature\\Core\\Toggle\\": "packages/toggle-core/src",
+            "Pheature\\Crud\\Psr11\\Toggle\\": "packages/toggle-crud-psr11-factories/src",
+            "Pheature\\Crud\\Psr7\\Toggle\\": "packages/toggle-crud-psr7-api/src",
+            "Pheature\\Crud\\Toggle\\": "packages/toggle-crud/src",
+            "Pheature\\Dbal\\Toggle\\": "packages/dbal-toggle/src",
+            "Pheature\\InMemory\\Toggle\\": "packages/inmemory-toggle/src",
+            "Pheature\\Model\\Toggle\\": "packages/toggle-model/src",
+            "Pheature\\Sdk\\": "packages/php-sdk/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pheature\\Test\\Community\\Laravel\\": "packages/laravel-toggle/test",
+            "Pheature\\Test\\Community\\Mezzio\\": "packages/mezzio-toggle/test",
+            "Pheature\\Test\\Core\\Toggle\\": "packages/toggle-core/test",
+            "Pheature\\Test\\Crud\\Psr11\\Toggle\\": "packages/toggle-crud-psr11-factories/test",
+            "Pheature\\Test\\Crud\\Psr7\\Toggle\\": "packages/toggle-crud-psr7-api/test",
+            "Pheature\\Test\\Crud\\Toggle\\": "packages/toggle-crud/test",
+            "Pheature\\Test\\Dbal\\Toggle\\": "packages/dbal-toggle/test",
+            "Pheature\\Test\\InMemory\\Toggle\\": "packages/inmemory-toggle/test",
+            "Pheature\\Test\\Model\\Toggle\\": "packages/toggle-model/test",
+            "Symplify\\Tests\\": "tests",
+            "Test\\Pheature\\Sdk\\": "packages/php-sdk/test"
+        }
+    },
+    "extra": {
+        "laminas": {
+            "config-provider": [
+                "Pheature\\Test\\Dbal\\Toggle\\Container\\ConfigProvider",
+                "Pheature\\Community\\Mezzio\\ToggleConfigProvider"
+            ]
+        },
+        "laravel": {
+            "providers": [
+                "Pheature\\Community\\Laravel\\ToggleProvider"
+            ],
+            "aliases": {
+                "Toggle": "Pheature\\Community\\Laravel\\Toggle"
+            }
+        }
+    },
+    "replace": {
+        "pheature/dbal-toggle": "self.version",
+        "pheature/inmemory-toggle": "self.version",
+        "pheature/laravel-toggle": "self.version",
+        "pheature/mezzio-toggle": "self.version",
+        "pheature/php-sdk": "self.version",
+        "pheature/toggle-core": "self.version",
+        "pheature/toggle-crud": "self.version",
+        "pheature/toggle-crud-psr11-factories": "self.version",
+        "pheature/toggle-crud-psr7-api": "self.version",
+        "pheature/toggle-model": "self.version"
+    }
+}
