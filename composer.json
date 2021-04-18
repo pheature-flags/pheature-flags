@@ -19,14 +19,15 @@
     },
     "require-dev": {
         "infection/infection": "^0.21.0",
-        "phpro/grumphp": "^1.0",
+        "phpro/grumphp": "^1.3",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^8.0 || ^9.0",
         "squizlabs/php_codesniffer": "^3.4",
         "symfony/console": "^4.2 || ^5.0",
         "symfony/var-dumper": "^4.2 || ^5.0",
         "symplify/monorepo-builder": "^9.2",
-        "vimeo/psalm": "^4.4"
+        "vimeo/psalm": "^4.4",
+        "illuminate/support": "^8.37"
     },
     "autoload": {
         "psr-4": {
@@ -56,6 +57,21 @@
             "Symplify\\Tests\\": "tests",
             "Test\\Pheature\\Sdk\\": "packages/php-sdk/test"
         }
+    },
+    "scripts": {
+        "check-all": [
+            "@cs-check",
+            "@test",
+            "@inspect",
+            "@psalm",
+            "@infection"
+        ],
+        "cs-check": "phpcs packages/*/src --colors",
+        "cs-fix": "phpcbf packages/*/src --colors",
+        "inspect": "phpstan analyse packages/*/src -l7 --ansi",
+        "test": "phpunit --colors=always",
+        "psalm": "psalm packages/*/src",
+        "infection": "XDEBUG_MODE=coverage infection"
     },
     "extra": {
         "laminas": {
