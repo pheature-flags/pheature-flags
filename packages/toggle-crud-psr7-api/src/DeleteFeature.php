@@ -30,4 +30,3 @@ final class DeleteFeature implements RequestHandlerInterface
         return $this->responseFactory->createResponse(204, 'Deleted');
     }
 }
-    
