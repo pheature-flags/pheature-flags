@@ -22,7 +22,7 @@ Want to learn more?
 
 ## Getting started
 
-Check our [getting started guide](/docs/getting-started) to get Pheature Flags up and running in minutes.
+Check our [getting started guide](https://pheatureflags.io/#/getting-started/) to get Pheature Flags up and running in minutes.
 
 ## Build The Docs
 
