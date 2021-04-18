@@ -1,7 +1,7 @@
 # Pheature Flags <br><sub><sup>Toggle CRUD PSR-7 Implementation</sup></sub>
 
-[![Latest Version](https://img.shields.io/packagist/v/pheature/toggle-crud-psr7-api.svg?style=flat-square)](https://packagist.org/packages/pheature/toggle-crud-psr7-api)
-[![Total Downloads](https://img.shields.io/packagist/dt/pheature/toggle-crud-psr7-api.svg?style=flat-square)](https://packagist.org/packages/pheature/toggle-crud-psr7-api)
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Total Downloads][ico-downloads]][link-downloads]
 
 ## Installation
 
