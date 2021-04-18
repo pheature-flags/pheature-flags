@@ -1,4 +1,4 @@
-# Pheature Flags Toggle Core
+# Pheature Flags <br><sub><sup>Toggle Core</sup></sub>
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Quality Score][ico-code-quality]][link-code-quality]

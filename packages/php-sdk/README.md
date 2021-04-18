@@ -1,6 +1,4 @@
-# Pheature Flags PHP SDK
-
-Pheature flags PHP SDK
+# Pheature Flags <br><sub><sup>PHP SDK</sup></sub>
 
 ## Installation
 

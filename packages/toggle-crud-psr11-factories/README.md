@@ -1,6 +1,4 @@
-# Pheature Flags Toggle CRUD PSR-11 Factories
-
-Pheature flags toggle CRUD PSR-11 Factories
+# Pheature Flags <br><sub><sup>Toggle CRUD PSR-11 Factories</sup></sub>
 
 ## Installation
 
