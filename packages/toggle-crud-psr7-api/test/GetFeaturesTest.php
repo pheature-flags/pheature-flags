@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\Test\Crud\Psr7\Toggle;
 
+use Pheature\Core\Toggle\Read\Feature;
 use Pheature\Core\Toggle\Read\FeatureFinder;
 use Pheature\Crud\Psr7\Toggle\GetFeatures;
 use PHPUnit\Framework\TestCase;
@@ -16,10 +17,14 @@ final class GetFeaturesTest extends TestCase
 {
     public function testItShouldHandleRequestAndPrepareGetFeaturesResponse(): void
     {
+        $feature = $this->createMock(Feature::class);
+        $feature->expects($this->once())
+            ->method('jsonSerialize')
+            ->willReturn(['hello' => 'world']);
         $finder = $this->createMock(FeatureFinder::class);
         $finder->expects($this->once())
             ->method('all')
-            ->willReturn([['hello' => 'world']]);
+            ->willReturn([$feature]);
         $stream = $this->createMock(StreamInterface::class);
         $stream->expects($this->once())
             ->method('write')

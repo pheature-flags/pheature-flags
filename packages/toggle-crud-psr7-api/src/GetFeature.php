@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Psr7\Toggle;
 
+use InvalidArgumentException;
 use Pheature\Core\Toggle\Exception\FeatureNotFoundException;
 use Pheature\Core\Toggle\Read\FeatureFinder;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Webmozart\Assert\Assert;
 
 final class GetFeature implements RequestHandlerInterface
 {
@@ -24,9 +26,12 @@ final class GetFeature implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
+        $featureId = $request->getAttribute('feature_id');
+
         try {
-            $feature = $this->featureFinder->get($request->getAttribute('feature_id'));
-        } catch (FeatureNotFoundException $exception) {
+            Assert::string($featureId);
+            $feature = $this->featureFinder->get($featureId);
+        } catch (FeatureNotFoundException | InvalidArgumentException $exception) {
             return $this->responseFactory->createResponse(404, 'Route Not Found.');
         }
 
@@ -39,4 +44,3 @@ final class GetFeature implements RequestHandlerInterface
         return $response;
     }
 }
-    

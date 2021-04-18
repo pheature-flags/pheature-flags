@@ -19,7 +19,8 @@
         "pheature/toggle-model": "@dev",
         "psr/http-factory": "^1.0",
         "psr/http-message": "^1.0",
-        "psr/http-server-handler": "^1.0"
+        "psr/http-server-handler": "^1.0",
+        "webmozart/assert": "^1.10"
     },
     "require-dev": {
         "infection/infection": "^0.21.0",

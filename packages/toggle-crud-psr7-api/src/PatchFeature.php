@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Psr7\Toggle;
 
-use Pheature\Crud\Toggle\Command\AddStrategy as AddStrategyCommand;
-use Pheature\Crud\Toggle\Command\DisableFeature as DisableFeatureCommand;
-use Pheature\Crud\Toggle\Command\EnableFeature as EnableFeatureCommand;
-use Pheature\Crud\Toggle\Command\RemoveStrategy as RemoveStrategyCommand;
 use Pheature\Crud\Toggle\Handler\AddStrategy;
 use Pheature\Crud\Toggle\Handler\DisableFeature;
 use Pheature\Crud\Toggle\Handler\EnableFeature;
@@ -42,60 +38,33 @@ final class PatchFeature implements RequestHandlerInterface
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $featureId = $request->getAttribute('feature_id');
-        $body = $request->getParsedBody();
-
-        $action = $body['action'];
-        $value = $body['value'] ?? null;
-
-        if ('add_strategy' === $action) {
-            $this->addStrategy($action, $featureId, $value);
-        }
-        if ('remove_strategy' === $action) {
-            $this->removeStrategy($action, $featureId, $value);
-        }
-        if ('enable_feature' === $action) {
-            $this->enableFeature($action, $featureId);
-        }
-        if ('disable_feature' === $action) {
-            $this->disableFeature($action, $featureId);
+        if (false === is_string($featureId)) {
+            return $this->responseFactory->createResponse(404, 'Route Not Found.');
         }
 
-        return $this->responseFactory->createResponse(202, 'Processed');
+        try {
+            $this->handleRequest($featureId, $request);
+        } catch (\InvalidArgumentException $exception) {
+            return $this->responseFactory->createResponse(400, 'Bad request.');
+        }
+
+        return $this->responseFactory->createResponse(202, 'Processed.');
     }
 
-    private function addStrategy(string $action, string $featureId, array $strategy): void
+    private function handleRequest(string $featureId, ServerRequestInterface $request): void
     {
-        $this->addStrategy->handle(
-            AddStrategyCommand::withIdAndType(
-                $featureId,
-                $strategy['id'],
-                $strategy['type']
-            )
-        );
-    }
-
-    private function removeStrategy(string $action, string $featureId, string $strategyId): void
-    {
-        $this->removeStrategy->handle(
-            RemoveStrategyCommand::withFeatureAndStrategyId(
-                $featureId,
-                $strategyId
-            )
-        );
-    }
-
-    private function enableFeature(string $action, string $featureId): void
-    {
-        $this->enableFeature->handle(
-            EnableFeatureCommand::withId($featureId)
-        );
-    }
-
-    private function disableFeature(string $action, string $featureId): void
-    {
-        $this->disableFeature->handle(
-            DisableFeatureCommand::withId($featureId)
-        );
+        $patchRequest = new PatchRequest($featureId, $request);
+        if ($patchRequest->isEnableFeatureAction()) {
+            $this->enableFeature->handle($patchRequest->enableFeatureCommand());
+        }
+        if ($patchRequest->isDisableFeatureAction()) {
+            $this->disableFeature->handle($patchRequest->disableFeatureCommand());
+        }
+        if ($patchRequest->isAddStrategyAction()) {
+            $this->addStrategy->handle($patchRequest->addStrategyCommand());
+        }
+        if ($patchRequest->isRemoveStrategyAction()) {
+            $this->removeStrategy->handle($patchRequest->removeStrategyCommand());
+        }
     }
 }
-    
