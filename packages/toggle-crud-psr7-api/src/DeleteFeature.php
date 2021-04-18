@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Psr7\Toggle;
 
+use InvalidArgumentException;
 use Pheature\Crud\Toggle\Command\RemoveFeature as RemoveFeatureCommand;
 use Pheature\Crud\Toggle\Handler\RemoveFeature;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Webmozart\Assert\Assert;
 
 final class DeleteFeature implements RequestHandlerInterface
 {
@@ -23,8 +25,16 @@ final class DeleteFeature implements RequestHandlerInterface
     }
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
+        $featureId = $request->getAttribute('feature_id');
+
+        try {
+            Assert::string($featureId);
+        } catch (InvalidArgumentException $exception) {
+            return $this->responseFactory->createResponse(404, 'Route Not Found.');
+        }
+
         $this->removeFeature->handle(
-            RemoveFeatureCommand::withId($request->getAttribute('feature_id'))
+            RemoveFeatureCommand::withId($featureId)
         );
 
         return $this->responseFactory->createResponse(204, 'Deleted');
