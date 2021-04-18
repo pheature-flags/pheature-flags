@@ -98,4 +98,3 @@ final class PatchFeature implements RequestHandlerInterface
         );
     }
 }
-    

@@ -34,4 +34,3 @@ final class GetFeatures implements RequestHandlerInterface
         return $response;
     }
 }
-    
