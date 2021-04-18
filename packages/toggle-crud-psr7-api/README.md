@@ -1,6 +1,4 @@
-# Pheature Flags Toggle CRUD PSR-7 implementation
-
-Pheature flags toggle CRUD PSR-7 implementation
+# Pheature Flags <br><sub><sup>Toggle CRUD PSR-7 implementation</sup></sub>
 
 ## Installation
 

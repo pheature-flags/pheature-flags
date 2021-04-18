@@ -1,6 +1,4 @@
-# Pheature Flags Laravel Toggle management API
-
-Pheature flags Laravel Toggle management API
+# Pheature Flags <br><sub><sup>Laravel Toggle management API</sup></sub>
 
 ## Installation
 

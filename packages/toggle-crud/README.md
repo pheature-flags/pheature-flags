@@ -1,4 +1,4 @@
-# Pheature Flags Toggle CRUD
+# Pheature Flags <br><sub><sup>Toggle CRUD</sup></sub>
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Quality Score][ico-code-quality]][link-code-quality]
