@@ -1,4 +1,4 @@
-# Pheature Flags Toggle Model implementation
+# Pheature Flags <br><sub><sup>Toggle Model implementation</sup></sub>
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Quality Score][ico-code-quality]][link-code-quality]

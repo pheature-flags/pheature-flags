@@ -1,6 +1,4 @@
-# Pheature Flags Laminas Mezzio Toggle management API
-
-Pheature flags Laminas Mezzio Toggle management API
+# Pheature Flags <br><sub><sup>Laminas Mezzio Toggle management API</sup></sub>
 
 ## Installation
 

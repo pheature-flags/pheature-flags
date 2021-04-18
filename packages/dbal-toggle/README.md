@@ -1,6 +1,4 @@
-# Pheature Flags Doctrine DBAL Toggle
-
-Pheature flags Doctrine DBAL toggle implementation
+# Pheature Flags <br><sub><sup>Doctrine DBAL Toggle</sup></sub>
 
 ## Installation
 
