@@ -17,21 +17,21 @@ final class FeatureFinderFactory
 {
     public function __invoke(ContainerInterface $container): FeatureFinder
     {
+        /** @var ToggleConfig $config */
         $config = $container->get(ToggleConfig::class);
         $driver = $config->driver();
 
         if ('inmemory' === $driver) {
             return new InMemoryFeatureFinder(
-                new InMemoryConfig($config['pheature_flags']['toggles']),
+                new InMemoryConfig($config->toggles()),
                 new InMemoryFeatureFactory()
             );
         }
 
         if ('dbal' === $driver) {
-            return new DbalFeatureFinder(
-                $container->get(Connection::class),
-                new DbalFeatureFactory()
-            );
+            /** @var Connection $connection */
+            $connection = $container->get(Connection::class);
+            return new DbalFeatureFinder($connection, new DbalFeatureFactory());
         }
 
         throw new \InvalidArgumentException('Valid driver required');

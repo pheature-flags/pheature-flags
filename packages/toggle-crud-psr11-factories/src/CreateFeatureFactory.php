@@ -12,8 +12,9 @@ final class CreateFeatureFactory
 {
     public function __invoke(ContainerInterface $container): CreateFeature
     {
-        return new CreateFeature(
-            $container->get(FeatureRepository::class)
-        );
+        /** @var FeatureRepository $featureRepository */
+        $featureRepository = $container->get(FeatureRepository::class);
+
+        return new CreateFeature($featureRepository);
     }
 }

@@ -23,7 +23,9 @@ final class InMemoryConfig
 
     /**
      * @param string $featureId
-     * @return array<string, mixed>
+     * @return array<string, string|bool|array<string, mixed>>
+     * @psalm-suppress MixedReturnStatement
+     * @psalm-suppress MixedInferredReturnType
      */
     public function get(string $featureId): array
     {
@@ -36,6 +38,7 @@ final class InMemoryConfig
     }
 
     /**
+     * @psalm-suppress UnusedParam
      * @param array<string, mixed> $config
      */
     private function assertConfig(array $config): void

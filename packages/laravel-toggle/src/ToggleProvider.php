@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\Community\Laravel;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Pheature\Core\Toggle\Read\FeatureFinder;
@@ -31,7 +32,9 @@ final class ToggleProvider extends ServiceProvider
         $this->app->bind(
             ToggleConfig::class,
             function (): ToggleConfig {
-                return new ToggleConfig(config('pheature_flags'));
+                /** @var array<string, mixed> $config */
+                $config = config('pheature_flags');
+                return new ToggleConfig($config);
             }
         );
 
@@ -61,20 +64,25 @@ final class ToggleProvider extends ServiceProvider
         $this->app->bind(
             CommandRunner::class,
             function (ContainerInterface $container): CommandRunner {
-                return new CommandRunner(
-                    new Toggle(
-                        $container->get(FeatureFinder::class)
-                    )
-                );
+                /** @var FeatureFinder $featureFinder */
+                $featureFinder = $container->get(FeatureFinder::class);
+                return new CommandRunner(new Toggle($featureFinder));
             }
         );
 
         $this->app->extend(
             ServerRequestInterface::class,
             function (ServerRequestInterface $psrRequest) {
-                $route = $this->app->make('request')->route();
+                /** @var Request $request */
+                $request = $this->app->make('request');
+                /** @var ?\Illuminate\Routing\Route $route */
+                $route = $request->route();
                 if ($route) {
                     $parameters = $route->parameters();
+                    /**
+                     * @var string $key
+                     * @var mixed $value
+                     */
                     foreach ($parameters as $key => $value) {
                         $psrRequest = $psrRequest->withAttribute($key, $value);
                     }
@@ -115,7 +123,7 @@ final class ToggleProvider extends ServiceProvider
     }
 
     /**
-     * @return array<string, string>
+     * @return array<string, mixed>
      */
     private function routeConfiguration(): array
     {
