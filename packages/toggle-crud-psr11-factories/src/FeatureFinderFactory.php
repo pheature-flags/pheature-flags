@@ -37,4 +37,3 @@ final class FeatureFinderFactory
         throw new \InvalidArgumentException('Valid driver required');
     }
 }
-    

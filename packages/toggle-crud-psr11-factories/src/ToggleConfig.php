@@ -23,4 +23,3 @@ final class ToggleConfig
         return $this->config['driver'];
     }
 }
-    

@@ -12,13 +12,16 @@ use Pheature\Crud\Psr7\Toggle\GetFeatures;
 use Pheature\Crud\Psr7\Toggle\PatchFeature;
 use Pheature\Crud\Psr7\Toggle\PostFeature;
 use Psr\Container\ContainerInterface;
+
 use function sprintf;
 
 final class RouterDelegator
 {
     public function __invoke(ContainerInterface $container, string $serviceName, callable $callback): Application
     {
-        /** @var $app Application */
+        /**
+ * @var $app Application
+*/
         $app = $callback();
 
         $config = $container->get('config');
@@ -35,4 +38,3 @@ final class RouterDelegator
         return $app;
     }
 }
-    

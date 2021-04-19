@@ -21,7 +21,5 @@ final class CommandRunnerFactory
                 $container->get(FeatureFinder::class)
             )
         );
-
     }
 }
-    

@@ -9,7 +9,7 @@ use Pheature\Core\Toggle\Exception\FeatureNotFoundException;
 interface FeatureFinder
 {
     /**
-     * @param string $featureId
+     * @param  string $featureId
      * @return Feature
      * @throws FeatureNotFoundException
      */

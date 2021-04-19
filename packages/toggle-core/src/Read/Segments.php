@@ -9,7 +9,9 @@ use function array_values;
 
 final class Segments
 {
-    /** @var array<string, Segment> */
+    /**
+     * @var array<string, Segment>
+     */
     private array $segments = [];
 
     public function __construct(Segment ...$segments)

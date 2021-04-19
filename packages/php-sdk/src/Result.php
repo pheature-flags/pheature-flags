@@ -6,7 +6,9 @@ namespace Pheature\Sdk;
 
 final class Result
 {
-    /** @var mixed null */
+    /**
+     * @var mixed null
+     */
     private $data;
 
     public function __construct($data = null)

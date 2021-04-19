@@ -15,7 +15,9 @@ use function count;
  */
 final class ToggleStrategies implements IteratorAggregate, JsonSerializable
 {
-    /** @var ToggleStrategy[] */
+    /**
+     * @var ToggleStrategy[]
+     */
     private array $strategies;
 
     public function __construct(ToggleStrategy ...$strategies)

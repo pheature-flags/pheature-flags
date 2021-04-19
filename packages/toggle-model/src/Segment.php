@@ -9,12 +9,15 @@ use Pheature\Core\Toggle\Read\Segment as ISegment;
 final class Segment implements ISegment
 {
     private string $id;
-    /** @var array<string, mixed> */
+    /**
+     * @var array<string, mixed>
+     */
     private array $criteria;
 
     /**
      * Segment constructor.
-     * @param string $id
+     *
+     * @param string               $id
      * @param array<string, mixed> $criteria
      */
     public function __construct(string $id, array $criteria)
@@ -40,7 +43,9 @@ final class Segment implements ISegment
     {
         $match = false;
 
-        /** @var mixed $value */
+        /**
+ * @var mixed $value
+*/
         foreach ($this->criteria as $key => $value) {
             if (array_key_exists($key, $payload) && $value === $payload[$key]) {
                 $match = true;

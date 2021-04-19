@@ -11,9 +11,11 @@ final class DbalFeatureNotFound extends InvalidArgumentException implements Feat
 {
     public static function withId(string $featureId): self
     {
-        return new self(sprintf(
-            'There is not feature with id %s in database.',
-            $featureId
-        ));
+        return new self(
+            sprintf(
+                'There is not feature with id %s in database.',
+                $featureId
+            )
+        );
     }
 }

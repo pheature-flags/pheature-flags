@@ -6,7 +6,9 @@ namespace Pheature\Sdk;
 
 final class OnEnabledFeature implements OnFeatureState
 {
-    /** @var callable */
+    /**
+     * @var callable
+     */
     private $callback;
     private array $arguments;
 
