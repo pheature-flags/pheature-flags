@@ -19,6 +19,15 @@ final class FeatureFinderFactory
     {
         /** @var ToggleConfig $config */
         $config = $container->get(ToggleConfig::class);
+        /** @var ?Connection $connection */
+        $connection = $container->get(Connection::class);
+
+        return self::create($config, $connection);
+    }
+
+    public static function create(ToggleConfig $config, ?Connection $connection): FeatureFinder
+    {
+
         $driver = $config->driver();
 
         if ('inmemory' === $driver) {
@@ -30,7 +39,6 @@ final class FeatureFinderFactory
 
         if ('dbal' === $driver) {
             /** @var Connection $connection */
-            $connection = $container->get(Connection::class);
             return new DbalFeatureFinder($connection, new DbalFeatureFactory());
         }
 
