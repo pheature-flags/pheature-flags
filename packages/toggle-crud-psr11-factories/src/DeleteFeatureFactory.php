@@ -18,6 +18,13 @@ final class DeleteFeatureFactory
         /** @var ResponseFactoryInterface $responseFactory */
         $responseFactory = $container->get(ResponseFactoryInterface::class);
 
+        return self::create($removeFeature, $responseFactory);
+    }
+
+    public static function create(
+        RemoveFeature $removeFeature,
+        ResponseFactoryInterface $responseFactory
+    ): DeleteFeature {
         return new DeleteFeature($removeFeature, $responseFactory);
     }
 }
