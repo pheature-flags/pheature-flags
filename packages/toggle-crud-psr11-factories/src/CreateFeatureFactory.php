@@ -15,6 +15,11 @@ final class CreateFeatureFactory
         /** @var FeatureRepository $featureRepository */
         $featureRepository = $container->get(FeatureRepository::class);
 
+        return self::create($featureRepository);
+    }
+
+    public static function create(FeatureRepository $featureRepository): CreateFeature
+    {
         return new CreateFeature($featureRepository);
     }
 }
