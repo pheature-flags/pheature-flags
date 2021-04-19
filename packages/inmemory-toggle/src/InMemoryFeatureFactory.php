@@ -15,15 +15,21 @@ use Pheature\Model\Toggle\Segment;
 final class InMemoryFeatureFactory
 {
     /**
-     * @param array<string, mixed> $data
+     * @param array<string, string|bool|array<string, mixed>> $data
      * @return IFeature
      */
     public function create(array $data): IFeature
     {
+        /** @var string $id */
+        $id = $data['id'];
+        $enabled = (bool)$data['enabled'];
+        /** @var array<string, array<string, mixed>> $strategies */
+        $strategies = $data['strategies'];
         return new Feature(
-            $data['id'],
-            new ToggleStrategies(...array_map([$this, 'makeStrategy'], $data['strategies'])),
-            $data['enabled']
+            $id,
+            /** @param array<string, array<string, mixed>> $strategies */
+            new ToggleStrategies(...array_map([$this, 'makeStrategy'], $strategies)),
+            $enabled
         );
     }
 
@@ -33,11 +39,21 @@ final class InMemoryFeatureFactory
      */
     private static function makeStrategy(array $strategy): ToggleStrategy
     {
+        /** @var array<array<string, mixed>> $segments */
+        $segments = $strategy['segments'];
+
         return new EnableByMatchingSegment(
             new Segments(
                 ...array_map(
-                    static fn(array $segment): Segment => new Segment($segment['id'], $segment['criteria']),
-                    $strategy['segments']
+                    /** @param array<string, mixed> $segment */
+                    static function (array $segment): Segment {
+                        /** @var string $id */
+                        $id = $segment['id'];
+                        /** @var array<string, mixed> $criteria */
+                        $criteria = $segment['criteria'];
+                        return new Segment($id, $criteria);
+                    },
+                    $segments
                 )
             )
         );

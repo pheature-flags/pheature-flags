@@ -6,6 +6,7 @@ namespace Pheature\Community\Mezzio;
 
 use Mezzio\Application;
 use Mezzio\Helper\BodyParams\BodyParamsMiddleware;
+use Pheature\Crud\Psr11\Toggle\ToggleConfig;
 use Pheature\Crud\Psr7\Toggle\DeleteFeature;
 use Pheature\Crud\Psr7\Toggle\GetFeature;
 use Pheature\Crud\Psr7\Toggle\GetFeatures;
@@ -22,9 +23,9 @@ final class RouterDelegator
         /** @var Application $app */
         $app = $callback();
 
-        $config = $container->get('config');
-        $prefix = $config['pheature_flags']['route_prefix'];
-        $path = sprintf('%s/features', $prefix);
+        /** @var ToggleConfig $config */
+        $config = $container->get(ToggleConfig::class);
+        $path = sprintf('%s/features', $config->prefix());
         $pathWithId = sprintf('%s/{feature_id}', $path);
 
         $app->get($path, [GetFeatures::class], 'get_features');

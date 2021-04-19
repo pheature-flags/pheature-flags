@@ -13,9 +13,11 @@ final class PostFeatureFactory
 {
     public function __invoke(ContainerInterface $container): PostFeature
     {
-        return new PostFeature(
-            $container->get(CreateFeature::class),
-            $container->get(ResponseFactoryInterface::class)
-        );
+        /** @var CreateFeature $createFeature */
+        $createFeature = $container->get(CreateFeature::class);
+        /** @var ResponseFactoryInterface $responseFactory */
+        $responseFactory = $container->get(ResponseFactoryInterface::class);
+
+        return new PostFeature($createFeature, $responseFactory);
     }
 }

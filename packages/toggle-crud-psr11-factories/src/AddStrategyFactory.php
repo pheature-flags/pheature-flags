@@ -12,8 +12,9 @@ final class AddStrategyFactory
 {
     public function __invoke(ContainerInterface $container): AddStrategy
     {
-        return new AddStrategy(
-            $container->get(FeatureRepository::class)
-        );
+        /** @var FeatureRepository $featureRepository */
+        $featureRepository = $container->get(FeatureRepository::class);
+
+        return new AddStrategy($featureRepository);
     }
 }

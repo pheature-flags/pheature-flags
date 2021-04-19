@@ -13,9 +13,11 @@ final class DeleteFeatureFactory
 {
     public function __invoke(ContainerInterface $container): DeleteFeature
     {
-        return new DeleteFeature(
-            $container->get(RemoveFeature::class),
-            $container->get(ResponseFactoryInterface::class)
-        );
+        /** @var RemoveFeature $removeFeature */
+        $removeFeature = $container->get(RemoveFeature::class);
+        /** @var ResponseFactoryInterface $responseFactory */
+        $responseFactory = $container->get(ResponseFactoryInterface::class);
+
+        return new DeleteFeature($removeFeature, $responseFactory);
     }
 }

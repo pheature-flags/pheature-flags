@@ -13,10 +13,11 @@ final class InitSchemaFactory
 {
     public function __invoke(ContainerInterface $container): InitSchema
     {
+        /** @var Connection $connection */
+        $connection = $container->get(Connection::class);
+
         return new InitSchema(
-            new DbalSchema(
-                $container->get(Connection::class)
-            )
+            new DbalSchema($connection)
         );
     }
 }

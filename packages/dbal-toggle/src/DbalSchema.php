@@ -16,7 +16,7 @@ final class DbalSchema
 
     public function __construct(Connection $connection)
     {
-        $this->schema = $connection->getSchemaManager()->createSchema();
+        $this->schema = $connection->createSchemaManager()->createSchema();
         $this->platform = $connection->getDatabasePlatform();
         $this->connection = $connection;
     }

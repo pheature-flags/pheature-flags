@@ -12,8 +12,9 @@ final class RemoveFeatureFactory
 {
     public function __invoke(ContainerInterface $container): RemoveFeature
     {
-        return new RemoveFeature(
-            $container->get(FeatureRepository::class)
-        );
+        /** @var FeatureRepository $featureRepository */
+        $featureRepository = $container->get(FeatureRepository::class);
+
+        return new RemoveFeature($featureRepository);
     }
 }

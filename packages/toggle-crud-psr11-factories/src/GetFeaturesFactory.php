@@ -13,9 +13,11 @@ final class GetFeaturesFactory
 {
     public function __invoke(ContainerInterface $container): GetFeatures
     {
-        return new GetFeatures(
-            $container->get(FeatureFinder::class),
-            $container->get(ResponseFactoryInterface::class)
-        );
+        /** @var FeatureFinder $featureFinder */
+        $featureFinder = $container->get(FeatureFinder::class);
+        /** @var ResponseFactoryInterface $responseFactory */
+        $responseFactory = $container->get(ResponseFactoryInterface::class);
+
+        return new GetFeatures($featureFinder, $responseFactory);
     }
 }

@@ -16,12 +16,17 @@ final class PatchFeatureFactory
 {
     public function __invoke(ContainerInterface $container): PatchFeature
     {
-        return new PatchFeature(
-            $container->get(AddStrategy::class),
-            $container->get(RemoveStrategy::class),
-            $container->get(EnableFeature::class),
-            $container->get(DisableFeature::class),
-            $container->get(ResponseFactoryInterface::class)
-        );
+        /** @var AddStrategy $addStrategy */
+        $addStrategy = $container->get(AddStrategy::class);
+        /** @var RemoveStrategy $removeStrategy */
+        $removeStrategy = $container->get(RemoveStrategy::class);
+        /** @var EnableFeature $enableFeature */
+        $enableFeature = $container->get(EnableFeature::class);
+        /** @var DisableFeature $disableFeature */
+        $disableFeature = $container->get(DisableFeature::class);
+        /** @var ResponseFactoryInterface $responseFactory */
+        $responseFactory = $container->get(ResponseFactoryInterface::class);
+
+        return new PatchFeature($addStrategy, $removeStrategy, $enableFeature, $disableFeature, $responseFactory);
     }
 }

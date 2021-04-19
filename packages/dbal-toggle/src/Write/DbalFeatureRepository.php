@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Pheature\Dbal\Toggle\Write;
 
 use Doctrine\DBAL\Connection;
+use InvalidArgumentException;
 use Pheature\Core\Toggle\Write\Feature;
 use Pheature\Core\Toggle\Write\FeatureId;
 use Pheature\Core\Toggle\Write\FeatureRepository;
@@ -56,6 +57,9 @@ final class DbalFeatureRepository implements FeatureRepository
     public function get(FeatureId $featureId): Feature
     {
         $featureData = $this->findFeature($featureId->value());
+        if (null === $featureData) {
+            throw new InvalidArgumentException(sprintf('Not feature found for given id %s', $featureId->value()));
+        }
 
         return DbalFeatureFactory::createFromDbalRepresentation($featureData);
     }
@@ -72,7 +76,7 @@ final class DbalFeatureRepository implements FeatureRepository
 
     /**
      * @param string $id
-     * @return array<string, mixed>|null
+     * @return array<string, string>|null
      * @throws \Doctrine\DBAL\Exception
      */
     private function findFeature(string $id): ?array
@@ -83,6 +87,7 @@ final class DbalFeatureRepository implements FeatureRepository
         SQL;
 
         $statement = $this->connection->executeQuery($sql, ['feature_id' => $id]);
+        /** @var array<string, string> $result */
         $result = $statement->fetchAssociative();
 
         return $result ?: null;
