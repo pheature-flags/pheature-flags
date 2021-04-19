@@ -6,11 +6,13 @@ namespace Pheature\Sdk;
 
 final class Result
 {
-    /**
-     * @var mixed null
-     */
+    /** @var null|mixed null */
     private $data;
 
+    /**
+     * Result constructor.
+     * @param null|mixed $data
+     */
     public function __construct($data = null)
     {
         $this->data = $data;

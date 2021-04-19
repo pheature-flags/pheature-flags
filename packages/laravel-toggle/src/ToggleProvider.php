@@ -114,6 +114,9 @@ final class ToggleProvider extends ServiceProvider
         );
     }
 
+    /**
+     * @return array<string, string>
+     */
     private function routeConfiguration(): array
     {
         return [

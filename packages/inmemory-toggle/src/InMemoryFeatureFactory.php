@@ -14,6 +14,10 @@ use Pheature\Model\Toggle\Segment;
 
 final class InMemoryFeatureFactory
 {
+    /**
+     * @param array<string, mixed> $data
+     * @return IFeature
+     */
     public function create(array $data): IFeature
     {
         return new Feature(
@@ -23,6 +27,10 @@ final class InMemoryFeatureFactory
         );
     }
 
+    /**
+     * @param array<string, mixed> $strategy
+     * @return ToggleStrategy
+     */
     private static function makeStrategy(array $strategy): ToggleStrategy
     {
         return new EnableByMatchingSegment(

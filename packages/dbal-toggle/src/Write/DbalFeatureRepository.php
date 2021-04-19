@@ -70,6 +70,11 @@ final class DbalFeatureRepository implements FeatureRepository
         );
     }
 
+    /**
+     * @param string $id
+     * @return array<string, mixed>|null
+     * @throws \Doctrine\DBAL\Exception
+     */
     private function findFeature(string $id): ?array
     {
         $table = self::TABLE;

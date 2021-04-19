@@ -10,6 +10,11 @@ use Pheature\Model\Toggle\Feature;
 
 final class DbalFeatureFactory
 {
+    /**
+     * @param array<string, mixed> $data
+     * @return IFeature
+     * @throws \JsonException
+     */
     public function create(array $data): IFeature
     {
         $strategies = json_decode($data['strategies'], true, 12, JSON_THROW_ON_ERROR);

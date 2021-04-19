@@ -27,7 +27,10 @@
         "symfony/var-dumper": "^4.2 || ^5.0",
         "symplify/monorepo-builder": "^9.2",
         "vimeo/psalm": "^4.4",
-        "illuminate/support": "^8.37"
+        "illuminate/support": "^8.37",
+        "mezzio/mezzio": "^3.3",
+        "mezzio/mezzio-helpers": "^5.4",
+        "laravel/laravel": "^8.5"
     },
     "autoload": {
         "psr-4": {
