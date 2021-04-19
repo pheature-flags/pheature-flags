@@ -16,5 +16,7 @@
     </rule>
 
     <!-- Paths to check -->
-    <file>packages/*/src</file>
+    <file>packages</file>
+    <include-pattern>packages/*/src</include-pattern>
+    <exclude-pattern>packages/*/test</exclude-pattern>
 </ruleset>
