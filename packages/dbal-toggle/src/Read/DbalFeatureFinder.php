@@ -5,8 +5,13 @@ declare(strict_types=1);
 namespace Pheature\Dbal\Toggle\Read;
 
 use Doctrine\DBAL\Connection;
+use InvalidArgumentException;
 use Pheature\Core\Toggle\Read\Feature;
 use Pheature\Core\Toggle\Read\FeatureFinder;
+
+use function array_map;
+use function is_array;
+use function sprintf;
 
 final class DbalFeatureFinder implements FeatureFinder
 {
@@ -28,10 +33,18 @@ final class DbalFeatureFinder implements FeatureFinder
         $statement = $this->connection->executeQuery($sql, ['feature_id' => $featureId]);
 
         $feature = $statement->fetchAssociative();
+        if (false === is_array($feature)) {
+            throw new InvalidArgumentException(sprintf('Not feature found for given id %s', $featureId));
+        }
 
         return $this->featureFactory->create($feature);
     }
 
+    /**
+     * @return Feature[]
+     * @throws \Doctrine\DBAL\Exception
+     * @throws \JsonException
+     */
     public function all(): array
     {
         $sql = <<<SQL

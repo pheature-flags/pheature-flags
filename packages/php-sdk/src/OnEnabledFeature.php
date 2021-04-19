@@ -6,16 +6,20 @@ namespace Pheature\Sdk;
 
 final class OnEnabledFeature implements OnFeatureState
 {
-    /**
-     * @var callable
-     */
+    /** @var callable */
     private $callback;
+    /** @var array<string, mixed> */
     private array $arguments;
 
     private function __construct()
     {
     }
 
+    /**
+     * @param callable $callback
+     * @param array<string, mixed> $arguments
+     * @return static
+     */
     public static function make(callable $callback, array $arguments = []): self
     {
         $self = new self();
@@ -30,6 +34,9 @@ final class OnEnabledFeature implements OnFeatureState
         return $this->callback;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function arguments(): array
     {
         return $this->arguments;

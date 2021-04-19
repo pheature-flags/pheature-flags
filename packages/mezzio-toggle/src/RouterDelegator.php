@@ -19,9 +19,7 @@ final class RouterDelegator
 {
     public function __invoke(ContainerInterface $container, string $serviceName, callable $callback): Application
     {
-        /**
- * @var $app Application
-*/
+        /** @var Application $app */
         $app = $callback();
 
         $config = $container->get('config');
