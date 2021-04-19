@@ -9,10 +9,12 @@ use JsonSerializable;
 interface Segment extends JsonSerializable
 {
     public function id(): string;
-    /** @return array<string, mixed> */
+    /**
+     * @return array<string, mixed>
+     */
     public function criteria(): array;
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed> $payload
      * @return bool
      */
     public function match(array $payload): bool;

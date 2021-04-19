@@ -8,7 +8,9 @@ use function json_decode;
 
 final class Payload
 {
-    /** @var array<string, mixed> */
+    /**
+     * @var array<string, mixed>
+     */
     private array $data;
 
     /**
@@ -21,7 +23,9 @@ final class Payload
 
     public static function fromJsonString(string $jsonPayload): self
     {
-        /** @var array<string, mixed> $payload */
+        /**
+ * @var array<string, mixed> $payload
+*/
         $payload = json_decode($jsonPayload, true, 16, JSON_THROW_ON_ERROR);
 
         return new self($payload);

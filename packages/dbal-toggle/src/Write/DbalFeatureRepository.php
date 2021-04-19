@@ -27,23 +27,30 @@ final class DbalFeatureRepository implements FeatureRepository
         $now = new DateTimeImmutable();
 
         if (null === $this->findFeature($feature->id())) {
-            $this->connection->insert(self::TABLE, [
+            $this->connection->insert(
+                self::TABLE,
+                [
                 'feature_id' => $feature->id(),
                 'name' => $feature->id(),
                 'enabled' => (int)$feature->isEnabled(),
                 'strategies' => json_encode($feature->strategies(), JSON_THROW_ON_ERROR),
                 'created_at' => $now->format('Y-m-d H:i:s'),
-            ]);
+                ]
+            );
             return;
         }
 
-        $this->connection->update(self::TABLE, [
+        $this->connection->update(
+            self::TABLE,
+            [
             'enabled' => (int)$feature->isEnabled(),
             'strategies' => json_encode($feature->strategies(), JSON_THROW_ON_ERROR),
             'updated_at' => $now->format('Y-m-d H:i:s'),
-        ], [
+            ],
+            [
             'feature_id' => $feature->id(),
-        ]);
+            ]
+        );
     }
 
     public function get(FeatureId $featureId): Feature
@@ -55,9 +62,12 @@ final class DbalFeatureRepository implements FeatureRepository
 
     public function remove(FeatureId $featureId): void
     {
-        $this->connection->delete(self::TABLE, [
+        $this->connection->delete(
+            self::TABLE,
+            [
             'feature_id' => $featureId->value()
-        ]);
+            ]
+        );
     }
 
     private function findFeature(string $id): ?array
