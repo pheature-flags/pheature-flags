@@ -7,5 +7,9 @@ namespace Pheature\Sdk;
 interface OnFeatureState
 {
     public function callback(): callable;
+
+    /**
+     * @return array<string, mixed>
+     */
     public function arguments(): array;
 }

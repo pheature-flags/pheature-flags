@@ -5,19 +5,57 @@ declare(strict_types=1);
 namespace Pheature\Dbal\Toggle\Read;
 
 use Pheature\Core\Toggle\Read\Feature as IFeature;
+use Pheature\Core\Toggle\Read\Segments;
 use Pheature\Core\Toggle\Read\ToggleStrategies;
+use Pheature\Core\Toggle\Read\ToggleStrategy;
+use Pheature\Model\Toggle\EnableByMatchingSegment;
 use Pheature\Model\Toggle\Feature;
+use Pheature\Model\Toggle\Segment;
 
 final class DbalFeatureFactory
 {
+    /**
+     * @param array<string, string|bool|array<string, mixed>> $data
+     * @return IFeature
+     */
     public function create(array $data): IFeature
     {
-        $strategies = json_decode($data['strategies'], true, 12, JSON_THROW_ON_ERROR);
-
+        /** @var string $id */
+        $id = $data['id'];
+        $enabled = (bool)$data['enabled'];
+        /** @var array<string, array<string, mixed>> $strategies */
+        $strategies = $data['strategies'];
         return new Feature(
-            $data['feature_id'],
-            new ToggleStrategies(...$strategies),
-            (bool)(int)$data['enabled']
+            $id,
+            /** @param array<string, array<string, mixed>> $strategies */
+            new ToggleStrategies(...array_map([$this, 'makeStrategy'], $strategies)),
+            $enabled
+        );
+    }
+
+    /**
+     * @param array<string, mixed> $strategy
+     * @return ToggleStrategy
+     */
+    private static function makeStrategy(array $strategy): ToggleStrategy
+    {
+        /** @var array<array<string, mixed>> $segments */
+        $segments = $strategy['segments'];
+
+        return new EnableByMatchingSegment(
+            new Segments(
+                ...array_map(
+                /** @param array<string, mixed> $segment */
+                    static function (array $segment): Segment {
+                        /** @var string $id */
+                        $id = $segment['id'];
+                        /** @var array<string, mixed> $criteria */
+                        $criteria = $segment['criteria'];
+                        return new Segment($id, $criteria);
+                    },
+                    $segments
+                )
+            )
         );
     }
 }

@@ -11,9 +11,11 @@ final class InMemoryFeatureNotFound extends InvalidArgumentException implements 
 {
     public static function withId(string $featureId): self
     {
-        return new self(sprintf(
-            'There is not feature with id %s configured.',
-            $featureId
-        ));
+        return new self(
+            sprintf(
+                'There is not feature with id %s configured.',
+                $featureId
+            )
+        );
     }
 }

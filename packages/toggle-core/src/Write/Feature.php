@@ -13,13 +13,16 @@ final class Feature implements JsonSerializable
 {
     private FeatureId $featureId;
     private bool $enabled;
-    /** @var Strategy[] */
+    /**
+     * @var Strategy[]
+     */
     private array $strategies = [];
 
     /**
      * Feature constructor.
-     * @param FeatureId $featureId
-     * @param bool $enabled
+     *
+     * @param FeatureId  $featureId
+     * @param bool       $enabled
      * @param Strategy[] $strategies
      */
     public function __construct(FeatureId $featureId, bool $enabled, array $strategies = [])

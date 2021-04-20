@@ -19,25 +19,32 @@ use function json_decode;
 final class DbalFeatureFactory
 {
     /**
-     * @param array<string, mixed> $featureData
+     * @param  array<string, string> $featureData
      * @return Feature
      */
     public static function createFromDbalRepresentation(array $featureData): Feature
     {
+        /** @var array<string, mixed> $strategiesData */
         $strategiesData = json_decode($featureData['strategies'], true, 12, JSON_THROW_ON_ERROR);
 
-        $strategies = array_map(function (array $strategy) {
-            $segments = array_map(fn(array $segment) => new Segment(
-                SegmentId::fromString($segment['segment_id']),
-                Payload::fromJsonString($segment['payload'])
-            ), $strategy['segments']);
+        $strategies = array_map(
+            function (array $strategy) {
+                $segments = array_map(
+                    fn(array $segment) => new Segment(
+                        SegmentId::fromString((string)$segment['segment_id']),
+                        Payload::fromJsonString((string)$segment['payload'])
+                    ),
+                    (array)$strategy['segments']
+                );
 
-            return new Strategy(
-                StrategyId::fromString($strategy['strategy_id']),
-                StrategyType::fromString($strategy['strategy_type']),
-                $segments
-            );
-        }, $strategiesData);
+                return new Strategy(
+                    StrategyId::fromString((string)$strategy['strategy_id']),
+                    StrategyType::fromString((string)$strategy['strategy_type']),
+                    $segments
+                );
+            },
+            $strategiesData
+        );
 
         return new Feature(
             FeatureId::fromString($featureData['feature_id']),
