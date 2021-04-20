@@ -11,9 +11,11 @@ final class ToggleConfigFactory
 {
     public function __invoke(ContainerInterface $container): ToggleConfig
     {
-        return new ToggleConfig(
-            $container->get('config')['pheature_flags']
-        );
+        /** @var array<string, mixed> $config */
+        $config = $container->get('config');
+        /** @var array<string, mixed> $pheatureConfig */
+        $pheatureConfig = $config['pheature_flags'];
+
+        return new ToggleConfig($pheatureConfig);
     }
 }
-    

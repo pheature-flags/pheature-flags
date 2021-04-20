@@ -20,7 +20,9 @@ final class PatchRequest
 
     private string $featureId;
     private string $action;
-    /** @var array<string|mixed>|null  */
+    /**
+     * @var array<string|mixed>|null
+     */
     private ?array $requestData = null;
 
     public function __construct(string $featureId, ServerRequestInterface $request)

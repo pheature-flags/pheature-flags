@@ -36,6 +36,9 @@ use Pheature\Sdk\CommandRunner;
 
 final class ToggleConfigProvider
 {
+    /**
+     * @return array<string, mixed>
+     */
     public function __invoke(): array
     {
         return [

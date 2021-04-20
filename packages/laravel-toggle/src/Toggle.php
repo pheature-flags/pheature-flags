@@ -13,8 +13,9 @@ use Pheature\Sdk\Result;
 
 /**
  * Class Toggle
+ *
  * @package Pheature\Community\Laravel
- * @method static CommandRunner inFeature(string $featureId, ConsumerIdentity $identity, ?OnEnabledFeature $onEnabledFeature = null, ?OnDisabledFeature $onDisabledFeature = null)
+ * @method  static CommandRunner inFeature()
  */
 final class Toggle extends Facade
 {

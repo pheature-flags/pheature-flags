@@ -29,6 +29,10 @@ final class InMemoryFeatureFinder implements FeatureFinder
 
     public function all(): array
     {
-        return array_map(fn(array $feature) => $this->featureFactory->create($feature), $this->config->all());
+        return array_map(
+            /** @param array<string, string|bool|array<string, mixed>> $feature */
+            fn(array $feature) => $this->featureFactory->create($feature),
+            $this->config->all()
+        );
     }
 }
