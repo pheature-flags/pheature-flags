@@ -18,7 +18,7 @@ final class CommandRunner
 
     public function inFeature(
         string $featureId,
-        ConsumerIdentity $identity,
+        ?ConsumerIdentity $identity = null,
         ?OnEnabledFeature $onEnabledFeature = null,
         ?OnDisabledFeature $onDisabledFeature = null
     ): Result {
