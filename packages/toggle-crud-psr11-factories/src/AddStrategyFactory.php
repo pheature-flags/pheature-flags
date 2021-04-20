@@ -18,7 +18,8 @@ final class AddStrategyFactory
         return self::create($featureRepository);
     }
 
-    public static function create(FeatureRepository $featureRepository): AddStrategy {
+    public static function create(FeatureRepository $featureRepository): AddStrategy
+    {
         return new AddStrategy($featureRepository);
     }
 }
