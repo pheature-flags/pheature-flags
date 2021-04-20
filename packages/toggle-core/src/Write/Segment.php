@@ -9,17 +9,24 @@ use JsonSerializable;
 final class Segment implements JsonSerializable
 {
     private SegmentId $segmentId;
+    private SegmentType $segmentType;
     private Payload $payload;
 
-    public function __construct(SegmentId $segmentId, Payload $payload)
+    public function __construct(SegmentId $segmentId, SegmentType $segmentType, Payload $payload)
     {
         $this->segmentId = $segmentId;
+        $this->segmentType = $segmentType;
         $this->payload = $payload;
     }
 
     public function segmentId(): SegmentId
     {
         return $this->segmentId;
+    }
+
+    public function segmentType(): SegmentType
+    {
+        return $this->segmentType;
     }
 
     public function payload(): Payload
@@ -34,6 +41,7 @@ final class Segment implements JsonSerializable
     {
         return [
             'segment_id' => $this->segmentId->value(),
+            'segment_type' => $this->segmentType->value(),
             'payload' => $this->payload->data(),
         ];
     }
