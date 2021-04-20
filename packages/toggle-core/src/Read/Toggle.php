@@ -14,7 +14,7 @@ final class Toggle
         $this->featureFinder = $featureRepository;
     }
 
-    public function isEnabled(string $featureId, ConsumerIdentity $identity): bool
+    public function isEnabled(string $featureId, ?ConsumerIdentity $identity = null): bool
     {
         $feature = $this->featureFinder->get($featureId);
 
@@ -24,7 +24,7 @@ final class Toggle
 
         $strategies = $feature->strategies();
 
-        if (self::ZERO === $strategies->count()) {
+        if (self::ZERO === $strategies->count() || null === $identity) {
             return true;
         }
 
