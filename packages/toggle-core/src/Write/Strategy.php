@@ -12,14 +12,17 @@ final class Strategy implements JsonSerializable
 {
     private StrategyId $strategyId;
     private StrategyType $strategyType;
-    /** @var Segment[] */
+    /**
+     * @var Segment[]
+     */
     private array $segments;
 
     /**
      * Strategy constructor.
-     * @param StrategyId $strategyId
+     *
+     * @param StrategyId   $strategyId
      * @param StrategyType $strategyType
-     * @param Segment[] $segments
+     * @param Segment[]    $segments
      */
     public function __construct(StrategyId $strategyId, StrategyType $strategyType, array $segments = [])
     {
@@ -47,9 +50,9 @@ final class Strategy implements JsonSerializable
     }
 
     /**
-     * @phpstan-return array<string, mixed>
+     * @phpstan-return           array<string, mixed>
      * @phpstan-ignore-next-line
-     * @return array{
+     * @return                   array{
      *   strategy_id: string,
      *   strategy_type: string
      *   segments: array<array-key, array<string, array<string, mixed>|string>>,

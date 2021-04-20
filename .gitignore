@@ -3,4 +3,6 @@ vendor
 packages/*/vendor
 sdks/*/vendor
 
+.phpunit.result.cache
 composer.lock
+infection.log

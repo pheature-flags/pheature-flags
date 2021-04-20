@@ -56,4 +56,6 @@ jobs:
           package-directory: 'packages/${{ matrix.package }}'
           split-repository-organization: 'pheature-flags'
           split-repository-name: '${{ matrix.package }}'
+          user-name: "pheaturebot"
+          user-email: "82849140+pheaturebot@users.noreply.github.com"
           branch: "1.0.x"

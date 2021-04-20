@@ -12,9 +12,9 @@ final class DisableFeatureFactory
 {
     public function __invoke(ContainerInterface $container): DisableFeature
     {
-        return new DisableFeature(
-            $container->get(FeatureRepository::class)
-        );
+        /** @var FeatureRepository $featureRepository */
+        $featureRepository = $container->get(FeatureRepository::class);
+
+        return new DisableFeature($featureRepository);
     }
 }
-    

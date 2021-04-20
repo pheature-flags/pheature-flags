@@ -16,12 +16,11 @@ final class CommandRunnerFactory
 {
     public function __invoke(ContainerInterface $container): CommandRunner
     {
-        return new CommandRunner(
-            new Toggle(
-                $container->get(FeatureFinder::class)
-            )
-        );
+        /** @var FeatureFinder $featureFinder */
+        $featureFinder = $container->get(FeatureFinder::class);
 
+        return new CommandRunner(
+            new Toggle($featureFinder)
+        );
     }
 }
-    

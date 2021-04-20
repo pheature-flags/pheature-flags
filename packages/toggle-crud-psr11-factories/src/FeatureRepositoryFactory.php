@@ -15,6 +15,7 @@ final class FeatureRepositoryFactory
 {
     public function __invoke(ContainerInterface $container): FeatureRepository
     {
+        /** @var ToggleConfig $config */
         $config = $container->get(ToggleConfig::class);
         $driver = $config->driver();
 
@@ -24,12 +25,12 @@ final class FeatureRepositoryFactory
         }
 
         if ('dbal' === $driver) {
-            return new DbalFeatureRepository(
-                $container->get(Connection::class)
-            );
+            /** @var Connection $connection */
+            $connection = $container->get(Connection::class);
+
+            return new DbalFeatureRepository($connection);
         }
 
         throw new InvalidArgumentException('Valid driver required');
     }
 }
-    

@@ -7,6 +7,8 @@ namespace Pheature\Core\Toggle\Read;
 interface ConsumerIdentity
 {
     public function id(): string;
-    /** @return array<string, mixed> */
+    /**
+     * @return array<string, mixed>
+     */
     public function payload(): array;
 }
