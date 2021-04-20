@@ -17,4 +17,9 @@ final class CreateFeatureFactory
 
         return new CreateFeature($featureRepository);
     }
+
+    public static function create(FeatureRepository $featureRepository): CreateFeature
+    {
+        return new CreateFeature($featureRepository);
+    }
 }
