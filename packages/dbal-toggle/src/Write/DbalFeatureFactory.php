@@ -9,6 +9,7 @@ use Pheature\Core\Toggle\Write\FeatureId;
 use Pheature\Core\Toggle\Write\Payload;
 use Pheature\Core\Toggle\Write\Segment;
 use Pheature\Core\Toggle\Write\SegmentId;
+use Pheature\Core\Toggle\Write\SegmentType;
 use Pheature\Core\Toggle\Write\Strategy;
 use Pheature\Core\Toggle\Write\StrategyId;
 use Pheature\Core\Toggle\Write\StrategyType;
@@ -32,6 +33,7 @@ final class DbalFeatureFactory
                 $segments = array_map(
                     fn(array $segment) => new Segment(
                         SegmentId::fromString((string)$segment['segment_id']),
+                        SegmentType::fromString((string)$segment['segment_type']),
                         Payload::fromJsonString((string)$segment['payload'])
                     ),
                     (array)$strategy['segments']
