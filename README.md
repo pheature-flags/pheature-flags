@@ -1,5 +1,6 @@
 # Pheature Flags
 
+[![Quality Score][ico-code-quality]][link-code-quality]
 [![Test Coverage][ico-coverage]][link-coverage]
 [![Type coverage][ico-psalm]][link-psalm]
 
@@ -60,6 +61,8 @@ knowledge to the community. For this reason we release all our packages under [B
     <img alt="JetBrains" width="200" src="https://antidotfw.io/images/jetbrains-variant-4.png" style="width:263px !important;height:147px !important"/>
 </a>
 
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/pheature-flags/pheature-flags.svg?style=flat-square
+[link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/pheature-flags/badges/coverage.png?b=master
 [ico-coverage]: https://codecov.io/gh/pheature-flags/pheature-flags/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106
 [link-coverage]: https://codecov.io/gh/pheature-flags/pheature-flags
 [ico-psalm]: https://shepherd.dev/github/pheature-flags/pheature-flags/coverage.svg
