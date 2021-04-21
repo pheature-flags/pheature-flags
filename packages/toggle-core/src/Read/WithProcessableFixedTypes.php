@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Pheature\Core\Toggle\Read;
 
-interface AvailableTypes
+interface WithProcessableFixedTypes
 {
     /**
      * @return array<string>
      */
-    public static function strategyTypes(): array;
+    public static function types(): array;
 }

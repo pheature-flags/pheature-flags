@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\Core\Toggle\Read;
 
-interface SegmentFactory extends AvailableTypes
+interface SegmentFactory extends WithProcessableFixedTypes
 {
     /**
      * @param string $segmentId
