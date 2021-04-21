@@ -12,9 +12,13 @@ final class RemoveStrategyFactory
 {
     public function __invoke(ContainerInterface $container): RemoveStrategy
     {
-        /** @var FeatureRepository $featureRepository */
-        $featureRepository = $container->get(FeatureRepository::class);
+        return self::create(
+            $container->get(FeatureRepository::class)
+        );
+    }
 
+    public static function create(FeatureRepository $featureRepository): RemoveStrategy
+    {
         return new RemoveStrategy($featureRepository);
     }
 }
