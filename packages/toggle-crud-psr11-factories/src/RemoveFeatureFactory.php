@@ -15,7 +15,7 @@ final class RemoveFeatureFactory
         /** @var FeatureRepository $featureRepository */
         $featureRepository = $container->get(FeatureRepository::class);
 
-        return new RemoveFeature($featureRepository);
+        return self::create($featureRepository);
     }
 
     public static function create(FeatureRepository $featureRepository): RemoveFeature
