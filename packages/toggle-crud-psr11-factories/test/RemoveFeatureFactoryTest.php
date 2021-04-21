@@ -9,7 +9,7 @@ use Pheature\Crud\Toggle\Handler\RemoveFeature;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 
-class RemoveFeatureFactoryTest extends TestCase
+final class RemoveFeatureFactoryTest extends TestCase
 {
     public function testItShouldCreateARemoveFeatureFromInvokable(): void
     {

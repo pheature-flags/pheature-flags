@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 
-class DeleteFeatureFactoryTest extends TestCase
+final class DeleteFeatureFactoryTest extends TestCase
 {
     public function testItShouldCreateInstanceOfDeleteFeature(): void
     {

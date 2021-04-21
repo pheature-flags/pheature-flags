@@ -8,7 +8,7 @@ use Pheature\Crud\Toggle\Handler\CreateFeature;
 use Psr\Container\ContainerInterface;
 use PHPUnit\Framework\TestCase;
 
-class CreateFeatureFactoryTest extends TestCase
+final class CreateFeatureFactoryTest extends TestCase
 {
     public function testItShouldCreateInstanceOfCreateFeature(): void
     {
