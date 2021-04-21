@@ -51,5 +51,13 @@ receive feedback, and learn from different approaches.
 We really believe in the Open Source Software, we built our carers around it, and we feel that we need to return our
 knowledge to the community. For this reason we release all our packages under [BSD-3-Clause licence](/LICENSE.md). 
 
+## Sponsors
+
+* **JetBrains**: Thanks for supporting us with the All Products Pack License for Open Source
+
+<a href="https://jb.gg/OpenSource" target="_blank">
+    <img alt="JetBrains" width="200" src="https://antidotfw.io/images/jetbrains-variant-4.png" style="width:263px !important;height:147px !important"/>
+</a>
+
 [ico-coverage]: https://codecov.io/gh/pheature-flags/pheature-flags/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106
 [link-coverage]: https://codecov.io/gh/pheature-flags/pheature-flags
