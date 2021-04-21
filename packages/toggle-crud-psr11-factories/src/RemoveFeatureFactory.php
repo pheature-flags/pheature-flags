@@ -17,4 +17,9 @@ final class RemoveFeatureFactory
 
         return new RemoveFeature($featureRepository);
     }
+
+    public static function create(FeatureRepository $featureRepository): RemoveFeature
+    {
+        return new RemoveFeature($featureRepository);
+    }
 }
