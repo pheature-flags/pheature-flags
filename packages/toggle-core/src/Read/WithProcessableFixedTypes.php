@@ -9,5 +9,5 @@ interface WithProcessableFixedTypes
     /**
      * @return array<string>
      */
-    public static function types(): array;
+    public function types(): array;
 }

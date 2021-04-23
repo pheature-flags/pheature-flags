@@ -28,9 +28,4 @@ final class Segments
     {
         return array_values($this->segments);
     }
-
-    public function has(Segment $segment): bool
-    {
-        return array_key_exists($segment->id(), $this->segments);
-    }
 }

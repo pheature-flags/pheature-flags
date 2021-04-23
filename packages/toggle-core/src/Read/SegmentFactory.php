@@ -10,7 +10,7 @@ interface SegmentFactory extends WithProcessableFixedTypes
      * @param string $segmentId
      * @param string $segmentType
      * @param array<string, mixed> $payload
-     * @return ToggleStrategy
+     * @return Segment
      */
-    public function create(string $segmentId, string $segmentType, array $payload): ToggleStrategy;
+    public function create(string $segmentId, string $segmentType, array $payload): Segment;
 }
