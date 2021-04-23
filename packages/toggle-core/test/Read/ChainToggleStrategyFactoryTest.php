@@ -31,7 +31,7 @@ final class ChainToggleStrategyFactoryTest extends TestCase
         $this->expectException(InvalidStrategyTypeGiven::class);
         $segmentFactory = $this->createMock(SegmentFactory::class);
         $toggleStrategyFactory = $this->createMock(ToggleStrategyFactory::class);
-        $toggleStrategyFactory->expects(static::once())
+        $toggleStrategyFactory->expects(self::once())
             ->method('types')
             ->willReturn([]);
         $chainToggleStrategyFactory = new ChainToggleStrategyFactory($segmentFactory, $toggleStrategyFactory);
@@ -47,44 +47,50 @@ final class ChainToggleStrategyFactoryTest extends TestCase
     {
         $segmentFactory = $this->createMock(SegmentFactory::class);
         $toggleStrategyFactory = $this->createMock(ToggleStrategyFactory::class);
-        $toggleStrategyFactory->expects(static::once())
+        $toggleStrategyFactory->expects(self::once())
             ->method('types')
             ->willReturn([self::STRATEGY_TYPE]);
-        $toggleStrategyFactory->expects(static::once())
+        $expectedStrategy = $this->createMock(ToggleStrategy::class);
+        $toggleStrategyFactory->expects(self::once())
             ->method('create')
             ->with(self::STRATEGY_ID, self::STRATEGY_TYPE)
-            ->willReturn($this->createMock(ToggleStrategy::class));
+            ->willReturn($expectedStrategy);
         $chainToggleStrategyFactory = new ChainToggleStrategyFactory($segmentFactory, $toggleStrategyFactory);
 
-        $chainToggleStrategyFactory->createFromArray([
+        $current = $chainToggleStrategyFactory->createFromArray([
             'strategy_id' => self::STRATEGY_ID,
             'strategy_type' => self::STRATEGY_TYPE,
             'segments' => []
         ]);
+
+        self::assertSame($expectedStrategy, $current);
     }
 
     public function testItShouldBeCreatedWithAtLeastOneToggleStrategyFactoryInstanceAndSegments(): void
     {
         $segmentFactory = $this->createMock(SegmentFactory::class);
-        $segmentFactory->expects(static::once())
+        $segmentFactory->expects(self::once())
             ->method('create')
             ->with(self::SEGMENTS[0]['segment_id'], self::SEGMENTS[0]['segment_type'],self::SEGMENTS[0]['payload'])
             ->willReturn($this->createMock(Segment::class));
         $toggleStrategyFactory = $this->createMock(ToggleStrategyFactory::class);
-        $toggleStrategyFactory->expects(static::once())
+        $toggleStrategyFactory->expects(self::once())
             ->method('types')
             ->willReturn([self::STRATEGY_TYPE]);
-        $toggleStrategyFactory->expects(static::once())
+        $expectedStrategy = $this->createMock(ToggleStrategy::class);
+        $toggleStrategyFactory->expects(self::once())
             ->method('create')
             ->with(self::STRATEGY_ID, self::STRATEGY_TYPE)
-            ->willReturn($this->createMock(ToggleStrategy::class));
+            ->willReturn($expectedStrategy);
         $chainToggleStrategyFactory = new ChainToggleStrategyFactory($segmentFactory, $toggleStrategyFactory);
 
-        $chainToggleStrategyFactory->createFromArray([
+        $current = $chainToggleStrategyFactory->createFromArray([
             'strategy_id' => self::STRATEGY_ID,
             'strategy_type' => self::STRATEGY_TYPE,
             'segments' => self::SEGMENTS
         ]);
+
+        self::assertSame($expectedStrategy, $current);
     }
 }
     
