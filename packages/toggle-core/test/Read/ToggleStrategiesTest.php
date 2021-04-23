@@ -28,5 +28,6 @@ final class ToggleStrategiesTest extends TestCase
         $this->assertSame($strategy2, $obtainedToggleStrategies->current());
         $obtainedToggleStrategies->next();
         $this->assertSame($strategy3, $obtainedToggleStrategies->current());
+        $this->assertSame([[], [], []], $toggleStrategies->jsonSerialize());
     }
 }
