@@ -53,7 +53,27 @@ final class EnableByMatchingSegmentTest extends TestCase
         ])));
     }
 
-    public function getSegmentsCriteria()
+    public function testItShouldBeSerializedAsArray(): void
+    {
+        $segments = new Segments(new Segment('users_from_barcelona', [
+            'location' => 'barcelona',
+        ]));
+
+        $strategy = new EnableByMatchingSegment($segments);
+        self::assertSame([
+            'type' => EnableByMatchingSegment::NAME,
+            'segments' => [
+                [
+                    'id'  => 'users_from_barcelona',
+                    'criteria' => [
+                        'location' => 'barcelona',
+                    ],
+                ]
+            ],
+        ], $strategy->jsonSerialize());
+    }
+
+    public function getSegmentsCriteria(): array
     {
         return [
             [
