@@ -18,7 +18,8 @@ final class DisableFeatureFactory
         return self::create($featureRepository);
     }
 
-    public static function create(FeatureRepository $featureRepository): DisableFeature {
+    public static function create(FeatureRepository $featureRepository): DisableFeature
+    {
         return new DisableFeature($featureRepository);
     }
 }
