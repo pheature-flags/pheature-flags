@@ -17,17 +17,22 @@ final class FeatureRepositoryFactory
     {
         /** @var ToggleConfig $config */
         $config = $container->get(ToggleConfig::class);
+        /** @var ?Connection $connection */
+        $connection = $container->get(Connection::class);
+
+        return self::create($config, $connection);
+    }
+
+    public static function create(ToggleConfig $config, ?Connection $connection): FeatureRepository
+    {
         $driver = $config->driver();
 
         if ('inmemory' === $driver) {
-            return new InMemoryFeatureRepository(
-            );
+            return new InMemoryFeatureRepository();
         }
 
         if ('dbal' === $driver) {
             /** @var Connection $connection */
-            $connection = $container->get(Connection::class);
-
             return new DbalFeatureRepository($connection);
         }
 
