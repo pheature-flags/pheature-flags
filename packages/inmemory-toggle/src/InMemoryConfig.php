@@ -10,7 +10,7 @@ use Traversable;
 final class InMemoryConfig
 {
     /** @var array<string, mixed> */
-    private array $config;
+    private array $config = [];
 
     /**
      * @param array<string, mixed> $config
@@ -18,7 +18,10 @@ final class InMemoryConfig
     public function __construct(array $config = [])
     {
         $this->assertConfig($config);
-        $this->config = $config;
+        /** @var array<string, mixed> $feature */
+        foreach ($config as $feature) {
+            $this->config[(string)$feature['id']] = $feature;
+        }
     }
 
     /**
