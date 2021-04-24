@@ -8,6 +8,7 @@ use Pheature\Core\Toggle\Read\Segment;
 
 final class IdentitySegment implements Segment
 {
+    public const NAME = 'identity_segment';
     private string $id;
     /**
      * @var array<string, mixed>
