@@ -10,7 +10,7 @@ use function array_values;
 final class Segments
 {
     /**
-     * @var array<string, Segment>
+     * @var Segment[]
      */
     private array $segments = [];
 
