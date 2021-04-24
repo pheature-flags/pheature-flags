@@ -8,6 +8,7 @@ use Pheature\Core\Toggle\Read\Segment as ISegment;
 
 final class Segment implements ISegment
 {
+    public const NAME = 'exact_matching_segment';
     private string $id;
     /**
      * @var array<string, mixed>
