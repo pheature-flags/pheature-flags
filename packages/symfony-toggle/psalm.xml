@@ -7,10 +7,9 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
 >
     <projectFiles>
-        <directory name="packages/*/src" />
+        <directory name="src" />
         <ignoreFiles>
             <directory name="vendor" />
-            <directory name="packages/symfony-toggle" />
         </ignoreFiles>
     </projectFiles>
 </psalm>
