@@ -19,7 +19,7 @@ final class ChainToggleStrategyFactory
     }
 
     /**
-     * @param array<string, string|array<string, string|array<string, mixed>>> $strategy
+     * @param array<string, mixed> $strategy
      * @return ToggleStrategy
      */
     public function createFromArray(array $strategy): ToggleStrategy
@@ -61,10 +61,10 @@ final class ChainToggleStrategyFactory
                 $segmentId = $segment['segment_id'];
                 /** @var string $segmentType */
                 $segmentType = $segment['segment_type'];
-                /** @var array<string, mixed> $payload */
-                $payload = $segment['payload'];
+                /** @var array<string, mixed> $criteria */
+                $criteria = $segment['criteria'];
 
-                return $this->segmentFactory->create($segmentId, $segmentType, $payload);
+                return $this->segmentFactory->create($segmentId, $segmentType, $criteria);
             }, $segments))
         );
     }

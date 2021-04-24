@@ -9,8 +9,8 @@ interface SegmentFactory extends WithProcessableFixedTypes
     /**
      * @param string $segmentId
      * @param string $segmentType
-     * @param array<string, mixed> $payload
+     * @param array<string, mixed> $criteria
      * @return Segment
      */
-    public function create(string $segmentId, string $segmentType, array $payload): Segment;
+    public function create(string $segmentId, string $segmentType, array $criteria): Segment;
 }
