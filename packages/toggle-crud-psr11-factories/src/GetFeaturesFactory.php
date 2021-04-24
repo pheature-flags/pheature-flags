@@ -18,6 +18,11 @@ final class GetFeaturesFactory
         /** @var ResponseFactoryInterface $responseFactory */
         $responseFactory = $container->get(ResponseFactoryInterface::class);
 
+        return self::create($featureFinder, $responseFactory);
+    }
+
+    public static function create(FeatureFinder $featureFinder, ResponseFactoryInterface $responseFactory): GetFeatures
+    {
         return new GetFeatures($featureFinder, $responseFactory);
     }
 }
