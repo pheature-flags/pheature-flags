@@ -10,13 +10,13 @@ use Pheature\Core\Toggle\Read\SegmentFactory as ISegmentFactory;
 
 final class SegmentFactory implements ISegmentFactory
 {
-    public function create(string $segmentId, string $segmentType, array $payload): ISegment
+    public function create(string $segmentId, string $segmentType, array $criteria): ISegment
     {
         if (StrictMatchingSegment::NAME === $segmentType) {
-            return new StrictMatchingSegment($segmentId, $payload);
+            return new StrictMatchingSegment($segmentId, $criteria);
         }
         if (IdentitySegment::NAME === $segmentType) {
-            return new IdentitySegment($segmentId, $payload);
+            return new IdentitySegment($segmentId, $criteria);
         }
 
         throw InvalidSegmentTypeGiven::withType($segmentType);
