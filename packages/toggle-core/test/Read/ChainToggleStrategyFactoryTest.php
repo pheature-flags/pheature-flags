@@ -20,7 +20,7 @@ final class ChainToggleStrategyFactoryTest extends TestCase
         [
             'segment_id' => 'some_segment_id',
             'segment_type' => 'some_segment_type',
-            'payload' => [
+            'criteria' => [
                 'some' => 'data'
             ],
         ],
@@ -71,7 +71,7 @@ final class ChainToggleStrategyFactoryTest extends TestCase
         $segmentFactory = $this->createMock(SegmentFactory::class);
         $segmentFactory->expects(self::once())
             ->method('create')
-            ->with(self::SEGMENTS[0]['segment_id'], self::SEGMENTS[0]['segment_type'],self::SEGMENTS[0]['payload'])
+            ->with(self::SEGMENTS[0]['segment_id'], self::SEGMENTS[0]['segment_type'],self::SEGMENTS[0]['criteria'])
             ->willReturn($this->createMock(Segment::class));
         $toggleStrategyFactory = $this->createMock(ToggleStrategyFactory::class);
         $toggleStrategyFactory->expects(self::once())
