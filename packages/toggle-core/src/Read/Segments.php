@@ -16,9 +16,7 @@ final class Segments
 
     public function __construct(Segment ...$segments)
     {
-        foreach ($segments as $segment) {
-            $this->segments[$segment->id()] = $segment;
-        }
+        $this->segments = $segments;
     }
 
     /**
@@ -26,6 +24,6 @@ final class Segments
      */
     public function all(): array
     {
-        return array_values($this->segments);
+        return $this->segments;
     }
 }
