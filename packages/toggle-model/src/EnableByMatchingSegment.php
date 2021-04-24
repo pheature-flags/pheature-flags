@@ -11,6 +11,7 @@ use Pheature\Core\Toggle\Read\ToggleStrategy;
 
 final class EnableByMatchingSegment implements ToggleStrategy
 {
+    public const NAME = 'enable_by_matching_segment';
     private Segments $segments;
 
     public function __construct(Segments $segments)
@@ -35,7 +36,7 @@ final class EnableByMatchingSegment implements ToggleStrategy
     public function toArray(): array
     {
         return [
-            'type' => 'enable_by_matching_segment',
+            'type' => self::NAME,
             'segments' => array_map(
                 static fn(ISegment $segment): array => $segment->toArray(),
                 $this->segments->all()
