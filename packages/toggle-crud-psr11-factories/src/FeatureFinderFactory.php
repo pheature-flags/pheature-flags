@@ -6,6 +6,7 @@ namespace Pheature\Crud\Psr11\Toggle;
 
 use Doctrine\DBAL\Connection;
 use InvalidArgumentException;
+use Pheature\Core\Toggle\Read\ChainToggleStrategyFactory;
 use Pheature\Core\Toggle\Read\FeatureFinder;
 use Pheature\Dbal\Toggle\Read\DbalFeatureFactory;
 use Pheature\Dbal\Toggle\Read\DbalFeatureFinder;
@@ -20,21 +21,28 @@ final class FeatureFinderFactory
     {
         /** @var ToggleConfig $config */
         $config = $container->get(ToggleConfig::class);
+        /** @var ChainToggleStrategyFactory $chainToggleStrategyFactory */
+        $chainToggleStrategyFactory = $container->get(ChainToggleStrategyFactory::class);
         /** @var ?Connection $connection */
         $connection = $container->get(Connection::class);
 
-        return self::create($config, $connection);
+        return self::create($config, $chainToggleStrategyFactory, $connection);
     }
 
-    public static function create(ToggleConfig $config, ?Connection $connection): FeatureFinder
-    {
+    public static function create(
+        ToggleConfig $config,
+        ChainToggleStrategyFactory $chainToggleStrategyFactory,
+        ?Connection $connection
+    ): FeatureFinder {
 
         $driver = $config->driver();
 
         if ('inmemory' === $driver) {
             return new InMemoryFeatureFinder(
                 new InMemoryConfig($config->toggles()),
-                new InMemoryFeatureFactory()
+                new InMemoryFeatureFactory(
+                    $chainToggleStrategyFactory
+                )
             );
         }
 
