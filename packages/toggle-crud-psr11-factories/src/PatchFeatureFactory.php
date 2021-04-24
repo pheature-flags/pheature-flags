@@ -27,6 +27,16 @@ final class PatchFeatureFactory
         /** @var ResponseFactoryInterface $responseFactory */
         $responseFactory = $container->get(ResponseFactoryInterface::class);
 
+        return self::create($addStrategy, $removeStrategy, $enableFeature, $disableFeature, $responseFactory);
+    }
+
+    public static function create(
+        AddStrategy $addStrategy,
+        RemoveStrategy $removeStrategy,
+        EnableFeature $enableFeature,
+        DisableFeature $disableFeature,
+        ResponseFactoryInterface $responseFactory
+    ): PatchFeature {
         return new PatchFeature($addStrategy, $removeStrategy, $enableFeature, $disableFeature, $responseFactory);
     }
 }
