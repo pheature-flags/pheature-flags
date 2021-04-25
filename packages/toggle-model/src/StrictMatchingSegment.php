@@ -6,9 +6,9 @@ namespace Pheature\Model\Toggle;
 
 use Pheature\Core\Toggle\Read\Segment as ISegment;
 
-final class Segment implements ISegment
+final class StrictMatchingSegment implements ISegment
 {
-    public const NAME = 'exact_matching_segment';
+    public const NAME = 'strict_matching_segment';
     private string $id;
     /**
      * @var array<string, mixed>
@@ -45,8 +45,8 @@ final class Segment implements ISegment
         $match = false;
 
         /**
- * @var mixed $value
-*/
+         * @var mixed $value
+         */
         foreach ($this->criteria as $key => $value) {
             if (array_key_exists($key, $payload) && $value === $payload[$key]) {
                 $match = true;

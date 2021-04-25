@@ -9,7 +9,7 @@ use Pheature\Core\Toggle\Read\Segments;
 use Pheature\Model\Toggle\EnableByMatchingIdentityId;
 use Pheature\Model\Toggle\Identity;
 use Pheature\Model\Toggle\IdentitySegment;
-use Pheature\Model\Toggle\Segment;
+use Pheature\Model\Toggle\StrictMatchingSegment;
 use PHPUnit\Framework\TestCase;
 
 final class EnableByMatchingIdentityIdTest extends TestCase
@@ -18,7 +18,7 @@ final class EnableByMatchingIdentityIdTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $segments = new Segments(new Segment('some_segments', []));
+        $segments = new Segments(new StrictMatchingSegment('some_segments', []));
         new EnableByMatchingIdentityId($segments);
     }
 

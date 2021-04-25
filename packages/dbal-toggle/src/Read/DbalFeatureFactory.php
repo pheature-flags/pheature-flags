@@ -10,7 +10,7 @@ use Pheature\Core\Toggle\Read\ToggleStrategies;
 use Pheature\Core\Toggle\Read\ToggleStrategy;
 use Pheature\Model\Toggle\EnableByMatchingSegment;
 use Pheature\Model\Toggle\Feature;
-use Pheature\Model\Toggle\Segment;
+use Pheature\Model\Toggle\StrictMatchingSegment;
 
 final class DbalFeatureFactory
 {
@@ -46,12 +46,12 @@ final class DbalFeatureFactory
             new Segments(
                 ...array_map(
                 /** @param array<string, mixed> $segment */
-                    static function (array $segment): Segment {
+                    static function (array $segment): StrictMatchingSegment {
                         /** @var string $id */
                         $id = $segment['id'];
                         /** @var array<string, mixed> $criteria */
                         $criteria = $segment['criteria'];
-                        return new Segment($id, $criteria);
+                        return new StrictMatchingSegment($id, $criteria);
                     },
                     $segments
                 )

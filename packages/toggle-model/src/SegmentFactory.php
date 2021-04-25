@@ -12,8 +12,8 @@ final class SegmentFactory implements ISegmentFactory
 {
     public function create(string $segmentId, string $segmentType, array $payload): ISegment
     {
-        if (Segment::NAME === $segmentType) {
-            return new Segment($segmentId, $payload);
+        if (StrictMatchingSegment::NAME === $segmentType) {
+            return new StrictMatchingSegment($segmentId, $payload);
         }
         if (IdentitySegment::NAME === $segmentType) {
             return new IdentitySegment($segmentId, $payload);
@@ -25,7 +25,7 @@ final class SegmentFactory implements ISegmentFactory
     public function types(): array
     {
         return [
-            Segment::NAME,
+            StrictMatchingSegment::NAME,
             IdentitySegment::NAME,
         ];
     }
