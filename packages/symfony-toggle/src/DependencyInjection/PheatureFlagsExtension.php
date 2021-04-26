@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace Pheature\Community\Symfony\DependencyInjection;
 
 use Doctrine\DBAL\Connection;
-use Pheature\Core\Toggle\Read\ChainSegmentFactory;
 use Pheature\Core\Toggle\Read\ChainToggleStrategyFactory;
 use Pheature\Core\Toggle\Read\FeatureFinder;
-use Pheature\Core\Toggle\Read\SegmentFactory;
 use Pheature\Core\Toggle\Read\Toggle;
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Psr11\Toggle\FeatureFinderFactory;
@@ -58,19 +56,6 @@ final class PheatureFlagsExtension extends ConfigurableExtension
                 ->setAutowired(false)
                 ->setLazy(true)
                 ->addArgument(new Reference(ChainToggleStrategyFactory::class));
-        }
-
-        $segmentFactory = $container->register(SegmentFactory::class, SegmentFactory::class)
-            ->setAutowired(false)
-            ->setLazy(true)
-            ->setClass(ChainSegmentFactory::class);
-
-        foreach ($mergedConfig['segment_types'] as $segmentDefinition) {
-            $container->register($segmentDefinition['type'], $segmentDefinition['factory_id'])
-                ->setAutowired(false)
-                ->setLazy(true);
-
-            $segmentFactory->addArgument(new Reference($segmentDefinition['type']));
         }
 
         $container->register(Toggle::class, Toggle::class)
