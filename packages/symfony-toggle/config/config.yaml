@@ -1,0 +1,8 @@
+pheature_flags:
+  driver: inmemory
+  segment_types:
+    - { type: 'identity_segment', factory_id: 'Pheature\Model\Toggle\SegmentFactory' }
+    - { type: 'strict_matching_segment', factory_id: 'Pheature\Model\Toggle\SegmentFactory' }
+  strategy_types:
+    - { type: 'enable_by_matching_segment', factory_id: 'Pheature\Model\Toggle\StrategyFactory' }
+    - { type: 'enable_by_matching_identity_id', factory_id: 'Pheature\Model\Toggle\StrategyFactory' }

@@ -21,7 +21,11 @@ use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
 final class PheatureFlagsExtension extends ConfigurableExtension
 {
-    protected function loadInternal(array $mergedConfig, ContainerBuilder $container)
+    /**
+     * @param array<mixed> $mergedConfig
+     * @param ContainerBuilder $container
+     */
+    protected function loadInternal(array $mergedConfig, ContainerBuilder $container): void
     {
         $driver = $mergedConfig['driver'];
 
@@ -67,22 +71,6 @@ final class PheatureFlagsExtension extends ConfigurableExtension
                 ->setLazy(true);
 
             $segmentFactory->addArgument(new Reference($segmentDefinition['type']));
-        }
-
-        $toggleStrategyFactory = $container->register(
-            ChainToggleStrategyFactory::class,
-            ChainToggleStrategyFactory::class
-        )
-            ->setAutowired(false)
-            ->setLazy(true)
-            ->addArgument(new Reference(SegmentFactory::class));
-
-        foreach ($mergedConfig['strategy_types'] as $strategyDefinition) {
-            $container->register($strategyDefinition['type'], $strategyDefinition['factory_id'])
-                ->setAutowired(false)
-                ->setLazy(true);
-
-            $toggleStrategyFactory->addArgument(new Reference($strategyDefinition['type']));
         }
 
         $container->register(Toggle::class, Toggle::class)
