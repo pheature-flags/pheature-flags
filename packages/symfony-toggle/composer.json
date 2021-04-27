@@ -16,17 +16,16 @@
     "require": {
         "php": "^7.4|^8.0",
         "pheature/toggle-core": "@dev",
-        "pheature/toggle-crud": "@dev",
-        "pheature/toggle-crud-psr7-api": "@dev",
         "pheature/toggle-crud-psr11-factories": "@dev",
         "pheature/toggle-model": "@dev",
-        "symfony/framework-bundle": "~5.0",
-        "symfony/psr-http-message-bridge": "^2.1"
+        "symfony/framework-bundle": "~5.0"
     },
     "require-dev": {
         "doctrine/dbal": ">=2.5 || ^3.0.0",
         "infection/infection": "^0.21.0",
         "pheature/inmemory-toggle": "@dev",
+        "pheature/toggle-crud": "@dev",
+        "pheature/toggle-crud-psr7-api": "@dev",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^8.0 || ^9.0",
@@ -70,7 +69,10 @@
         }
     },
     "suggest": {
-        "doctrine/dbal": "Allows using Dbal toggle management implementation."
+        "pheature/dbal-toggle": "Allows using Dbal toggle management implementation.",
+        "pheature/inmemory-toggle": "Allows using Inmemory toggle management implementation.",
+        "pheature/toggle-crud": "Allows using toggle management CRUD implementation.",
+        "pheature/toggle-crud-psr7-api": "Allows using toggle management CRUD HTTP API."
     },
     "config": {
         "sort-packages": true
