@@ -12,47 +12,52 @@ Install it using [composer package manager](https://getcomposer.org/download/) i
 
 ```bash
 composer require pheature/symfony-toggle
+composer require pheature/inmemory-toggle
+composer require pheature/php-sdk
+```
+
+```php
+<?php
+// config/bundles.php
+return [
+    ...,
+    Pheature\Community\Symfony\PheatureFlagsBundle::class => ['all' => true],
+];
+
 ```
 
 ### Config
 
 ```yaml
 # config/packages/pheature-flags.yaml
-parameters:
-  pheature.inmemory.config:
-    feature_1:
-      id: feature_1
-      enabled: false
-      strategies: [ ]
-    feature_2:
-      id: feature_2
-      enabled: true
-      strategies: [ ]
-      
-services:
-  Pheature\InMemory\Toggle\InMemoryConfig:
-    class: Pheature\InMemory\Toggle\InMemoryConfig
-    arguments:
-      - '%pheature.inmemory.config%'
+pheature_flags:
+  driver:               ~ # One of "inmemory"; "dbal"
+  prefix:               ''
+  segment_types:
+    - { type: 'identity_segment', factory_id: 'Pheature\Model\Toggle\SegmentFactory' }
+    - { type: 'strict_matching_segment', factory_id: 'Pheature\Model\Toggle\SegmentFactory' }
+  strategy_types:
+    - { type: 'enable_by_matching_segment', factory_id: 'Pheature\Model\Toggle\StrategyFactory' }
+    - { type: 'enable_by_matching_identity_id', factory_id: 'Pheature\Model\Toggle\StrategyFactory' }
 
-  Pheature\InMemory\Toggle\InMemoryFeatureFactory:
-    class: Pheature\InMemory\Toggle\InMemoryFeatureFactory
-
-  Pheature\Core\Toggle\Read\FeatureFinder:
-    class: Pheature\InMemory\Toggle\InMemoryFeatureFinder
-    arguments:
-      - '@Pheature\InMemory\Toggle\InMemoryConfig'
-      - '@Pheature\InMemory\Toggle\InMemoryFeatureFactory'
-
-  Pheature\Core\Toggle\Read\Toggle:
-    class: Pheature\Core\Toggle\Read\Toggle
-    arguments:
-      - '@Pheature\Core\Toggle\Read\FeatureFinder'
-
-  Pheature\Sdk\CommandRunner:
-    class: Pheature\Sdk\CommandRunner
-    arguments:
-      - '@Pheature\Core\Toggle\Read\Toggle'
+  # Toggle data for in-memory implementation
+  toggles:
+    -
+      id:                   ~ # string
+      # Kill Switch
+      enabled:              ~ # bool
+      # Optional rollout strategies
+      # If One of the enabled strategies returns true the feature should be enabled.
+      strategies:
+        -
+          strategy_id:          ~ # string
+          strategy_type:        ~ # string
+          segments:
+            # Each strategy has segments where if any of it matches against the given payload it should compute as true.
+            -
+              segment_id:           ~ # string
+              segment_type:         ~ # string
+              criteria:             ~ # mixed
 
 ```
 
