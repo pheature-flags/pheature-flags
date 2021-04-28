@@ -37,6 +37,10 @@ class InCollectionMatchingSegment implements Segment
 
     public function match(array $payload): bool
     {
+        if (empty($this->criteria)) {
+            return false;
+        }
+
         /** @var mixed $criterionValue */
         foreach ($this->criteria as $field => $criterionValue) {
             if (!array_key_exists($field, $payload)) {
