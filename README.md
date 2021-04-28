@@ -62,7 +62,7 @@ knowledge to the community. For this reason we release all our packages under [B
 </a>
 
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/pheature-flags/pheature-flags.svg?style=flat-square
-[link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/pheature-flags/badges/coverage.png?b=master
+[link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/pheature-flags/badges/coverage.png?b=1.0.x
 [ico-coverage]: https://codecov.io/gh/pheature-flags/pheature-flags/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106
 [link-coverage]: https://codecov.io/gh/pheature-flags/pheature-flags
 [ico-psalm]: https://shepherd.dev/github/pheature-flags/pheature-flags/coverage.svg
