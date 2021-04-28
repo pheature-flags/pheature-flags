@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Pheature\Model\Toggle;
 
-use Pheature\Core\Toggle\Read\Segment as ISegment;
+use Pheature\Core\Toggle\Read\Segment;
 
-final class StrictMatchingSegment implements ISegment
+final class StrictMatchingSegment implements Segment
 {
     public const NAME = 'strict_matching_segment';
     private string $id;
