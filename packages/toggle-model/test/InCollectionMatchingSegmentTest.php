@@ -28,6 +28,13 @@ class InCollectionMatchingSegmentTest extends TestCase
 
     public function nonMatchingPayloads(): Generator
     {
+        yield 'no criteria present' => [
+            'criteria' => [],
+            'payload' => [
+                'location' => 'girona',
+            ]
+        ];
+
         yield 'strict value comparison' => [
             'criteria' => [
                 'location' => 'barcelona',
