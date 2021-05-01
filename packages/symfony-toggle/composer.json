@@ -21,8 +21,9 @@
         "symfony/framework-bundle": "~5.0"
     },
     "require-dev": {
-        "doctrine/dbal": ">=2.5 || ^3.0.0",
+        "doctrine/dbal": "^3.1",
         "infection/infection": "^0.21.0",
+        "pheature/dbal-toggle": "@dev",
         "pheature/inmemory-toggle": "@dev",
         "pheature/toggle-crud": "@dev",
         "pheature/toggle-crud-psr7-api": "@dev",

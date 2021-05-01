@@ -12,15 +12,19 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 final class TestContainerFactory
 {
-    public static function create(CompilerPassInterface $compilerPass): ContainerBuilder
+    public static function create(CompilerPassInterface $compilerPass, string $driver = 'inmemory'): ContainerBuilder
     {
         $containerBuilder = new ContainerBuilder();
         $extension = new PheatureFlagsExtension();
         $containerBuilder->registerExtension($extension);
 
         $phpFileLoader = new YamlFileLoader($containerBuilder, new FileLocator());
-        $phpFileLoader->load(realpath(__DIR__ . '/../../config/config.yaml'));
-
+        if ('inmemory' === $driver) {
+            $phpFileLoader->load(realpath(__DIR__ . '/../../config/config.yaml'));
+        }
+        if ('dbal' === $driver) {
+            $phpFileLoader->load(realpath(__DIR__ . '/../../config/dbal_config.yaml'));
+        }
         $compilerPass->process($containerBuilder);
 
         return $containerBuilder;
