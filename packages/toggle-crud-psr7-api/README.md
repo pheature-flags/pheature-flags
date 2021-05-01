@@ -1,6 +1,7 @@
 # Pheature Flags <br><sub><sup>Toggle CRUD PSR-7 Implementation</sup></sub>
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
+[![Type coverage][ico-psalm]][link-psalm]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 ## Installation
@@ -22,5 +23,7 @@ knowledge to the community. For this reason we release all our packages under [B
 
 [ico-version]: https://img.shields.io/packagist/v/pheature/toggle-crud-psr7-api.svg?style=flat-square
 [link-packagist]: https://packagist.org/packages/pheature/toggle-crud-psr7-api
+[ico-psalm]: https://shepherd.dev/github/pheature-flags/toggle-crud-psr7-api/coverage.svg
+[link-psalm]: https://shepherd.dev/github/pheature-flags/toggle-crud-psr7-api
 [ico-downloads]: https://img.shields.io/packagist/dt/pheature/toggle-crud-psr7-api.svg?style=flat-square
 [link-downloads]: https://packagist.org/packages/pheature/toggle-crud-psr7-api
