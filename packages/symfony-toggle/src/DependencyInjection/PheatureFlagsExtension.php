@@ -39,24 +39,21 @@ final class PheatureFlagsExtension extends ConfigurableExtension
             ->addArgument(new Reference(ToggleConfig::class))
             ->addArgument(new Reference(ChainToggleStrategyFactory::class));
 
-        $repository = $container->register(FeatureRepository::class, FeatureRepository::class)
-            ->setAutowired(false)
-            ->setLazy(true)
-            ->setFactory([FeatureRepositoryFactory::class, 'create']);
-
         if ('dbal' === $driver) {
             $finder->addArgument(new Reference(Connection::class));
-            $repository->addArgument(new Reference(Connection::class));
         }
 
         if ('inmemory' === $driver) {
             $finder->addArgument(null);
-            $repository->addArgument(null);
             $container->register(InMemoryFeatureFactory::class, InMemoryFeatureFactory::class)
                 ->setAutowired(false)
                 ->setLazy(true)
                 ->addArgument(new Reference(ChainToggleStrategyFactory::class));
         }
+
+        $container->addCompilerPass(new SegmentFactoryPass());
+        $container->addCompilerPass(new ToggleStrategyFactoryPass());
+        $container->addCompilerPass(new FeatureRepositoryFactoryPass());
 
         $container->register(Toggle::class, Toggle::class)
             ->setAutowired(false)
