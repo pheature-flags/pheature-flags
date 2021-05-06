@@ -37,6 +37,7 @@ final class Configuration implements ConfigurationInterface
 
     private function addStrategyTypes(ArrayNodeDefinition $rootNode): void
     {
+        /** @phpstan-ignore-next-line */
         $rootNode
             ->children()
                 ->arrayNode('strategy_types')
@@ -51,6 +52,7 @@ final class Configuration implements ConfigurationInterface
 
     private function addSegmentTypes(ArrayNodeDefinition $rootNode): void
     {
+        /** @phpstan-ignore-next-line */
         $rootNode
             ->children()
                 ->arrayNode('segment_types')
@@ -65,6 +67,7 @@ final class Configuration implements ConfigurationInterface
 
     private function addToggles(ArrayNodeDefinition $rootNode): void
     {
+        /** @phpstan-ignore-next-line */
         $rootNode
             ->children()
                 ->arrayNode('toggles')
