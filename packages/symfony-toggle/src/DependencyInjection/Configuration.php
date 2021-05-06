@@ -26,38 +26,64 @@ final class Configuration implements ConfigurationInterface
             ->scalarNode('prefix')
                 ->defaultValue('')
             ->end()
-            ->arrayNode('strategy_types')
-                ->arrayPrototype()
-                    ->children()
-                        ->scalarNode('type')->end()
-                        ->scalarNode('factory_id')->end()
+        ->end();
+
+        $this->addStrategyTypes($rootNode);
+        $this->addSegmentTypes($rootNode);
+        $this->addToggles($rootNode);
+
+        return $treeBuilder;
+    }
+
+    private function addStrategyTypes(ArrayNodeDefinition $rootNode): void
+    {
+        $rootNode
+            ->children()
+                ->arrayNode('strategy_types')
+                    ->arrayPrototype()
+                        ->children()
+                            ->scalarNode('type')->end()
+                            ->scalarNode('factory_id')->end()
+                        ->end()
                     ->end()
-                ->end()
-            ->end()
-            ->arrayNode('segment_types')
-                ->arrayPrototype()
-                    ->children()
-                        ->scalarNode('type')->end()
-                        ->scalarNode('factory_id')->end()
+                ->end();
+    }
+
+    private function addSegmentTypes(ArrayNodeDefinition $rootNode): void
+    {
+        $rootNode
+            ->children()
+                ->arrayNode('segment_types')
+                    ->arrayPrototype()
+                        ->children()
+                            ->scalarNode('type')->end()
+                            ->scalarNode('factory_id')->end()
+                        ->end()
                     ->end()
-                ->end()
-            ->end()
-            ->arrayNode('toggles')
-                ->arrayPrototype()
-                    ->children()
-                        ->scalarNode('id')->end()
-                        ->scalarNode('enabled')->end()
-                        ->arrayNode('strategies')
-                            ->arrayPrototype()
-                                ->children()
-                                    ->scalarNode('strategy_id')->end()
-                                    ->scalarNode('strategy_type')->end()
-                                    ->arrayNode('segments')
-                                        ->arrayPrototype()
-                                            ->children()
-                                                ->scalarNode('segment_id')->end()
-                                                ->scalarNode('segment_type')->end()
-                                                ->variableNode('criteria')->end()
+                ->end();
+    }
+
+    private function addToggles(ArrayNodeDefinition $rootNode): void
+    {
+        $rootNode
+            ->children()
+                ->arrayNode('toggles')
+                    ->arrayPrototype()
+                        ->children()
+                            ->scalarNode('id')->end()
+                            ->scalarNode('enabled')->end()
+                            ->arrayNode('strategies')
+                                ->arrayPrototype()
+                                    ->children()
+                                        ->scalarNode('strategy_id')->end()
+                                        ->scalarNode('strategy_type')->end()
+                                        ->arrayNode('segments')
+                                            ->arrayPrototype()
+                                                ->children()
+                                                    ->scalarNode('segment_id')->end()
+                                                    ->scalarNode('segment_type')->end()
+                                                    ->variableNode('criteria')->end()
+                                                ->end()
                                             ->end()
                                         ->end()
                                     ->end()
@@ -65,10 +91,6 @@ final class Configuration implements ConfigurationInterface
                             ->end()
                         ->end()
                     ->end()
-                ->end()
-            ->end()
-        ->end();
-
-        return $treeBuilder;
+                ->end();
     }
 }
