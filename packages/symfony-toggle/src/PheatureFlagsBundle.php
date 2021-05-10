@@ -7,6 +7,7 @@ namespace Pheature\Community\Symfony;
 use Pheature\Community\Symfony\DependencyInjection\FeatureRepositoryFactoryPass;
 use Pheature\Community\Symfony\DependencyInjection\SegmentFactoryPass;
 use Pheature\Community\Symfony\DependencyInjection\ToggleStrategyFactoryPass;
+use Pheature\Community\Symfony\DependencyInjection\ToggleAPIPass;
 use Pheature\Model\Toggle\EnableByMatchingIdentityId;
 use Pheature\Model\Toggle\EnableByMatchingSegment;
 use Pheature\Model\Toggle\IdentitySegment;
@@ -21,6 +22,7 @@ final class PheatureFlagsBundle extends Bundle
     private const DEFAULT_CONFIG = [
         'driver' => 'inmemory',
         'prefix' => '',
+        'api_enabled' => false,
         'segment_types' => [
             [
                 'type' => IdentitySegment::NAME,
@@ -51,5 +53,6 @@ final class PheatureFlagsBundle extends Bundle
         $container->addCompilerPass(new SegmentFactoryPass());
         $container->addCompilerPass(new ToggleStrategyFactoryPass());
         $container->addCompilerPass(new FeatureRepositoryFactoryPass());
+        $container->addCompilerPass(new ToggleAPIPass());
     }
 }
