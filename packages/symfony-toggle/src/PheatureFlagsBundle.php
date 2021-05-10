@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Pheature\Community\Symfony;
 
+use Pheature\Community\Symfony\DependencyInjection\FeatureRepositoryFactoryPass;
+use Pheature\Community\Symfony\DependencyInjection\SegmentFactoryPass;
+use Pheature\Community\Symfony\DependencyInjection\ToggleStrategyFactoryPass;
 use Pheature\Model\Toggle\EnableByMatchingIdentityId;
 use Pheature\Model\Toggle\EnableByMatchingSegment;
 use Pheature\Model\Toggle\IdentitySegment;
@@ -44,5 +47,9 @@ final class PheatureFlagsBundle extends Bundle
     public function build(ContainerBuilder $container): void
     {
         $container->loadFromExtension('pheature_flags', self::DEFAULT_CONFIG);
+
+        $container->addCompilerPass(new SegmentFactoryPass());
+        $container->addCompilerPass(new ToggleStrategyFactoryPass());
+        $container->addCompilerPass(new FeatureRepositoryFactoryPass());
     }
 }
