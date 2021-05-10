@@ -8,9 +8,7 @@ use Doctrine\DBAL\Connection;
 use Pheature\Core\Toggle\Read\ChainToggleStrategyFactory;
 use Pheature\Core\Toggle\Read\FeatureFinder;
 use Pheature\Core\Toggle\Read\Toggle;
-use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Psr11\Toggle\FeatureFinderFactory;
-use Pheature\Crud\Psr11\Toggle\FeatureRepositoryFactory;
 use Pheature\Crud\Psr11\Toggle\ToggleConfig;
 use Pheature\InMemory\Toggle\InMemoryFeatureFactory;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -50,10 +48,6 @@ final class PheatureFlagsExtension extends ConfigurableExtension
                 ->setLazy(true)
                 ->addArgument(new Reference(ChainToggleStrategyFactory::class));
         }
-
-        $container->addCompilerPass(new SegmentFactoryPass());
-        $container->addCompilerPass(new ToggleStrategyFactoryPass());
-        $container->addCompilerPass(new FeatureRepositoryFactoryPass());
 
         $container->register(Toggle::class, Toggle::class)
             ->setAutowired(false)
