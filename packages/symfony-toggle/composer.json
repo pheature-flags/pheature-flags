@@ -15,16 +15,15 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
+        "pheature/inmemory-toggle": "@dev",
         "pheature/toggle-core": "@dev",
         "pheature/toggle-crud-psr11-factories": "@dev",
-        "pheature/toggle-model": "@dev",
-        "symfony/framework-bundle": "~5.0"
+        "pheature/toggle-model": "@dev"
     },
     "require-dev": {
         "doctrine/dbal": "^3.1",
         "infection/infection": "^0.21.0",
         "pheature/dbal-toggle": "@dev",
-        "pheature/inmemory-toggle": "@dev",
         "pheature/toggle-crud": "@dev",
         "pheature/toggle-crud-psr7-api": "@dev",
         "phpro/grumphp": "^1.0",

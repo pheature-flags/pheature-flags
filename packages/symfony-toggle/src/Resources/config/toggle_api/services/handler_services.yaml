@@ -1,0 +1,34 @@
+services:
+  _defaults:
+    autowire: false
+    autoconfigure: false
+
+  Pheature\Crud\Toggle\Handler\CreateFeature:
+    class: Pheature\Crud\Toggle\Handler\CreateFeature
+    arguments:
+      - '@Pheature\Core\Toggle\Write\FeatureRepository'
+
+  Pheature\Crud\Toggle\Handler\AddStrategy:
+    class: Pheature\Crud\Toggle\Handler\AddStrategy
+    arguments:
+      - '@Pheature\Core\Toggle\Write\FeatureRepository'
+
+  Pheature\Crud\Toggle\Handler\RemoveStrategy:
+    class: Pheature\Crud\Toggle\Handler\RemoveStrategy
+    arguments:
+      - '@Pheature\Core\Toggle\Write\FeatureRepository'
+
+  Pheature\Crud\Toggle\Handler\EnableFeature:
+    class: Pheature\Crud\Toggle\Handler\EnableFeature
+    arguments:
+      - '@Pheature\Core\Toggle\Write\FeatureRepository'
+
+  Pheature\Crud\Toggle\Handler\DisableFeature:
+    class: Pheature\Crud\Toggle\Handler\DisableFeature
+    arguments:
+      - '@Pheature\Core\Toggle\Write\FeatureRepository'
+
+  Pheature\Crud\Toggle\Handler\RemoveFeature:
+    class: Pheature\Crud\Toggle\Handler\RemoveFeature
+    arguments:
+      - '@Pheature\Core\Toggle\Write\FeatureRepository'
