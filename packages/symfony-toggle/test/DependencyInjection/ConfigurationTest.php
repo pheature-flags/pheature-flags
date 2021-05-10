@@ -38,6 +38,7 @@ class ConfigurationTest extends TestCase
             'user config' => [],
             'expected config' => [
                 'prefix' => '',
+                'api_enabled' => false,
                 'strategy_types' => [],
                 'segment_types' => [],
                 'toggles' => [],
@@ -52,6 +53,7 @@ class ConfigurationTest extends TestCase
             ],
             'expected config' => [
                 'prefix' => 'myapp',
+                'api_enabled' => false,
                 'strategy_types' => [],
                 'segment_types' => [],
                 'toggles' => [],
@@ -66,6 +68,7 @@ class ConfigurationTest extends TestCase
             ],
             'expected config' => [
                 'prefix' => '',
+                'api_enabled' => false,
                 'driver' => 'dbal',
                 'strategy_types' => [],
                 'segment_types' => [],
@@ -86,6 +89,7 @@ class ConfigurationTest extends TestCase
             ],
             'expected config' => [
                 'prefix' => '',
+                'api_enabled' => false,
                 'strategy_types' => [
                     [
                         'type' => 'my_strategy_type',
@@ -110,6 +114,7 @@ class ConfigurationTest extends TestCase
             ],
             'expected config' => [
                 'prefix' => '',
+                'api_enabled' => false,
                 'strategy_types' => [],
                 'segment_types' => [
                     [
@@ -149,6 +154,7 @@ class ConfigurationTest extends TestCase
             ],
             'expected config' => [
                 'prefix' => '',
+                'api_enabled' => false,
                 'strategy_types' => [],
                 'segment_types' => [],
                 'toggles' => [
