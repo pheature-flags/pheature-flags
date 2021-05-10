@@ -26,6 +26,9 @@ final class Configuration implements ConfigurationInterface
             ->scalarNode('prefix')
                 ->defaultValue('')
             ->end()
+            ->booleanNode('api_enabled')
+                ->defaultFalse()
+            ->end()
         ->end();
 
         $this->addStrategyTypes($rootNode);
