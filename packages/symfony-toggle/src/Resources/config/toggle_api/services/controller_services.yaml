@@ -1,0 +1,81 @@
+services:
+  _defaults:
+    autowire: false
+    autoconfigure: false
+    public: true
+
+  # Symfony Controllers
+  Pheature\Community\Symfony\Controller\GetFeatures:
+    class: Pheature\Community\Symfony\Controller\GetFeatures
+    arguments:
+      - '@Pheature\Community\Symfony\Toggle\Transformer\SymfonyToPsrRequestTransformer'
+      - '@Pheature\Community\Symfony\Toggle\Transformer\PsrToSymfonyResponseTransformer'
+      - '@Pheature\Crud\Psr7\Toggle\GetFeatures'
+    tags: [ 'controller.service_arguments' ]
+
+  Pheature\Community\Symfony\Controller\GetFeature:
+    class: Pheature\Community\Symfony\Controller\GetFeature
+    arguments:
+      - '@Pheature\Community\Symfony\Toggle\Transformer\SymfonyToPsrRequestTransformer'
+      - '@Pheature\Community\Symfony\Toggle\Transformer\PsrToSymfonyResponseTransformer'
+      - '@Pheature\Crud\Psr7\Toggle\GetFeature'
+    tags: [ 'controller.service_arguments' ]
+
+  Pheature\Community\Symfony\Controller\PostFeature:
+    class: Pheature\Community\Symfony\Controller\PostFeature
+    arguments:
+      - '@Pheature\Community\Symfony\Toggle\Transformer\SymfonyToPsrRequestTransformer'
+      - '@Pheature\Community\Symfony\Toggle\Transformer\PsrToSymfonyResponseTransformer'
+      - '@Pheature\Crud\Psr7\Toggle\PostFeature'
+    tags: [ 'controller.service_arguments' ]
+
+  Pheature\Community\Symfony\Controller\PatchFeature:
+    class: Pheature\Community\Symfony\Controller\PatchFeature
+    arguments:
+      - '@Pheature\Community\Symfony\Toggle\Transformer\SymfonyToPsrRequestTransformer'
+      - '@Pheature\Community\Symfony\Toggle\Transformer\PsrToSymfonyResponseTransformer'
+      - '@Pheature\Crud\Psr7\Toggle\PatchFeature'
+    tags: [ 'controller.service_arguments' ]
+
+  Pheature\Community\Symfony\Controller\DeleteFeature:
+    class: Pheature\Community\Symfony\Controller\DeleteFeature
+    arguments:
+      - '@Pheature\Community\Symfony\Toggle\Transformer\SymfonyToPsrRequestTransformer'
+      - '@Pheature\Community\Symfony\Toggle\Transformer\PsrToSymfonyResponseTransformer'
+      - '@Pheature\Crud\Psr7\Toggle\DeleteFeature'
+    tags: [ 'controller.service_arguments' ]
+
+  # PSR Controllers
+  Pheature\Crud\Psr7\Toggle\GetFeatures:
+    class: Pheature\Crud\Psr7\Toggle\GetFeatures
+    arguments:
+      - '@Pheature\Core\Toggle\Read\FeatureFinder'
+      - '@Psr\Http\Message\ResponseFactoryInterface'
+
+  Pheature\Crud\Psr7\Toggle\GetFeature:
+    class: Pheature\Crud\Psr7\Toggle\GetFeature
+    arguments:
+      - '@Pheature\Core\Toggle\Read\FeatureFinder'
+      - '@Psr\Http\Message\ResponseFactoryInterface'
+    tags: [ 'controller.service_arguments' ]
+
+  Pheature\Crud\Psr7\Toggle\PostFeature:
+    class: Pheature\Crud\Psr7\Toggle\PostFeature
+    arguments:
+      - '@Pheature\Crud\Toggle\Handler\CreateFeature'
+      - '@Psr\Http\Message\ResponseFactoryInterface'
+
+  Pheature\Crud\Psr7\Toggle\PatchFeature:
+    class: Pheature\Crud\Psr7\Toggle\PatchFeature
+    arguments:
+      - '@Pheature\Crud\Toggle\Handler\AddStrategy'
+      - '@Pheature\Crud\Toggle\Handler\RemoveStrategy'
+      - '@Pheature\Crud\Toggle\Handler\EnableFeature'
+      - '@Pheature\Crud\Toggle\Handler\DisableFeature'
+      - '@Psr\Http\Message\ResponseFactoryInterface'
+
+  Pheature\Crud\Psr7\Toggle\DeleteFeature:
+    class: Pheature\Crud\Psr7\Toggle\DeleteFeature
+    arguments:
+      - '@Pheature\Crud\Toggle\Handler\RemoveFeature'
+      - '@Psr\Http\Message\ResponseFactoryInterface'

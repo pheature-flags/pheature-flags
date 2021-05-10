@@ -1,0 +1,24 @@
+pheature_flags_toggle_detail:
+  methods: [GET]
+  path: /features/{feature_id}
+  controller: Pheature\Community\Symfony\Controller\GetFeature
+
+pheature_flags_feature_list:
+  methods: [GET]
+  path: /features
+  controller: Pheature\Community\Symfony\Controller\GetFeatures
+
+pheature_flags_feature_create:
+  methods: [POST]
+  path: /features/{feature_id}
+  controller: Pheature\Community\Symfony\Controller\PostFeature
+
+pheature_flags_feature_update:
+  methods: [PATCH]
+  path: /features/{feature_id}
+  controller: Pheature\Community\Symfony\Controller\PatchFeature
+
+pheature_flags_feature_remove:
+  methods: [DELETE]
+  path: /features/{feature_id}
+  controller: Pheature\Community\Symfony\Controller\DeleteFeature
