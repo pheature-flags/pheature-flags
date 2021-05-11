@@ -29,8 +29,8 @@ final class InitSchema extends Command
     {
         $this->dbalSchema->__invoke();
 
-        $output->writeln('<success>Pheature Toggle database schema successfully created.</success>');
+        $output->writeln('<info>Pheature Toggle database schema successfully created.</info>');
 
-        return Command::SUCCESS;
+        return 0;
     }
 }

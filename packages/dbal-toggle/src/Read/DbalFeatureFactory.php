@@ -45,7 +45,7 @@ final class DbalFeatureFactory
         return new EnableByMatchingSegment(
             new Segments(
                 ...array_map(
-                /** @param array<string, mixed> $segment */
+                    /** @param array<string, mixed> $segment */
                     static function (array $segment): StrictMatchingSegment {
                         /** @var string $id */
                         $id = $segment['id'];
