@@ -16,6 +16,11 @@ final class InitSchemaFactory
         /** @var Connection $connection */
         $connection = $container->get(Connection::class);
 
+        return self::create($connection);
+    }
+
+    public static function create(Connection $connection): InitSchema
+    {
         return new InitSchema(
             new DbalSchema($connection)
         );

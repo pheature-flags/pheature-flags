@@ -29,13 +29,15 @@ final class DbalFeatureFactory
         $strategiesData = json_decode($featureData['strategies'], true, 12, JSON_THROW_ON_ERROR);
 
         $strategies = array_map(
-            function (array $strategy) {
+            static function (array $strategy) {
                 $segments = array_map(
-                    fn(array $segment) => new Segment(
-                        SegmentId::fromString((string)$segment['segment_id']),
-                        SegmentType::fromString((string)$segment['segment_type']),
-                        Payload::fromJsonString((string)$segment['payload'])
-                    ),
+                    static function (array $segment) {
+                        return new Segment(
+                            SegmentId::fromString((string)$segment['segment_id']),
+                            SegmentType::fromString((string)$segment['segment_type']),
+                            Payload::fromJsonString((string)$segment['payload'])
+                        );
+                    },
                     (array)$strategy['segments']
                 );
 

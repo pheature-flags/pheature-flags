@@ -16,7 +16,12 @@ final class DbalSchema
 
     public function __construct(Connection $connection)
     {
-        $this->schema = $connection->createSchemaManager()->createSchema();
+        if (method_exists($connection, 'createSchemaManager')) {
+            $this->schema = $connection->createSchemaManager()->createSchema();
+        } else {
+            /** @psalm-suppress DeprecatedMethod */
+            $this->schema = $connection->getSchemaManager()->createSchema();
+        }
         $this->platform = $connection->getDatabasePlatform();
         $this->connection = $connection;
     }
@@ -64,7 +69,9 @@ final class DbalSchema
 
         $queries = $this->schema->toSql($this->platform);
         foreach ($queries as $query) {
-            $this->connection->executeQuery($query);
+            if (false !== strpos($query, 'pheature_toggles')) {
+                $this->connection->executeQuery($query);
+            }
         }
     }
 }
