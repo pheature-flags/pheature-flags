@@ -28,10 +28,16 @@ final class FeatureRepositoryFactory
         $driver = $config->driver();
 
         if ('inmemory' === $driver) {
+            if (!class_exists(InMemoryFeatureRepository::class, true)) {
+                throw new InvalidArgumentException('Run "composer require pheature/inmemory-toggle" to install InMemory feature storage.');
+            }
             return new InMemoryFeatureRepository();
         }
 
         if ('dbal' === $driver) {
+            if (!class_exists(DbalFeatureRepository::class, true)) {
+                throw new InvalidArgumentException('Run "composer require pheature/dbal-toggle" to install DBAL feature storage.');
+            }
             /** @var Connection $connection */
             return new DbalFeatureRepository($connection);
         }

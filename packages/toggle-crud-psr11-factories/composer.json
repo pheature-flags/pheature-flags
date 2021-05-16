@@ -21,8 +21,6 @@
     },
     "require-dev": {
         "infection/infection": "^0.21.0",
-        "pheature/dbal-toggle": "@dev",
-        "pheature/inmemory-toggle": "@dev",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^8.0 || ^9.0",

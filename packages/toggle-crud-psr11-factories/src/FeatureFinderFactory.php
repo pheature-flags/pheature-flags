@@ -38,6 +38,10 @@ final class FeatureFinderFactory
         $driver = $config->driver();
 
         if ('inmemory' === $driver) {
+            if (!class_exists(InMemoryFeatureFinder::class, true)) {
+                throw new InvalidArgumentException('Run "composer require pheature/inmemory-toggle" to install InMemory feature storage.');
+            }
+
             return new InMemoryFeatureFinder(
                 new InMemoryConfig($config->toggles()),
                 new InMemoryFeatureFactory(
@@ -47,6 +51,10 @@ final class FeatureFinderFactory
         }
 
         if ('dbal' === $driver) {
+            if (!class_exists(DbalFeatureFinder::class, true)) {
+                throw new InvalidArgumentException('Run "composer require pheature/dbal-toggle" to install DBAL feature storage.');
+            }
+
             /** @var Connection $connection */
             return new DbalFeatureFinder($connection, new DbalFeatureFactory());
         }
