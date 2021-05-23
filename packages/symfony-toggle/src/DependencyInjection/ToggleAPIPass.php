@@ -15,6 +15,7 @@ final class ToggleAPIPass implements CompilerPassInterface
     {
         /** @var array<array<mixed>> $pheatureFlagsConfig */
         $pheatureFlagsConfig = $container->getExtensionConfig('pheature_flags');
+
         $mergedConfig = array_merge(...$pheatureFlagsConfig);
 
         if (false === $mergedConfig['api_enabled']) {
