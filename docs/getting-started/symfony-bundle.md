@@ -32,7 +32,7 @@ return [
 # config/packages/pheature-flags.yaml
 pheature_flags:
   driver:               ~ # One of "inmemory"; "dbal"
-  prefix:               ''
+  api_prefix:           ''
   segment_types:
     - { type: 'identity_segment', factory_id: 'Pheature\Model\Toggle\SegmentFactory' }
     - { type: 'strict_matching_segment', factory_id: 'Pheature\Model\Toggle\SegmentFactory' }

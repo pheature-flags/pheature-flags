@@ -21,7 +21,7 @@ class FeatureRepositoryFactoryTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $container = $this->createMock(ContainerInterface::class);
-        $toggleConfig = new ToggleConfig(['prefix' => '', 'driver' => 'some_other']);
+        $toggleConfig = new ToggleConfig(['api_prefix' => '', 'driver' => 'some_other']);
 
         $container->expects(self::exactly(2))
             ->method('get')
@@ -36,7 +36,7 @@ class FeatureRepositoryFactoryTest extends TestCase
     public function testItShouldCreateADBalFeatureRepositoryFromInvokable(): void
     {
         $container = $this->createMock(ContainerInterface::class);
-        $toggleConfig = new ToggleConfig(['prefix' => '', 'driver' => 'dbal']);
+        $toggleConfig = new ToggleConfig(['api_prefix' => '', 'driver' => 'dbal']);
         $connection = $this->createMock(Connection::class);
 
         $container->expects(static::exactly(2))
@@ -53,7 +53,7 @@ class FeatureRepositoryFactoryTest extends TestCase
     public function testItShouldCreateAnInMemoryFeatureRepositoryFromInvokable(): void
     {
         $container = $this->createMock(ContainerInterface::class);
-        $toggleConfig = new ToggleConfig(['prefix' => '', 'driver' => 'inmemory']);
+        $toggleConfig = new ToggleConfig(['api_prefix' => '', 'driver' => 'inmemory']);
 
         $container->expects(static::exactly(2))
             ->method('get')
@@ -68,7 +68,7 @@ class FeatureRepositoryFactoryTest extends TestCase
 
     public function testItShouldCreateADBalFeatureRepositoryFromCreate(): void
     {
-        $toggleConfig = new ToggleConfig(['prefix' => '', 'driver' => 'dbal']);
+        $toggleConfig = new ToggleConfig(['api_prefix' => '', 'driver' => 'dbal']);
         $connection = $this->createMock(Connection::class);
         $featureRepository = FeatureRepositoryFactory::create($toggleConfig, $connection);
         self::assertInstanceOf(FeatureRepository::class, $featureRepository);
@@ -76,7 +76,7 @@ class FeatureRepositoryFactoryTest extends TestCase
 
     public function testItShouldCreateInMemoryFeatureRepositoryFromCreate(): void
     {
-        $toggleConfig = new ToggleConfig(['prefix' => '', 'driver' => 'inmemory']);
+        $toggleConfig = new ToggleConfig(['api_prefix' => '', 'driver' => 'inmemory']);
         $connection = null;
         $featureRepository = FeatureRepositoryFactory::create($toggleConfig, $connection);
         self::assertInstanceOf(FeatureRepository::class, $featureRepository);

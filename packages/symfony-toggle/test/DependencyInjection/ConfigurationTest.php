@@ -37,7 +37,7 @@ final class ConfigurationTest extends TestCase
         yield 'user does not define any config' => [
             'user config' => [],
             'expected config' => [
-                'prefix' => '',
+                'api_prefix' => '',
                 'api_enabled' => false,
                 'strategy_types' => [],
                 'segment_types' => [],
@@ -45,14 +45,14 @@ final class ConfigurationTest extends TestCase
             ]
         ];
 
-        yield 'user defines only the prefix' => [
+        yield 'user defines only the api_prefix' => [
             'user config' => [
                 'pheature_flags' => [
-                    'prefix' => 'myapp',
+                    'api_prefix' => 'myapp',
                 ],
             ],
             'expected config' => [
-                'prefix' => 'myapp',
+                'api_prefix' => 'myapp',
                 'api_enabled' => false,
                 'strategy_types' => [],
                 'segment_types' => [],
@@ -67,7 +67,7 @@ final class ConfigurationTest extends TestCase
                 ],
             ],
             'expected config' => [
-                'prefix' => '',
+                'api_prefix' => '',
                 'api_enabled' => false,
                 'driver' => 'dbal',
                 'strategy_types' => [],
@@ -88,7 +88,7 @@ final class ConfigurationTest extends TestCase
                 ],
             ],
             'expected config' => [
-                'prefix' => '',
+                'api_prefix' => '',
                 'api_enabled' => false,
                 'strategy_types' => [
                     [
@@ -113,7 +113,7 @@ final class ConfigurationTest extends TestCase
                 ],
             ],
             'expected config' => [
-                'prefix' => '',
+                'api_prefix' => '',
                 'api_enabled' => false,
                 'strategy_types' => [],
                 'segment_types' => [
@@ -153,7 +153,7 @@ final class ConfigurationTest extends TestCase
                 ],
             ],
             'expected config' => [
-                'prefix' => '',
+                'api_prefix' => '',
                 'api_enabled' => false,
                 'strategy_types' => [],
                 'segment_types' => [],

@@ -128,7 +128,7 @@ final class ToggleProvider extends ServiceProvider
     private function routeConfiguration(): array
     {
         return [
-            'prefix' => config('pheature_flags.prefix') ?? '',
+            'prefix' => config('pheature_flags.api_prefix') ?? '',
             'middleware' => config('pheature_flags.middleware') ?? ['api'],
         ];
     }

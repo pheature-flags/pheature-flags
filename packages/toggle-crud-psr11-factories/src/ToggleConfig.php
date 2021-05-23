@@ -9,7 +9,7 @@ use Webmozart\Assert\Assert;
 final class ToggleConfig
 {
     private string $driver;
-    private string $prefix;
+    private string $apiPrefix;
     /** @var array<string, mixed> */
     private array $toggles = [];
 
@@ -18,11 +18,11 @@ final class ToggleConfig
      */
     public function __construct(array $config)
     {
-        Assert::keyExists($config, 'prefix');
+        Assert::keyExists($config, 'api_prefix');
         Assert::keyExists($config, 'driver');
-        Assert::string($config['prefix']);
+        Assert::string($config['api_prefix']);
         Assert::string($config['driver']);
-        $this->prefix = $config['prefix'];
+        $this->apiPrefix = $config['api_prefix'];
         $this->driver = $config['driver'];
         if (array_key_exists('toggles', $config)) {
             Assert::isArray($config['toggles']);
@@ -32,9 +32,9 @@ final class ToggleConfig
         }
     }
 
-    public function prefix(): string
+    public function apiPrefix(): string
     {
-        return $this->prefix;
+        return $this->apiPrefix;
     }
 
     public function driver(): string
