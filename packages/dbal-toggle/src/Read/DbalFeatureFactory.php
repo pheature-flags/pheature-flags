@@ -12,6 +12,9 @@ use Pheature\Model\Toggle\EnableByMatchingSegment;
 use Pheature\Model\Toggle\Feature;
 use Pheature\Model\Toggle\StrictMatchingSegment;
 
+use function array_map;
+use function json_decode;
+
 final class DbalFeatureFactory
 {
     /**
@@ -21,10 +24,13 @@ final class DbalFeatureFactory
     public function create(array $data): IFeature
     {
         /** @var string $id */
-        $id = $data['id'];
+        $id = $data['feature_id'];
         $enabled = (bool)$data['enabled'];
+        /** @var string $jsonStrategies */
+        $jsonStrategies = $data['strategies'];
         /** @var array<string, array<string, mixed>> $strategies */
-        $strategies = $data['strategies'];
+        $strategies = json_decode($jsonStrategies, true) ?? [];
+
         return new Feature(
             $id,
             /** @param array<string, array<string, mixed>> $strategies */
