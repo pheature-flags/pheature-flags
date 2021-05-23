@@ -18,7 +18,7 @@
         "pheature/toggle-model": "@dev"
     },
     "require-dev": {
-        "infection/infection": "^0.21.0",
+        "infection/infection": "^0.23.0",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^8.0 || ^9.0",
@@ -49,7 +49,7 @@
         "inspect": "phpstan analyse src -l7 --ansi",
         "test": "phpunit --colors=always",
         "psalm": "psalm",
-        "infection": "XDEBUG_MODE=coverage infection"
+        "infection": "XDEBUG_MODE=coverage roave-infection-static-analysis-plugin"
     },
     "config": {
         "sort-packages": true
