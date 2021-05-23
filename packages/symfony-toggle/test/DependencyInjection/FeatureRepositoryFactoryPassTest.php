@@ -19,7 +19,7 @@ final class FeatureRepositoryFactoryPassTest extends TestCase
         $container = TestContainerFactory::create($compilerPass);
         $container->register(ToggleConfig::class, ToggleConfig::class)->addArgument([
             'driver' => 'inmemory',
-            'prefix' => '',
+            'api_prefix' => '',
         ]);
 
         $featureRepositoryFactoryDefinition = $container->getDefinition(FeatureRepository::class);
@@ -37,7 +37,7 @@ final class FeatureRepositoryFactoryPassTest extends TestCase
         $container = TestContainerFactory::create($compilerPass, 'dbal');
         $container->register(ToggleConfig::class, ToggleConfig::class)->addArgument([
             'driver' => 'dbal',
-            'prefix' => '',
+            'api_prefix' => '',
         ]);
         $container->register(Connection::class, Connection::class)
             ->setFactory([DriverManager::class, 'getConnection'])

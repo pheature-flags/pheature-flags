@@ -25,7 +25,7 @@ final class RouterDelegator
 
         /** @var ToggleConfig $config */
         $config = $container->get(ToggleConfig::class);
-        $path = sprintf('%s/features', $config->prefix());
+        $path = sprintf('%s/features', $config->apiPrefix());
         $pathWithId = sprintf('%s/{feature_id}', $path);
 
         $app->get($path, [GetFeatures::class], 'get_features');

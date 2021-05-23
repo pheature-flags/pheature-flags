@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'prefix' => '',
+    'api_prefix' => '',
     'driver' => 'inmemory',
     'toggles' => [
         'feature_1' => [

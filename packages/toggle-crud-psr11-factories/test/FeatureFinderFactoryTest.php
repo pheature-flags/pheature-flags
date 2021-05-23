@@ -25,7 +25,7 @@ class FeatureFinderFactoryTest extends TestCase
             $this->createMock(SegmentFactory::class),
             $this->createMock(ToggleStrategyFactory::class),
         );
-        $toggleConfig = new ToggleConfig(['prefix' => '', 'driver' => 'some_other']);
+        $toggleConfig = new ToggleConfig(['api_prefix' => '', 'driver' => 'some_other']);
 
         $container->expects(self::exactly(3))
             ->method('get')
@@ -41,7 +41,7 @@ class FeatureFinderFactoryTest extends TestCase
     public function testItShouldCreateADBalFeatureFinderFromInvokable(): void
     {
         $container = $this->createMock(ContainerInterface::class);
-        $toggleConfig = new ToggleConfig(['prefix' => '', 'driver' => 'dbal']);
+        $toggleConfig = new ToggleConfig(['api_prefix' => '', 'driver' => 'dbal']);
         $chainStrategyFactory = new ChainToggleStrategyFactory(
             $this->createMock(SegmentFactory::class),
             $this->createMock(ToggleStrategyFactory::class),
@@ -62,7 +62,7 @@ class FeatureFinderFactoryTest extends TestCase
     public function testItShouldCreateAnInMemoryFeatureFinderFromInvokable(): void
     {
         $container = $this->createMock(ContainerInterface::class);
-        $toggleConfig = new ToggleConfig(['prefix' => '', 'driver' => 'inmemory']);
+        $toggleConfig = new ToggleConfig(['api_prefix' => '', 'driver' => 'inmemory']);
         $chainStrategyFactory = new ChainToggleStrategyFactory(
             $this->createMock(SegmentFactory::class),
             $this->createMock(ToggleStrategyFactory::class),
@@ -81,7 +81,7 @@ class FeatureFinderFactoryTest extends TestCase
 
     public function testItShouldCreateADBalFeatureFinderFromCreate(): void
     {
-        $toggleConfig = new ToggleConfig(['prefix' => '', 'driver' => 'dbal']);
+        $toggleConfig = new ToggleConfig(['api_prefix' => '', 'driver' => 'dbal']);
         $chainStrategyFactory = new ChainToggleStrategyFactory(
             $this->createMock(SegmentFactory::class),
             $this->createMock(ToggleStrategyFactory::class),
@@ -93,7 +93,7 @@ class FeatureFinderFactoryTest extends TestCase
 
     public function testItShouldCreateInMemoryFeatureFinderFromCreate(): void
     {
-        $toggleConfig = new ToggleConfig(['prefix' => '', 'driver' => 'inmemory']);
+        $toggleConfig = new ToggleConfig(['api_prefix' => '', 'driver' => 'inmemory']);
         $chainStrategyFactory = new ChainToggleStrategyFactory(
             $this->createMock(SegmentFactory::class),
             $this->createMock(ToggleStrategyFactory::class),

@@ -6,7 +6,7 @@
     </include>
   </coverage>
   <testsuites>
-    <testsuite name="Antidot\\Tests">
+    <testsuite name="Pheature\\Test\\Crud\\Psr11">
       <directory>./test</directory>
     </testsuite>
   </testsuites>

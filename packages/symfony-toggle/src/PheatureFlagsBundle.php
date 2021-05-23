@@ -21,7 +21,7 @@ final class PheatureFlagsBundle extends Bundle
 {
     private const DEFAULT_CONFIG = [
         'driver' => 'inmemory',
-        'prefix' => '',
+        'api_prefix' => '',
         'api_enabled' => false,
         'segment_types' => [
             [
