@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Pheature\Dbal\Toggle\Read;
 
 use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Portability\Statement;
 use Doctrine\DBAL\Result;
 use InvalidArgumentException;
 use Pheature\Core\Toggle\Read\Feature;
