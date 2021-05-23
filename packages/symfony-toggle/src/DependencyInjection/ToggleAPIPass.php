@@ -21,6 +21,8 @@ final class ToggleAPIPass implements CompilerPassInterface
             return;
         }
 
+        $container->getParameterBag()->set('pheature_flags_prefix', $mergedConfig['api_prefix']);
+
         $loader = new YamlFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../Resources/config/toggle_api')
