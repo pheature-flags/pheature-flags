@@ -29,7 +29,7 @@ services:
   Pheature\Crud\Psr7\Toggle\PatchFeature:
     class: Pheature\Crud\Psr7\Toggle\PatchFeature
     arguments:
-      - '@Pheature\Crud\Toggle\Handler\AddStrategy'
+      - '@Pheature\Crud\Toggle\Handler\SetStrategy'
       - '@Pheature\Crud\Toggle\Handler\RemoveStrategy'
       - '@Pheature\Crud\Toggle\Handler\EnableFeature'
       - '@Pheature\Crud\Toggle\Handler\DisableFeature'

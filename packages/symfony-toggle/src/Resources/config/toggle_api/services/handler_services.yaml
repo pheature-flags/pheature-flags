@@ -8,8 +8,8 @@ services:
     arguments:
       - '@Pheature\Core\Toggle\Write\FeatureRepository'
 
-  Pheature\Crud\Toggle\Handler\AddStrategy:
-    class: Pheature\Crud\Toggle\Handler\AddStrategy
+  Pheature\Crud\Toggle\Handler\SetStrategy:
+    class: Pheature\Crud\Toggle\Handler\SetStrategy
     arguments:
       - '@Pheature\Core\Toggle\Write\FeatureRepository'
 
