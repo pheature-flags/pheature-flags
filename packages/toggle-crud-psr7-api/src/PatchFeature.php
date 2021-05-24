@@ -60,8 +60,8 @@ final class PatchFeature implements RequestHandlerInterface
         if ($patchRequest->isDisableFeatureAction()) {
             $this->disableFeature->handle($patchRequest->disableFeatureCommand());
         }
-        if ($patchRequest->isAddStrategyAction()) {
-            $this->addStrategy->handle($patchRequest->addStrategyCommand());
+        if ($patchRequest->isSetStrategyAction()) {
+            $this->addStrategy->handle($patchRequest->setStrategyCommand());
         }
         if ($patchRequest->isRemoveStrategyAction()) {
             $this->removeStrategy->handle($patchRequest->removeStrategyCommand());

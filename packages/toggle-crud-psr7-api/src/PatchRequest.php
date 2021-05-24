@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Psr7\Toggle;
 
-use Pheature\Crud\Toggle\Command\AddStrategy;
+use Pheature\Crud\Toggle\Command\SetStrategy;
 use Pheature\Crud\Toggle\Command\DisableFeature;
 use Pheature\Crud\Toggle\Command\EnableFeature;
 use Pheature\Crud\Toggle\Command\RemoveStrategy;
@@ -15,7 +15,7 @@ final class PatchRequest
 {
     private const ACTION_ENABLE_FEATURE = 'enable_feature';
     private const ACTION_DISABLE_FEATURE = 'disable_feature';
-    private const ACTION_ADD_STRATEGY = 'add_strategy';
+    private const ACTION_SET_STRATEGY = 'set_strategy';
     private const ACTION_REMOVE_STRATEGY = 'remove_strategy';
 
     private string $featureId;
@@ -39,18 +39,31 @@ final class PatchRequest
         $this->requestData = $value;
     }
 
-    public function addStrategyCommand(): AddStrategy
+    public function setStrategyCommand(): SetStrategy
     {
         Assert::notNull($this->requestData);
         Assert::keyExists($this->requestData, 'strategy_id');
         Assert::keyExists($this->requestData, 'strategy_type');
         Assert::string($this->requestData['strategy_id']);
         Assert::string($this->requestData['strategy_type']);
+        /** @var array<array<string, mixed>> $segments */
+        $segments = $this->requestData['segments'] ?? [];
+        if (false === empty($segments)) {
+            foreach ($segments as $segment) {
+                Assert::keyExists($segment, 'segment_id');
+                Assert::keyExists($segment, 'segment_type');
+                Assert::keyExists($segment, 'criteria');
+                Assert::string($segment['segment_id']);
+                Assert::string($segment['segment_type']);
+                Assert::isArray($segment['criteria']);
+            }
+        }
 
-        return AddStrategy::withIdAndType(
+        return SetStrategy::withIdTypeAndSegments(
             $this->featureId,
             $this->requestData['strategy_id'],
-            $this->requestData['strategy_type']
+            $this->requestData['strategy_type'],
+            $segments
         );
     }
 
@@ -76,9 +89,9 @@ final class PatchRequest
         return DisableFeature::withId($this->featureId);
     }
 
-    public function isAddStrategyAction(): bool
+    public function isSetStrategyAction(): bool
     {
-        return self::ACTION_ADD_STRATEGY === $this->action;
+        return self::ACTION_SET_STRATEGY === $this->action;
     }
 
     public function isRemoveStrategyAction(): bool
