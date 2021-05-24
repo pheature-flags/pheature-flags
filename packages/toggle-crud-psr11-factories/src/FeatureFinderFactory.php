@@ -48,7 +48,7 @@ final class FeatureFinderFactory
 
         if ('dbal' === $driver) {
             /** @var Connection $connection */
-            return new DbalFeatureFinder($connection, new DbalFeatureFactory());
+            return new DbalFeatureFinder($connection, new DbalFeatureFactory($chainToggleStrategyFactory));
         }
 
         throw new InvalidArgumentException('Valid driver required');
