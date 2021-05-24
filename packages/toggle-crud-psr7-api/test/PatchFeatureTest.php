@@ -8,7 +8,7 @@ use Pheature\Core\Toggle\Write\Feature;
 use Pheature\Core\Toggle\Write\FeatureId;
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Psr7\Toggle\PatchFeature;
-use Pheature\Crud\Toggle\Handler\AddStrategy;
+use Pheature\Crud\Toggle\Handler\SetStrategy;
 use Pheature\Crud\Toggle\Handler\DisableFeature;
 use Pheature\Crud\Toggle\Handler\EnableFeature;
 use Pheature\Crud\Toggle\Handler\RemoveStrategy;
@@ -24,7 +24,7 @@ final class PatchFeatureTest extends TestCase
     private FeatureRepository $repository;
     /** @var MockObject|ResponseFactoryInterface */
     private ResponseFactoryInterface $responseFactory;
-    private AddStrategy $addStrategy;
+    private SetStrategy $addStrategy;
     private RemoveStrategy $removeStrategy;
     private EnableFeature $enableFeature;
     private DisableFeature $disableFeature;
@@ -334,7 +334,7 @@ final class PatchFeatureTest extends TestCase
     {
         $this->repository = $this->createMock(FeatureRepository::class);
         $this->responseFactory = $this->createMock(ResponseFactoryInterface::class);
-        $this->addStrategy = new AddStrategy($this->repository);
+        $this->addStrategy = new SetStrategy($this->repository);
         $this->removeStrategy = new RemoveStrategy($this->repository);
         $this->enableFeature = new EnableFeature($this->repository);
         $this->disableFeature = new DisableFeature($this->repository);

@@ -46,17 +46,16 @@ final class PatchRequest
         Assert::keyExists($this->requestData, 'strategy_type');
         Assert::string($this->requestData['strategy_id']);
         Assert::string($this->requestData['strategy_type']);
-        /** @var array<array<string, mixed>> $segments */
+        /** @var array<array<string, mixed>>|null $segments */
         $segments = $this->requestData['segments'] ?? [];
-        if (false === empty($segments)) {
-            foreach ($segments as $segment) {
-                Assert::keyExists($segment, 'segment_id');
-                Assert::keyExists($segment, 'segment_type');
-                Assert::keyExists($segment, 'criteria');
-                Assert::string($segment['segment_id']);
-                Assert::string($segment['segment_type']);
-                Assert::isArray($segment['criteria']);
-            }
+        Assert::isArray($segments);
+        foreach ($segments as $segment) {
+            Assert::keyExists($segment, 'segment_id');
+            Assert::keyExists($segment, 'segment_type');
+            Assert::keyExists($segment, 'criteria');
+            Assert::string($segment['segment_id']);
+            Assert::string($segment['segment_type']);
+            Assert::isArray($segment['criteria']);
         }
 
         return SetStrategy::withIdTypeAndSegments(

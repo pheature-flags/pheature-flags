@@ -5,7 +5,7 @@ namespace Pheature\Test\Crud\Psr11\Toggle;
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Psr11\Toggle\PatchFeatureFactory;
 use Pheature\Crud\Psr7\Toggle\PatchFeature;
-use Pheature\Crud\Toggle\Handler\AddStrategy;
+use Pheature\Crud\Toggle\Handler\SetStrategy;
 use Pheature\Crud\Toggle\Handler\DisableFeature;
 use Pheature\Crud\Toggle\Handler\EnableFeature;
 use Pheature\Crud\Toggle\Handler\RemoveStrategy;
@@ -18,7 +18,7 @@ class PatchFeatureFactoryTest extends TestCase
     public function testItShouldCreateInstanceOfPatchFeature(): void
     {
         $featureRepository = $this->createMock(FeatureRepository::class);
-        $addStrategy = new AddStrategy($featureRepository);
+        $addStrategy = new SetStrategy($featureRepository);
         $removeStrategy = new RemoveStrategy($featureRepository);
         $enableFeature = new EnableFeature($featureRepository);
         $disableFeature = new DisableFeature($featureRepository);
@@ -27,7 +27,7 @@ class PatchFeatureFactoryTest extends TestCase
 
         $container->expects(static::exactly(5))
             ->method('get')
-            ->withConsecutive([AddStrategy::class], [RemoveStrategy::class],
+            ->withConsecutive([SetStrategy::class], [RemoveStrategy::class],
                 [EnableFeature::class], [DisableFeature::class], [ResponseFactoryInterface::class])
             ->willReturnOnConsecutiveCalls($addStrategy, $removeStrategy,
                 $enableFeature, $disableFeature, $responseFactory);
@@ -40,7 +40,7 @@ class PatchFeatureFactoryTest extends TestCase
     public function testItShouldCreateInstanceOfPatchFeatureStatically(): void
     {
         $featureRepository = $this->createMock(FeatureRepository::class);
-        $addStrategy = new AddStrategy($featureRepository);
+        $addStrategy = new SetStrategy($featureRepository);
         $removeStrategy = new RemoveStrategy($featureRepository);
         $enableFeature = new EnableFeature($featureRepository);
         $disableFeature = new DisableFeature($featureRepository);

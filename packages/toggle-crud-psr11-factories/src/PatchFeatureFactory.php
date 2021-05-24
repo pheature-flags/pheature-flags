@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Pheature\Crud\Psr11\Toggle;
 
 use Pheature\Crud\Psr7\Toggle\PatchFeature;
-use Pheature\Crud\Toggle\Handler\AddStrategy;
+use Pheature\Crud\Toggle\Handler\SetStrategy;
 use Pheature\Crud\Toggle\Handler\DisableFeature;
 use Pheature\Crud\Toggle\Handler\EnableFeature;
 use Pheature\Crud\Toggle\Handler\RemoveStrategy;
@@ -16,8 +16,8 @@ final class PatchFeatureFactory
 {
     public function __invoke(ContainerInterface $container): PatchFeature
     {
-        /** @var AddStrategy $addStrategy */
-        $addStrategy = $container->get(AddStrategy::class);
+        /** @var SetStrategy $addStrategy */
+        $addStrategy = $container->get(SetStrategy::class);
         /** @var RemoveStrategy $removeStrategy */
         $removeStrategy = $container->get(RemoveStrategy::class);
         /** @var EnableFeature $enableFeature */
@@ -31,7 +31,7 @@ final class PatchFeatureFactory
     }
 
     public static function create(
-        AddStrategy $addStrategy,
+        SetStrategy $addStrategy,
         RemoveStrategy $removeStrategy,
         EnableFeature $enableFeature,
         DisableFeature $disableFeature,

@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Pheature\Crud\Psr11\Toggle;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Toggle\Handler\AddStrategy;
+use Pheature\Crud\Toggle\Handler\SetStrategy;
 use Psr\Container\ContainerInterface;
 
-final class AddStrategyFactory
+final class SetStrategyFactory
 {
-    public function __invoke(ContainerInterface $container): AddStrategy
+    public function __invoke(ContainerInterface $container): SetStrategy
     {
         /** @var FeatureRepository $featureRepository */
         $featureRepository = $container->get(FeatureRepository::class);
@@ -18,8 +18,8 @@ final class AddStrategyFactory
         return self::create($featureRepository);
     }
 
-    public static function create(FeatureRepository $featureRepository): AddStrategy
+    public static function create(FeatureRepository $featureRepository): SetStrategy
     {
-        return new AddStrategy($featureRepository);
+        return new SetStrategy($featureRepository);
     }
 }

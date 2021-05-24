@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Pheature\Test\Crud\Psr11\Toggle;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Psr11\Toggle\AddStrategyFactory;
-use Pheature\Crud\Toggle\Handler\AddStrategy;
+use Pheature\Crud\Psr11\Toggle\SetStrategyFactory;
+use Pheature\Crud\Toggle\Handler\SetStrategy;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 
-final class AddStrategyFactoryTest extends TestCase
+final class SetStrategyFactoryTest extends TestCase
 {
     public function testItShouldCreateInstanceOfAddStrategy(): void
     {
@@ -21,7 +21,7 @@ final class AddStrategyFactoryTest extends TestCase
             ->with(FeatureRepository::class)
             ->willReturn($featureRepository);
 
-        $addStrategyFactory = new AddStrategyFactory();
+        $addStrategyFactory = new SetStrategyFactory();
 
         $addStrategyFactory->__invoke($container);
     }
@@ -30,8 +30,8 @@ final class AddStrategyFactoryTest extends TestCase
     {
         $featureRepository = $this->createMock(FeatureRepository::class);
 
-        $addStrategy = AddStrategyFactory::create($featureRepository);
+        $addStrategy = SetStrategyFactory::create($featureRepository);
 
-        $this->assertInstanceOf(AddStrategy::class, $addStrategy);
+        $this->assertInstanceOf(SetStrategy::class, $addStrategy);
     }
 }

@@ -42,7 +42,7 @@ final class Segment implements JsonSerializable
         return [
             'segment_id' => $this->segmentId->value(),
             'segment_type' => $this->segmentType->value(),
-            'payload' => $this->payload->data(),
+            'payload' => $this->payload->criteria(),
         ];
     }
 }
