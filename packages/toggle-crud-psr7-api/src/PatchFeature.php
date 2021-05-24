@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Psr7\Toggle;
 
-use Pheature\Crud\Toggle\Handler\AddStrategy;
+use Pheature\Crud\Toggle\Handler\SetStrategy;
 use Pheature\Crud\Toggle\Handler\DisableFeature;
 use Pheature\Crud\Toggle\Handler\EnableFeature;
 use Pheature\Crud\Toggle\Handler\RemoveStrategy;
@@ -15,20 +15,20 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class PatchFeature implements RequestHandlerInterface
 {
-    private AddStrategy $addStrategy;
+    private SetStrategy $setStrategy;
     private RemoveStrategy $removeStrategy;
     private EnableFeature $enableFeature;
     private DisableFeature $disableFeature;
     private ResponseFactoryInterface $responseFactory;
 
     public function __construct(
-        AddStrategy $addStrategy,
+        SetStrategy $setStrategy,
         RemoveStrategy $removeStrategy,
         EnableFeature $enableFeature,
         DisableFeature $disableFeature,
         ResponseFactoryInterface $responseFactory
     ) {
-        $this->addStrategy = $addStrategy;
+        $this->setStrategy = $setStrategy;
         $this->removeStrategy = $removeStrategy;
         $this->enableFeature = $enableFeature;
         $this->disableFeature = $disableFeature;
@@ -61,7 +61,7 @@ final class PatchFeature implements RequestHandlerInterface
             $this->disableFeature->handle($patchRequest->disableFeatureCommand());
         }
         if ($patchRequest->isSetStrategyAction()) {
-            $this->addStrategy->handle($patchRequest->setStrategyCommand());
+            $this->setStrategy->handle($patchRequest->setStrategyCommand());
         }
         if ($patchRequest->isRemoveStrategyAction()) {
             $this->removeStrategy->handle($patchRequest->removeStrategyCommand());

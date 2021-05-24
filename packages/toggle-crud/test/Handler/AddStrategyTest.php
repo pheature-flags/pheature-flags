@@ -8,7 +8,7 @@ use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Core\Toggle\Write\Segment;
 use Pheature\Core\Toggle\Write\Strategy;
 use Pheature\Crud\Toggle\Command\SetStrategy as AddStrategyCommand;
-use Pheature\Crud\Toggle\Handler\AddStrategy;
+use Pheature\Crud\Toggle\Handler\SetStrategy;
 use Pheature\Core\Toggle\Write\Feature;
 use Pheature\Core\Toggle\Write\FeatureId;
 use PHPUnit\Framework\TestCase;
@@ -41,7 +41,7 @@ final class AddStrategyTest extends TestCase
             ->method('save')
             ->with($feature);
 
-        $handler = new AddStrategy($repository);
+        $handler = new SetStrategy($repository);
         $handler->handle($command);
 
         $strategies = $feature->strategies();
@@ -66,7 +66,7 @@ final class AddStrategyTest extends TestCase
             ->method('save')
             ->with($feature);
 
-        $handler = new AddStrategy($repository);
+        $handler = new SetStrategy($repository);
         $handler->handle($command);
 
         $strategies = $feature->strategies();

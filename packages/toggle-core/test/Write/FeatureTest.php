@@ -95,7 +95,7 @@ final class FeatureTest extends TestCase
             []
         );
         $feature = $this->createFeature();
-        $feature->addStrategy($strategy);
+        $feature->setStrategy($strategy);
 
         return $feature;
     }

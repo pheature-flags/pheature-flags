@@ -39,7 +39,7 @@ final class Feature implements JsonSerializable
         return new self($featureId, false);
     }
 
-    public function addStrategy(Strategy $strategy): void
+    public function setStrategy(Strategy $strategy): void
     {
         $this->strategies[$strategy->id()->value()] = $strategy;
     }

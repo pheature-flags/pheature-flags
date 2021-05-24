@@ -43,7 +43,7 @@ final class Payload
     /**
      * @return array<string, mixed>
      */
-    public function data(): array
+    public function criteria(): array
     {
         return $this->criteria;
     }

@@ -23,7 +23,7 @@ final class RemoveStrategyTest extends TestCase
     public function testItShouldAddStrategyToAFeature(): void
     {
         $feature = Feature::withId(FeatureId::fromString(self::FEATURE_ID));
-        $feature->addStrategy(new Strategy(
+        $feature->setStrategy(new Strategy(
             StrategyId::fromString(self::STRATEGY_ID),
             StrategyType::fromString(self::STRATEGY_TYPE)
         ));
