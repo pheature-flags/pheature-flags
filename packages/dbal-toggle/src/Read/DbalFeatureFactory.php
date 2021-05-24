@@ -4,19 +4,24 @@ declare(strict_types=1);
 
 namespace Pheature\Dbal\Toggle\Read;
 
+use Pheature\Core\Toggle\Read\ChainToggleStrategyFactory;
 use Pheature\Core\Toggle\Read\Feature as IFeature;
-use Pheature\Core\Toggle\Read\Segments;
 use Pheature\Core\Toggle\Read\ToggleStrategies;
-use Pheature\Core\Toggle\Read\ToggleStrategy;
-use Pheature\Model\Toggle\EnableByMatchingSegment;
 use Pheature\Model\Toggle\Feature;
-use Pheature\Model\Toggle\StrictMatchingSegment;
 
 use function array_map;
 use function json_decode;
 
 final class DbalFeatureFactory
 {
+    private const MAX_DEPTH = 512;
+    private ChainToggleStrategyFactory $strategyFactory;
+
+    public function __construct(ChainToggleStrategyFactory $strategyFactory)
+    {
+        $this->strategyFactory = $strategyFactory;
+    }
+
     /**
      * @param array<string, string|bool|array<string, mixed>> $data
      * @return IFeature
@@ -29,39 +34,17 @@ final class DbalFeatureFactory
         /** @var string $jsonStrategies */
         $jsonStrategies = $data['strategies'];
         /** @var array<string, array<string, mixed>> $strategies */
-        $strategies = json_decode($jsonStrategies, true) ?? [];
+        $strategies = json_decode($jsonStrategies, true, self::MAX_DEPTH, JSON_THROW_ON_ERROR);
 
         return new Feature(
             $id,
-            /** @param array<string, array<string, mixed>> $strategies */
-            new ToggleStrategies(...array_map([$this, 'makeStrategy'], $strategies)),
-            $enabled
-        );
-    }
-
-    /**
-     * @param array<string, mixed> $strategy
-     * @return ToggleStrategy
-     */
-    private static function makeStrategy(array $strategy): ToggleStrategy
-    {
-        /** @var array<array<string, mixed>> $segments */
-        $segments = $strategy['segments'];
-
-        return new EnableByMatchingSegment(
-            new Segments(
+            new ToggleStrategies(
                 ...array_map(
-                    /** @param array<string, mixed> $segment */
-                    static function (array $segment): StrictMatchingSegment {
-                        /** @var string $id */
-                        $id = $segment['id'];
-                        /** @var array<string, mixed> $criteria */
-                        $criteria = $segment['criteria'];
-                        return new StrictMatchingSegment($id, $criteria);
-                    },
-                    $segments
+                    fn(array $strategy) => $this->strategyFactory->createFromArray($strategy),
+                    $strategies
                 )
-            )
+            ),
+            $enabled
         );
     }
 }
