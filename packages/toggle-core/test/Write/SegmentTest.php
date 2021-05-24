@@ -27,7 +27,10 @@ final class SegmentTest extends TestCase
         $this->assertSame([
             'segment_id' => self::SEGMENT_ID,
             'segment_type' => self::SEGMENT_TYPE,
-            'payload' => json_decode(self::JSON_PAYLOAD, true, 6, JSON_THROW_ON_ERROR),
+            'criteria' => json_decode(self::JSON_PAYLOAD, true, 6, JSON_THROW_ON_ERROR),
         ], $segment->jsonSerialize());
+        $this->assertSame(self::SEGMENT_ID, $segment->segmentId()->value());
+        $this->assertSame(self::SEGMENT_TYPE, $segment->segmentType()->value());
+        $this->assertSame(json_decode(self::JSON_PAYLOAD, true), $segment->payload()->criteria());
     }
 }

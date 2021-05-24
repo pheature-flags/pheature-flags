@@ -32,10 +32,12 @@ final class DbalFeatureFactory
             static function (array $strategy) {
                 $segments = array_map(
                     static function (array $segment) {
+                        /** @var array<string, mixed> $criteria */
+                        $criteria = $segment['criteria'];
                         return new Segment(
                             SegmentId::fromString((string)$segment['segment_id']),
                             SegmentType::fromString((string)$segment['segment_type']),
-                            Payload::fromJsonString((string)$segment['payload'])
+                            Payload::fromArray($criteria)
                         );
                     },
                     (array)$strategy['segments']
