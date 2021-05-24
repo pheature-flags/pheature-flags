@@ -1,4 +1,6 @@
 grumphp:
+    git_hook_variables:
+        EXEC_GRUMPHP_COMMAND: 'docker run --rm -v $PWD:/code:cached pheature/pheature-php-dev:latest'
     hooks_dir: .
     hooks_preset: local
     tasks:
