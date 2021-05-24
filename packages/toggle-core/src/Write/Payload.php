@@ -11,21 +11,30 @@ final class Payload
     /**
      * @var array<string, mixed>
      */
-    private array $data;
+    private array $criteria;
 
     /**
-     * @param array<string, mixed> $data
+     * @param array<string, mixed> $criteria
      */
-    private function __construct(array $data)
+    private function __construct(array $criteria)
     {
-        $this->data = $data;
+        $this->criteria = $criteria;
+    }
+
+    /**
+     * @param array<string, mixed> $criteria
+     * @return static
+     */
+    public static function fromArray(array $criteria): self
+    {
+        return new self($criteria);
     }
 
     public static function fromJsonString(string $jsonPayload): self
     {
         /**
- * @var array<string, mixed> $payload
-*/
+         * @var array<string, mixed> $payload
+        */
         $payload = json_decode($jsonPayload, true, 16, JSON_THROW_ON_ERROR);
 
         return new self($payload);
@@ -36,6 +45,6 @@ final class Payload
      */
     public function data(): array
     {
-        return $this->data;
+        return $this->criteria;
     }
 }
