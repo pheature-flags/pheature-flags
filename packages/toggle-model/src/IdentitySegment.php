@@ -32,6 +32,11 @@ final class IdentitySegment implements Segment
         return $this->id;
     }
 
+    public function type(): string
+    {
+        return self::NAME;
+    }
+
     /**
      * @return array<string, mixed>
      */
@@ -59,6 +64,7 @@ final class IdentitySegment implements Segment
     {
         return [
             'id' => $this->id,
+            'type' => self::NAME,
             'criteria' => $this->criteria,
         ];
     }

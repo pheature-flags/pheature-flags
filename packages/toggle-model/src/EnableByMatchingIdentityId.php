@@ -13,9 +13,10 @@ use Pheature\Core\Toggle\Read\ToggleStrategy;
 final class EnableByMatchingIdentityId implements ToggleStrategy
 {
     public const NAME = 'enable_by_matching_identity_id';
+    private string $id;
     private Segments $segments;
 
-    public function __construct(Segments $segments)
+    public function __construct(string $id, Segments $segments)
     {
         foreach ($segments->all() as $segment) {
             if (false === $segment instanceof IdentitySegment) {
@@ -25,7 +26,18 @@ final class EnableByMatchingIdentityId implements ToggleStrategy
                 ));
             }
         }
+        $this->id = $id;
         $this->segments = $segments;
+    }
+
+    public function id(): string
+    {
+        return $this->id;
+    }
+
+    public function type(): string
+    {
+        return self::NAME;
     }
 
     public function isSatisfiedBy(ConsumerIdentity $identity): bool
@@ -42,6 +54,7 @@ final class EnableByMatchingIdentityId implements ToggleStrategy
     public function toArray(): array
     {
         return [
+            'id' => $this->id,
             'type' => self::NAME,
             'segments' => array_map(
                 static fn(ISegment $segment): array => $segment->toArray(),
