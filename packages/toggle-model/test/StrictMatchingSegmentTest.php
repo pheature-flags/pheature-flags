@@ -1,27 +1,29 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pheature\Test\Model\Toggle;
 
 use Generator;
-use Pheature\Model\Toggle\InCollectionMatchingSegment;
+use Pheature\Model\Toggle\StrictMatchingSegment;
 use PHPUnit\Framework\TestCase;
 
-class InCollectionMatchingSegmentTest extends TestCase
+final class StrictMatchingSegmentTest extends TestCase
 {
     private const SEGMENT_ID = 'a_segment_id';
 
     /** @dataProvider nonMatchingPayloads */
     public function testItShouldNotMatch(array $criteria, array $payload): void
     {
-        $segment = new InCollectionMatchingSegment(self::SEGMENT_ID, $criteria);
+        $segment = new StrictMatchingSegment(self::SEGMENT_ID, $criteria);
 
         self::assertFalse($segment->match($payload));
         self::assertSame(self::SEGMENT_ID, $segment->id());
-        self::assertSame('in_collection_matching_segment', $segment->type());
+        self::assertSame('strict_matching_segment', $segment->type());
         self::assertSame($criteria, $segment->criteria());
         self::assertSame([
             'id' => self::SEGMENT_ID,
-            'type' => 'in_collection_matching_segment',
+            'type' => 'strict_matching_segment',
             'criteria' => $criteria,
         ], $segment->jsonSerialize());
     }
@@ -29,15 +31,15 @@ class InCollectionMatchingSegmentTest extends TestCase
     /** @dataProvider matchingPayloads */
     public function testItShouldMatch(array $criteria, array $payload): void
     {
-        $segment = new InCollectionMatchingSegment(self::SEGMENT_ID, $criteria);
+        $segment = new StrictMatchingSegment(self::SEGMENT_ID, $criteria);
 
         self::assertTrue($segment->match($payload));
         self::assertSame(self::SEGMENT_ID, $segment->id());
-        self::assertSame('in_collection_matching_segment', $segment->type());
+        self::assertSame('strict_matching_segment', $segment->type());
         self::assertSame($criteria, $segment->criteria());
         self::assertSame([
             'id' => self::SEGMENT_ID,
-            'type' => 'in_collection_matching_segment',
+            'type' => 'strict_matching_segment',
             'criteria' => $criteria,
         ], $segment->jsonSerialize());
     }
@@ -51,7 +53,7 @@ class InCollectionMatchingSegmentTest extends TestCase
             ]
         ];
 
-        yield 'strict value comparison' => [
+        yield 'different value comparison' => [
             'criteria' => [
                 'location' => 'barcelona',
             ],
@@ -60,66 +62,55 @@ class InCollectionMatchingSegmentTest extends TestCase
             ]
         ];
 
-        yield 'possible values comparison' => [
+        yield 'different key comparison' => [
             'criteria' => [
-                'location' => ['barcelona', 'girona'],
+                'location' => 'barcelona',
             ],
             'payload' => [
-                'location' => 'bilbao',
+                'city' => 'barcelona',
             ]
+        ];
+        yield 'strict matching multiple criteria with multiple fields' => [
+            'criteria' => [
+                'user_type' => 'top',
+                'location' => 'barcelona',
+            ],
+            'payload' => [
+                'location' => 'barcelona',
+                'user_type' => 'default',
+            ],
         ];
 
-        yield 'multiple fields comparison' => [
-            'criteria' => [
-                'location' => ['barcelona', 'girona'],
-                'top_buyers' => true,
-            ],
-            'payload' => [
-                'location' => 'girona',
-                'top_buyers' => false,
-            ]
-        ];
-
-        yield 'multiple fields with missing field comparison' => [
-            'criteria' => [
-                'location' => ['barcelona', 'girona'],
-                'top_buyers' => true,
-            ],
-            'payload' => [
-                'location' => 'girona',
-            ]
-        ];
     }
 
     public function matchingPayloads(): Generator
     {
-        yield 'strict value comparison' => [
+        yield 'strict matching criteria' => [
             'criteria' => [
                 'location' => 'barcelona',
             ],
             'payload' => [
                 'location' => 'barcelona',
-            ]
+            ],
         ];
-
-        yield 'possible values comparison' => [
+        yield 'strict matching criteria with multiple fields' => [
             'criteria' => [
-                'location' => ['barcelona', 'girona'],
+                'location' => 'barcelona',
             ],
             'payload' => [
-                'location' => 'girona',
-            ]
+                'location' => 'barcelona',
+                'user_type' => 'top',
+            ],
         ];
-
-        yield 'multiple fields comparison' => [
+        yield 'strict matching multiple criteria with multiple fields' => [
             'criteria' => [
-                'location' => ['barcelona', 'girona'],
-                'top_buyers' => true,
+                'user_type' => 'top',
+                'location' => 'barcelona',
             ],
             'payload' => [
-                'location' => 'girona',
-                'top_buyers' => true,
-            ]
+                'location' => 'barcelona',
+                'user_type' => 'top',
+            ],
         ];
     }
 }

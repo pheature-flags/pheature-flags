@@ -9,6 +9,7 @@ use JsonSerializable;
 interface Segment extends JsonSerializable
 {
     public function id(): string;
+    public function type(): string;
     /**
      * @return array<string, mixed>
      */

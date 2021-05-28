@@ -8,6 +8,8 @@ use JsonSerializable;
 
 interface ToggleStrategy extends JsonSerializable
 {
+    public function id(): string;
+    public function type(): string;
     public function isSatisfiedBy(ConsumerIdentity $identity): bool;
     /**
      * @return array<string, string|array>

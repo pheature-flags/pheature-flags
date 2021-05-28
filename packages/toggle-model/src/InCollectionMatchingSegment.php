@@ -30,6 +30,11 @@ class InCollectionMatchingSegment implements Segment
         return $this->id;
     }
 
+    public function type(): string
+    {
+        return self::NAME;
+    }
+
     public function criteria(): array
     {
         return $this->criteria;
@@ -73,6 +78,7 @@ class InCollectionMatchingSegment implements Segment
     {
         return [
             'id' => $this->id,
+            'type' => self::NAME,
             'criteria' => $this->criteria,
         ];
     }

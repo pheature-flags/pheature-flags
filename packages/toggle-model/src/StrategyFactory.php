@@ -15,10 +15,10 @@ final class StrategyFactory implements ToggleStrategyFactory
     {
         $segments = $segments ?? new Segments();
         if (EnableByMatchingSegment::NAME === $strategyType) {
-            return new EnableByMatchingSegment($segments);
+            return new EnableByMatchingSegment($strategyId, $segments);
         }
         if (EnableByMatchingIdentityId::NAME === $strategyType) {
-            return new EnableByMatchingIdentityId($segments);
+            return new EnableByMatchingIdentityId($strategyId, $segments);
         }
 
         throw InvalidStrategyTypeGiven::withType($strategyType);
