@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Pheature\Community\Mezzio;
 
 use Mezzio\Application;
+use Pheature\Core\Toggle\Read\ChainToggleStrategyFactory;
 use Pheature\Core\Toggle\Read\FeatureFinder;
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Psr11\Toggle\SetStrategyFactory;
@@ -32,6 +33,11 @@ use Pheature\Crud\Toggle\Handler\DisableFeature;
 use Pheature\Crud\Toggle\Handler\EnableFeature;
 use Pheature\Crud\Toggle\Handler\RemoveFeature;
 use Pheature\Crud\Toggle\Handler\RemoveStrategy;
+use Pheature\Model\Toggle\EnableByMatchingIdentityId;
+use Pheature\Model\Toggle\EnableByMatchingSegment;
+use Pheature\Model\Toggle\SegmentFactory;
+use Pheature\Model\Toggle\StrategyFactory;
+use Pheature\Model\Toggle\StrictMatchingSegment;
 use Pheature\Sdk\CommandRunner;
 
 final class ToggleConfigProvider
@@ -41,11 +47,27 @@ final class ToggleConfigProvider
      */
     public function __invoke(): array
     {
+        $pheatureFlagsConfig = $this->pheatureFlagsConfig();
+
+        /** @var array<array<string, string>> $strategyTypes */
+        $strategyTypes = $pheatureFlagsConfig['strategy_types'];
+
+        $strategyTypeAliases = array_reduce(
+            $strategyTypes,
+            static function (array $strategies, array $current) {
+                $strategies[(string) $current['type']] = (string) $current['factory_id'];
+
+                return $strategies;
+            },
+            []
+        );
+
         return [
             'dependencies' => [
                 'invokables' => [
                     RouterDelegator::class => RouterDelegator::class,
                 ],
+                'aliases' => $strategyTypeAliases,
                 'factories' => [
                     // Config
                     ToggleConfig::class => ToggleConfigFactory::class,
@@ -68,6 +90,10 @@ final class ToggleConfigProvider
                     FeatureFinder::class => FeatureFinderFactory::class,
                     // Write model
                     FeatureRepository::class => FeatureRepositoryFactory::class,
+
+                    StrategyFactory::class => \Pheature\Crud\Psr11\Toggle\StrategyFactory::class,
+                    SegmentFactory::class => \Pheature\Crud\Psr11\Toggle\SegmentFactory::class,
+                    ChainToggleStrategyFactory::class => \Pheature\Crud\Psr11\Toggle\ChainToggleStrategyFactory::class,
                 ],
                 'delegators' => [
                     Application::class => [
@@ -75,34 +101,28 @@ final class ToggleConfigProvider
                     ],
                 ],
             ],
-            'pheature_flags' => [
-                'route_prefix' => '',
-                'driver' => 'inmemory',
-                'toggles' => [
-                    'feature_1' => [
-                        'id' => 'feature_1',
-                        'enabled' => true,
-                        'strategies' => [
-                            [
-                                'segments' => [
-                                    [
-                                        'id' => 'location_barcelona',
-                                        'criteria' => [
-                                            'location' => 'barcelona',
-                                        ]
-                                    ],
-                                    [
-                                        'id' => 'location_bilbao',
-                                        'criteria' => [
-                                            'location' => 'bilbao',
-                                        ]
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
+            'pheature_flags' => $pheatureFlagsConfig,
+        ];
+    }
+
+    /** @return array<string,mixed> */
+    private function pheatureFlagsConfig(): array
+    {
+        return [
+            'api_enabled' => false,
+            'api_prefix' => '',
+            'driver' => 'inmemory',
+            'strategy_types' => [
+                [
+                    'type' => EnableByMatchingSegment::NAME,
+                    'factory_id' => StrategyFactory::class
                 ],
-            ]
+                [
+                    'type' => EnableByMatchingIdentityId::NAME,
+                    'factory_id' => StrategyFactory::class
+                ],
+            ],
+            'toggles' => [],
         ];
     }
 }
