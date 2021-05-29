@@ -23,10 +23,14 @@ final class FeatureFinderFactory
         $config = $container->get(ToggleConfig::class);
         /** @var ChainToggleStrategyFactory $chainToggleStrategyFactory */
         $chainToggleStrategyFactory = $container->get(ChainToggleStrategyFactory::class);
-        /** @var ?Connection $connection */
-        $connection = $container->get(Connection::class);
 
-        return self::create($config, $chainToggleStrategyFactory, $connection);
+        if (ToggleConfig::DRIVER_DBAL === $config->driver()) {
+            /** @var ?Connection $connection */
+            $connection = $container->get(Connection::class);
+            return self::create($config, $chainToggleStrategyFactory, $connection);
+        }
+
+        return self::create($config, $chainToggleStrategyFactory, null);
     }
 
     public static function create(
@@ -37,7 +41,7 @@ final class FeatureFinderFactory
 
         $driver = $config->driver();
 
-        if ('inmemory' === $driver) {
+        if (ToggleConfig::DRIVER_IN_MEMORY === $driver) {
             return new InMemoryFeatureFinder(
                 new InMemoryConfig($config->toggles()),
                 new InMemoryFeatureFactory(
@@ -46,7 +50,7 @@ final class FeatureFinderFactory
             );
         }
 
-        if ('dbal' === $driver) {
+        if (ToggleConfig::DRIVER_DBAL === $driver) {
             /** @var Connection $connection */
             return new DbalFeatureFinder($connection, new DbalFeatureFactory($chainToggleStrategyFactory));
         }
