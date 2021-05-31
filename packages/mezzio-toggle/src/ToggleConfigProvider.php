@@ -40,6 +40,7 @@ use Pheature\Model\Toggle\SegmentFactory;
 use Pheature\Model\Toggle\StrategyFactory;
 use Pheature\Model\Toggle\StrictMatchingSegment;
 use Pheature\Sdk\CommandRunner;
+
 use function array_merge;
 use function array_reduce;
 
