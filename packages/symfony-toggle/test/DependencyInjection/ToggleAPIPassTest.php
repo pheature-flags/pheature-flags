@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Pheature\Test\Community\Symfony\DependencyInjection;
 
 use Pheature\Community\Symfony\DependencyInjection\ToggleAPIPass;
-use Pheature\Test\Community\Symfony\DependencyInjection\Fixtures\PheatureFlagsConfig;
+use Pheature\Test\Crud\Psr11\Toggle\Fixtures\PheatureFlagsConfig;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;

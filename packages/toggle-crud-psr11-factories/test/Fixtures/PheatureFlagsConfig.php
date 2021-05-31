@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Test\Community\Symfony\DependencyInjection\Fixtures;
+namespace Pheature\Test\Crud\Psr11\Toggle\Fixtures;
 
 use Pheature\Model\Toggle\EnableByMatchingIdentityId;
 use Pheature\Model\Toggle\EnableByMatchingSegment;
