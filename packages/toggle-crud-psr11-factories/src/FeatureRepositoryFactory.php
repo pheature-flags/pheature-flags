@@ -27,11 +27,11 @@ final class FeatureRepositoryFactory
     {
         $driver = $config->driver();
 
-        if ('inmemory' === $driver) {
+        if (ToggleConfig::DRIVER_IN_MEMORY === $driver) {
             return new InMemoryFeatureRepository();
         }
 
-        if ('dbal' === $driver) {
+        if (ToggleConfig::DRIVER_DBAL === $driver) {
             /** @var Connection $connection */
             return new DbalFeatureRepository($connection);
         }
