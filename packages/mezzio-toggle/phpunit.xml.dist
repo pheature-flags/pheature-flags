@@ -6,7 +6,7 @@
     </include>
   </coverage>
   <testsuites>
-    <testsuite name="Antidot\\Tests">
+    <testsuite name="Pheature\\Test\\Community\\Mezzio">
       <directory>./test</directory>
     </testsuite>
   </testsuites>

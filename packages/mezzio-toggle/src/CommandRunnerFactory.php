@@ -6,9 +6,6 @@ namespace Pheature\Community\Mezzio;
 
 use Pheature\Core\Toggle\Read\FeatureFinder;
 use Pheature\Core\Toggle\Read\Toggle;
-use Pheature\InMemory\Toggle\InMemoryConfig;
-use Pheature\InMemory\Toggle\InMemoryFeatureFactory;
-use Pheature\InMemory\Toggle\InMemoryFeatureFinder;
 use Pheature\Sdk\CommandRunner;
 use Psr\Container\ContainerInterface;
 
