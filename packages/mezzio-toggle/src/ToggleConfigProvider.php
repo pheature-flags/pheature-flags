@@ -40,6 +40,8 @@ use Pheature\Model\Toggle\SegmentFactory;
 use Pheature\Model\Toggle\StrategyFactory;
 use Pheature\Model\Toggle\StrictMatchingSegment;
 use Pheature\Sdk\CommandRunner;
+use function array_merge;
+use function array_reduce;
 
 final class ToggleConfigProvider
 {
@@ -63,12 +65,25 @@ final class ToggleConfigProvider
             []
         );
 
+        /** @var array<array<string, string>> $segmentTypes */
+        $segmentTypes = $pheatureFlagsConfig['segment_types'];
+
+        $segmentTypeAliases = array_reduce(
+            $segmentTypes,
+            static function (array $segments, array $current) {
+                $segments[(string) $current['type']] = (string) $current['factory_id'];
+
+                return $segments;
+            },
+            []
+        );
+
         return [
             'dependencies' => [
                 'invokables' => [
                     RouterDelegator::class => RouterDelegator::class,
                 ],
-                'aliases' => $strategyTypeAliases,
+                'aliases' => array_merge($strategyTypeAliases, $segmentTypeAliases),
                 'factories' => [
                     // Config
                     ToggleConfig::class => ToggleConfigFactory::class,

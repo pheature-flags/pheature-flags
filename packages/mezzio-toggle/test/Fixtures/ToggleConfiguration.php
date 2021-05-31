@@ -56,6 +56,8 @@ final class ToggleConfiguration
                 'aliases' => [
                     'enable_by_matching_segment' => StrategyFactory::class,
                     'enable_by_matching_identity_id' => StrategyFactory::class,
+                    'identity_segment' => SegmentFactory::class,
+                    'strict_matching_segment' => SegmentFactory::class,
                 ],
                 'factories' => [
                     // Config
