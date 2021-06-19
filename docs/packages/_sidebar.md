@@ -5,6 +5,7 @@
     - [Toggle Core](/packages/toggle-core)
     - [Toggle Model](/packages/toggle-model)
     - [Toggle CRUD](/packages/toggle-crud)
+    - [Toggle CRUD API](/packages/toggle-crud-api)
     - [InMemory Toggle](/packages/inmemory-toggle)
     - [DBAL Toggle](/packages/dbal-toggle)
     - [Toggle UI](/packages/toggle-ui)
