@@ -9,5 +9,5 @@ Exposes an HTTP API to manage Pheature Toggles.
 Install it using [composer package manager](https://getcomposer.org/download/).
 
 ```bash
-composer require pheature/toggle-crud
+composer require pheature/toggle-crud-psr7-api
 ```
