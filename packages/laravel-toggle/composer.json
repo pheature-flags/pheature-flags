@@ -1,10 +1,7 @@
 {
     "name": "pheature/laravel-toggle",
     "description": "Pheature flags Laravel toggle.",
-    "keywords": [
-        "feature-toggle",
-        "feature-flags"
-    ],
+    "keywords": ["feature-toggle", "feature-flags"],
     "type": "library",
     "license": "BSD-3-Clause",
     "authors": [
@@ -17,14 +14,14 @@
         "illuminate/support": "^8.37",
         "laravel/laravel": "^8.5",
         "nyholm/psr7": "^1.4",
-        "pheature/dbal-toggle": "@dev",
-        "pheature/inmemory-toggle": "@dev",
-        "pheature/php-sdk": "@dev",
-        "pheature/toggle-core": "@dev",
-        "pheature/toggle-crud": "@dev",
-        "pheature/toggle-crud-psr7-api": "@dev",
-        "pheature/toggle-crud-psr11-factories": "@dev",
-        "pheature/toggle-model": "@dev",
+        "pheature/dbal-toggle": "^0.1",
+        "pheature/inmemory-toggle": "^0.1",
+        "pheature/php-sdk": "^0.1",
+        "pheature/toggle-core": "^0.1",
+        "pheature/toggle-crud": "^0.1",
+        "pheature/toggle-crud-psr7-api": "^0.1",
+        "pheature/toggle-crud-psr11-factories": "^0.1",
+        "pheature/toggle-model": "^0.1",
         "symfony/psr-http-message-bridge": "^2.1"
     },
     "require-dev": {

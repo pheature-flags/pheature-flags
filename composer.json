@@ -108,16 +108,16 @@
         }
     },
     "replace": {
-        "pheature/dbal-toggle": "self.version",
-        "pheature/inmemory-toggle": "self.version",
-        "pheature/laravel-toggle": "self.version",
-        "pheature/mezzio-toggle": "self.version",
-        "pheature/php-sdk": "self.version",
-        "pheature/symfony-toggle": "self.version",
-        "pheature/toggle-core": "self.version",
-        "pheature/toggle-crud": "self.version",
-        "pheature/toggle-crud-psr11-factories": "self.version",
-        "pheature/toggle-crud-psr7-api": "self.version",
-        "pheature/toggle-model": "self.version"
+        "pheature/dbal-toggle": "0.1.0",
+        "pheature/inmemory-toggle": "0.1.0",
+        "pheature/laravel-toggle": "0.1.0",
+        "pheature/mezzio-toggle": "0.1.0",
+        "pheature/php-sdk": "0.1.0",
+        "pheature/symfony-toggle": "0.1.0",
+        "pheature/toggle-core": "0.1.0",
+        "pheature/toggle-crud": "0.1.0",
+        "pheature/toggle-crud-psr11-factories": "0.1.0",
+        "pheature/toggle-crud-psr7-api": "0.1.0",
+        "pheature/toggle-model": "0.1.0"
     }
 }
