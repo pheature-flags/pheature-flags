@@ -6,5 +6,5 @@
     - [PHP SDK](/sdks/php-sdk)
     - [JS Client Side SDK](/sdks/js-client-side-sdk)
 - [Contributing](/CONTRIBUTING.md)
-- [API Docs](#)
+- [API Docs](https://api.pheatureflags.io)
 - [Need More?](#)
