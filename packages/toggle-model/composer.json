@@ -1,10 +1,7 @@
 {
     "name": "pheature/toggle-model",
     "description": "Pheature flags toggle model implementation library.",
-    "keywords": [
-        "feature-toggle",
-        "feature-flags"
-    ],
+    "keywords": ["feature-toggle", "feature-flags"],
     "type": "library",
     "license": "BSD-3-Clause",
     "authors": [
@@ -14,7 +11,7 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "pheature/toggle-core": "@dev"
+        "pheature/toggle-core": "^0.0.1"
     },
     "require-dev": {
         "infection/infection": "^0.23.0",

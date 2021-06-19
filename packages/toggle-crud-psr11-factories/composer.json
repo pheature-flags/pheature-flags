@@ -1,10 +1,7 @@
 {
     "name": "pheature/toggle-crud-psr11-factories",
     "description": "Pheature flags toggle CRUD PSR-11 Factories.",
-    "keywords": [
-        "feature-toggle",
-        "feature-flags"
-    ],
+    "keywords": ["feature-toggle", "feature-flags"],
     "type": "library",
     "license": "BSD-3-Clause",
     "authors": [
@@ -14,15 +11,15 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "pheature/toggle-core": "@dev",
-        "pheature/toggle-model": "@dev",
-        "pheature/toggle-crud": "@dev",
-        "pheature/toggle-crud-psr7-api": "@dev"
+        "pheature/toggle-core": "^0.0.1",
+        "pheature/toggle-model": "^0.0.1",
+        "pheature/toggle-crud": "^0.0.1",
+        "pheature/toggle-crud-psr7-api": "^0.0.1"
     },
     "require-dev": {
         "infection/infection": "^0.23.0",
-        "pheature/dbal-toggle": "@dev",
-        "pheature/inmemory-toggle": "@dev",
+        "pheature/dbal-toggle": "^0.0.1",
+        "pheature/inmemory-toggle": "^0.0.1",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^8.0 || ^9.0",

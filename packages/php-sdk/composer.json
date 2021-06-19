@@ -1,58 +1,55 @@
 {
-  "name": "pheature/php-sdk",
-  "description": "Feature Flags As A Service PHP SDK.",
-  "keywords": [
-    "feature-toggle",
-    "feature-flags"
-  ],
-  "type": "library",
-  "license": "BSD-3-Clause",
-  "authors": [
-    {
-      "name": "kpicaza"
-    }
-  ],
-  "require": {
-    "php": "^7.4|^8.0",
-    "pheature/toggle-core": "@dev",
-    "psr/container": "^1.0.0|^2.0.0"
-  },
-  "require-dev": {
-    "infection/infection": "^0.23.0",
-    "phpro/grumphp": "^1.0",
-    "phpstan/phpstan": "^0.12",
-    "phpunit/phpunit": "^8.0 || ^9.0",
-    "roave/infection-static-analysis-plugin": "^1.8",
-    "squizlabs/php_codesniffer": "^3.4",
-    "symfony/var-dumper": "^4.2 || ^5.0",
-    "vimeo/psalm": "^4.4"
-  },
-  "autoload": {
-    "psr-4": {
-      "Pheature\\Sdk\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Test\\Pheature\\Sdk\\": "test"
-    }
-  },
-  "scripts": {
-    "check-all": [
-      "@cs-check",
-      "@test",
-      "@inspect",
-      "@psalm",
-      "@infection"
+    "name": "pheature/php-sdk",
+    "description": "Feature Flags As A Service PHP SDK.",
+    "keywords": ["feature-toggle", "feature-flags"],
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "kpicaza"
+        }
     ],
-    "cs-check": "phpcs src --colors",
-    "cs-fix": "phpcbf src --colors",
-    "infection": "XDEBUG_MODE=coverage roave-infection-static-analysis-plugin",
-    "inspect": "phpstan analyse src -l7 --ansi",
-    "psalm": "psalm",
-    "test": "phpunit --colors=always"
-  },
-  "config": {
-    "sort-packages": true
-  }
+    "require": {
+        "php": "^7.4|^8.0",
+        "pheature/toggle-core": "^0.0.1",
+        "psr/container": "^1.0.0|^2.0.0"
+    },
+    "require-dev": {
+        "infection/infection": "^0.23.0",
+        "phpro/grumphp": "^1.0",
+        "phpstan/phpstan": "^0.12",
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "roave/infection-static-analysis-plugin": "^1.8",
+        "squizlabs/php_codesniffer": "^3.4",
+        "symfony/var-dumper": "^4.2 || ^5.0",
+        "vimeo/psalm": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pheature\\Sdk\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\Pheature\\Sdk\\": "test"
+        }
+    },
+    "scripts": {
+        "check-all": [
+            "@cs-check",
+            "@test",
+            "@inspect",
+            "@psalm",
+            "@infection"
+        ],
+        "cs-check": "phpcs src --colors",
+        "cs-fix": "phpcbf src --colors",
+        "infection": "XDEBUG_MODE=coverage roave-infection-static-analysis-plugin",
+        "inspect": "phpstan analyse src -l7 --ansi",
+        "psalm": "psalm",
+        "test": "phpunit --colors=always"
+    },
+    "config": {
+        "sort-packages": true
+    }
 }
