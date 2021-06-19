@@ -223,7 +223,7 @@ class HomePage extends AbstractController
 
 (*) *The security component isn’t required to use the Pheature flags library but highly recommended*
 
-### Toggle CRUD PSR-7 API
+### CRUD PSR-7 API
 
 The CRUD PSR-7 API package allows us to manage our feature configuration through HTTP endpoints.
 
@@ -259,7 +259,7 @@ pheature_flags:
 
 See the [API documentation](https://api.pheatureflags.io) to check the available endpoints.
 
-> [pheature/toggle-crud-psr7-api](/packages/toggle-crud-psr7-api)
+> [pheature/toggle-crud-psr7-api](/packages/toggle-crud-api)
 
 ### Toggle UI
 
