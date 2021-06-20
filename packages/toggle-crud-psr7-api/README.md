@@ -3,6 +3,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Type coverage][ico-psalm]][link-psalm]
+[![Test Coverage][ico-coverage]][link-coverage]
 [![Maintainability][ico-mantain]][link-mantain]
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -27,6 +28,8 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-packagist]: https://packagist.org/packages/pheature/toggle-crud-psr7-api
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/pheature-flags/toggle-crud-psr7-api.svg?style=flat-square
 [link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/toggle-crud-psr7-api/badges/coverage.png?b=1.0.x
+[ico-coverage]: https://codecov.io/gh/pheature-flags/toggle-crud-psr-7-api/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106
+[link-coverage]: https://codecov.io/gh/pheature-flags/toggle-crud-psr-7-api
 [ico-psalm]: https://shepherd.dev/github/pheature-flags/toggle-crud-psr7-api/coverage.svg
 [link-psalm]: https://shepherd.dev/github/pheature-flags/toggle-crud-psr7-api
 [link-mantain]: https://codeclimate.com/github/pheature-flags/toggle-crud-psr7-api/maintainability
