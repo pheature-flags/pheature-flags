@@ -1,6 +1,7 @@
 # Pheature Flags <br><sub><sup>Toggle CRUD PSR-11 Factories</sup></sub>
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
+[![Quality Score][ico-code-quality]][link-code-quality]
 [![Type coverage][ico-psalm]][link-psalm]
 [![Test Coverage][ico-coverage]][link-coverage]
 [![Mutation testing badge][ico-mutant]][link-mutant]
@@ -36,3 +37,5 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-packagist]: https://packagist.org/packages/pheature/toggle-crud-psr11-factories
 [ico-downloads]: https://img.shields.io/packagist/dt/pheature/toggle-crud-psr11-factories.svg?style=flat-square
 [link-downloads]: https://packagist.org/packages/pheature/toggle-crud-psr11-factories
+[ico-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/toggle-crud-psr11-factories/badges/quality-score.png?b=1.0.x
+[link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/toggle-crud-psr11-factories/?branch=1.0.x
