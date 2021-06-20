@@ -3,6 +3,7 @@
 [![Type coverage][ico-psalm]][link-psalm]
 [![Test Coverage][ico-coverage]][link-coverage]
 [![Mutation testing badge][ico-mutant]][link-mutant]
+[![Maintainability][ico-maintain]][link-maintain]
 
 ## Installation
 
@@ -27,3 +28,5 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-coverage]: https://codecov.io/gh/pheature-flags/toggle-crud-psr11-factories
 [ico-mutant]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fpheature-flags%2Ftoggle-crud-psr11-factories%2F1.0.x
 [link-mutant]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/toggle-crud-psr11-factories/1.0.x
+[ico-maintain]: https://api.codeclimate.com/v1/badges/68661c9a0984b1fad036/maintainability
+[link-maintain]: https://codeclimate.com/github/pheature-flags/toggle-crud-psr11-factories/maintainability
