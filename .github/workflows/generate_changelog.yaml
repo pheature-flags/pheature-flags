@@ -1,7 +1,8 @@
 name: generate_changelog
 on:
-  release:
-    types: [prereleased]
+  push:
+    tags:
+      - '*'
 
 jobs:
   generate_changelog:
