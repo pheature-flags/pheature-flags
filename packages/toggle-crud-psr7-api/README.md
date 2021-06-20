@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Type coverage][ico-psalm]][link-psalm]
+[![Maintainability][ico-mantain]][link-mantain]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 ## Installation
@@ -25,5 +26,7 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-packagist]: https://packagist.org/packages/pheature/toggle-crud-psr7-api
 [ico-psalm]: https://shepherd.dev/github/pheature-flags/toggle-crud-psr7-api/coverage.svg
 [link-psalm]: https://shepherd.dev/github/pheature-flags/toggle-crud-psr7-api
+[link-mantain]: https://codeclimate.com/github/pheature-flags/toggle-crud-psr7-api/maintainability
+[ico-mantain]: https://api.codeclimate.com/v1/badges/b84c8311c7533228b018/maintainability
 [ico-downloads]: https://img.shields.io/packagist/dt/pheature/toggle-crud-psr7-api.svg?style=flat-square
 [link-downloads]: https://packagist.org/packages/pheature/toggle-crud-psr7-api
