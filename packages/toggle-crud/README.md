@@ -36,7 +36,7 @@ knowledge to the community. For this reason we release all our packages under [B
 [ico-maintain]: https://api.codeclimate.com/v1/badges/e6d9ef290523229a1a0e/maintainability
 [link-maintain]: https://codeclimate.com/github/pheature-flags/toggle-crud/maintainability
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/pheature-flags/toggle-crud.svg?style=flat-square
-[link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/toggle-crud/badges/coverage.png?b=master
+[link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/toggle-crud/badges/coverage.png?b=1.0.x
 [ico-psalm]: https://shepherd.dev/github/pheature-flags/toggle-crud/coverage.svg
 [link-psalm]: https://shepherd.dev/github/pheature-flags/toggle-crud
 [ico-mutant]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fpheature-flags%2Ftoggle-crud%2F1.0.x

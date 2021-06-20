@@ -1,5 +1,6 @@
 # Pheature Flags <br><sub><sup>Toggle CRUD PSR-11 Factories</sup></sub>
 
+[![Quality Score][ico-code-quality]][link-code-quality]
 [![Test Coverage][ico-coverage]][link-coverage]
 
 ## Installation
@@ -21,3 +22,5 @@ knowledge to the community. For this reason we release all our packages under [B
 
 [ico-coverage]: https://codecov.io/gh/pheature-flags/toggle-crud-psr11-factories/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106
 [link-coverage]: https://codecov.io/gh/pheature-flags/toggle-crud-psr11-factories
+[ico-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/toggle-crud-psr11-factories/badges/quality-score.png?b=1.0.x
+[link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/toggle-crud-psr11-factories/?branch=1.0.x
