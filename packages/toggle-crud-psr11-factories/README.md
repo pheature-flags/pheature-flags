@@ -1,9 +1,11 @@
 # Pheature Flags <br><sub><sup>Toggle CRUD PSR-11 Factories</sup></sub>
 
+[![Latest Version on Packagist][ico-version]][link-packagist]
 [![Type coverage][ico-psalm]][link-psalm]
 [![Test Coverage][ico-coverage]][link-coverage]
 [![Mutation testing badge][ico-mutant]][link-mutant]
 [![Maintainability][ico-maintain]][link-maintain]
+[![Total Downloads][ico-downloads]][link-downloads]
 
 ## Installation
 
@@ -30,3 +32,7 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-mutant]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/toggle-crud-psr11-factories/1.0.x
 [ico-maintain]: https://api.codeclimate.com/v1/badges/68661c9a0984b1fad036/maintainability
 [link-maintain]: https://codeclimate.com/github/pheature-flags/toggle-crud-psr11-factories/maintainability
+[ico-version]: https://img.shields.io/packagist/v/pheature/toggle-crud-psr11-factories.svg?style=flat-square
+[link-packagist]: https://packagist.org/packages/pheature/toggle-crud-psr11-factories
+[ico-downloads]: https://img.shields.io/packagist/dt/pheature/toggle-crud-psr11-factories.svg?style=flat-square
+[link-downloads]: https://packagist.org/packages/pheature/toggle-crud-psr11-factories
