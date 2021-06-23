@@ -166,13 +166,13 @@ class HomePage extends AbstractController
         // Generate an identity based on any requirements
         if (null === $user) {
             $identity = new Identity('anon', [
-                'location' => $request->query->get('location') ?? 'unknow',
+                'location' => $request->query->get('location') ?? 'unknown',
                 'role' => 'IS_AUTHENTICATED_ANONYMOUSLY'
             ]);
         } else {
             $identity = new Identity($user->id(), [
                 'location' => $user->location(),
-                'role' => $user->role()
+                'role' => $user->role(),
             ]);
         }
     
@@ -208,14 +208,14 @@ class HomePage extends AbstractController
 
     {% if some_feature_section %}
         <div>
-          <p>This section onlyu visible with "some_feature" enabled for request locatd in "barcelona"</p>
+          <p>This section is only visible with "some_feature" enabled for request located in "barcelona"</p>
         </div>
     {% endif %}
     
     {% if in_progress_feature_section %}
         <div>
           <p>This is a work in progress section only visible with "in_progress_feature_section" 
-            enabled for users with "ROLE_DEVELOPER"</p>
+            enabled for users with role "ROLE_DEVELOPER"</p>
         </div>      
     {% endif %}
 {% endblock %}
@@ -303,7 +303,7 @@ we are assuming that the API is up and running at http://127.0.0.1:3000.
 pheature_flags:
   driver:               ~ # One of "inmemory"; "dbal"
   api_enabled:          false # True to enable CRUD HTTP API
-  api_prefix:           ''
+  api_prefix:           '' # It corresponds to each route path prefix
   segment_types:
     - { type: 'identity_segment', factory_id: 'Pheature\Model\Toggle\SegmentFactory' }
     - { type: 'strict_matching_segment', factory_id: 'Pheature\Model\Toggle\SegmentFactory' }
@@ -318,7 +318,7 @@ pheature_flags:
       # Kill Switch
       enabled:              ~ # bool
       # Optional rollout strategies
-      # If One of the enabled strategies returns true the feature should be enabled.
+      # If one of the enabled strategies returns true the feature should be enabled.
       strategies:
         -
           strategy_id:          ~ # string
