@@ -3,6 +3,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Type coverage][ico-psalm]][link-psalm]
+[![Test Coverage][ico-coverage]][link-coverage]
 [![Mutation testing coverage][ico-mutant]][link-mutant]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Maintainability][ico-maintain]][link-maintain]
@@ -36,3 +37,5 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-psalm]: https://shepherd.dev/github/pheature-flags/dbal-toggle
 [ico-mutant]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fpheature-flags%2Fdbal-toggle%2F1.0.x
 [link-mutant]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/dbal-toggle/1.0.x
+[ico-coverage]: https://codecov.io/gh/pheature-flags/dbal-toggle/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106
+[link-coverage]: https://codecov.io/gh/pheature-flags/dbal-toggle
