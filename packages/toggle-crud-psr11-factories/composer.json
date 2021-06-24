@@ -62,6 +62,11 @@
     "config": {
         "sort-packages": true
     },
+    "extra": {
+        "laminas": {
+            "config-provider": "Pheature\\Crud\\Psr11\\Toggle\\Container\\ConfigProvider"
+        }
+    },
     "suggest": {
         "pheature/dbal-toggle": "Dbal toggle implementation",
         "pheature/inmemory-toggle": "In memory toggle implementation"

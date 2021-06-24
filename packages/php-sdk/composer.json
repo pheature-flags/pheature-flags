@@ -55,6 +55,11 @@
         "psalm": "psalm",
         "test": "phpunit --colors=always"
     },
+    "extra": {
+        "laminas": {
+            "config-provider": "Pheature\\Sdk\\Container\\ConfigProvider"
+        }
+    },
     "config": {
         "sort-packages": true
     }

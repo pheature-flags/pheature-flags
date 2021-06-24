@@ -60,6 +60,11 @@
         "psalm": "psalm",
         "infection": "XDEBUG_MODE=coverage roave-infection-static-analysis-plugin"
     },
+    "extra": {
+        "laminas": {
+            "config-provider": "Pheature\\Crud\\Psr7\\Toggle\\Container\\ConfigProvider"
+        }
+    },
     "config": {
         "sort-packages": true
     }
