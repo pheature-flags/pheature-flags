@@ -1,6 +1,8 @@
 # Pheature Flags <br><sub><sup>Doctrine DBAL Toggle</sup></sub>
 
+[![Latest Version on Packagist][ico-version]][link-packagist]
 [![Quality Score][ico-code-quality]][link-code-quality]
+[![Total Downloads][ico-downloads]][link-downloads]
 
 ## Installation
 
@@ -21,3 +23,7 @@ knowledge to the community. For this reason we release all our packages under [B
 
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/pheature-flags/dbal-toggle.svg?style=flat-square
 [link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/dbal-toggle/badges/coverage.png?b=1.0.x
+[ico-version]: https://img.shields.io/packagist/v/pheature/dbal-toggle.svg?style=flat-square
+[link-packagist]: https://packagist.org/packages/pheature/dbal-toggle
+[ico-downloads]: https://img.shields.io/packagist/dt/pheature/dbal-toggle.svg?style=flat-square
+[link-downloads]: https://packagist.org/packages/pheature/dbal-toggle
