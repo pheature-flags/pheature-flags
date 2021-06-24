@@ -22,7 +22,7 @@ $aggregator = new ConfigAggregator([
     // ...
 ```
 
-Once we have the bundle installed in our project, we need to choose one of the available storage drivers:
+Once we have the package installed in our project, we need to choose one of the available storage drivers:
 
 ### InMemory driver
 
@@ -228,7 +228,7 @@ INSERT INTO `pheature_toggles` (
 
 <span id="inmemory_driver_usage"></span>
 
-In this example, we are using a Mezzio Controller, assuming that we already have a Security layer to our controller (*). 
+In this example, we are using a PSR-15 Request Handler, assuming that we already have a Security layer to our controller (*). 
 We will use the InMemory driver with the previous configuration to show different view sections depending on the features 
 enabled for the given identity of the user and the payload.
 
