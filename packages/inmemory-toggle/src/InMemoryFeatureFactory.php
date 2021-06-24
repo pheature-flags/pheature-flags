@@ -28,7 +28,7 @@ final class InMemoryFeatureFactory
         $id = $data['id'];
         $enabled = (bool)$data['enabled'];
         /** @var array<string, array<string, mixed>> $strategies */
-        $strategies = $data['strategies'];
+        $strategies = $data['strategies'] ?? [];
         return new Feature(
             $id,
             /** @param array<string, array<string, mixed>> $strategies */
