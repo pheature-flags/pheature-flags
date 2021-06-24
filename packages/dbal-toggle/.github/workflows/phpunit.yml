@@ -56,4 +56,10 @@ jobs:
         run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Tests"
-        run: "vendor/bin/phpunit"
+        run: "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover coverage.xml"
+
+      - name: "Send codecov report0"
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ./coverage.xml
