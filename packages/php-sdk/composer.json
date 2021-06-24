@@ -37,7 +37,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Test\\Pheature\\Sdk\\": "test"
+            "Pheature\\Test\\Sdk\\": "test"
         }
     },
     "scripts": {

@@ -69,7 +69,7 @@
             "Pheature\\Test\\InMemory\\Toggle\\": "packages/inmemory-toggle/test",
             "Pheature\\Test\\Model\\Toggle\\": "packages/toggle-model/test",
             "Symplify\\Tests\\": "tests",
-            "Test\\Pheature\\Sdk\\": "packages/php-sdk/test"
+            "Pheature\\Test\\Sdk\\": "packages/php-sdk/test"
         }
     },
     "scripts": {
