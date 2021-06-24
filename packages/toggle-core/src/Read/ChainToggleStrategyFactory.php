@@ -63,10 +63,12 @@ final class ChainToggleStrategyFactory implements ToggleStrategyFactory
 
     public function types(): array
     {
-        return array_merge(
-            ...array_map(
-                static fn(ToggleStrategyFactory $strategyFactory) => $strategyFactory->types(),
-                $this->toggleStrategyFactories
+        return array_unique(
+            array_merge(
+                ...array_map(
+                    static fn(ToggleStrategyFactory $strategyFactory) => $strategyFactory->types(),
+                    $this->toggleStrategyFactories
+                )
             )
         );
     }
