@@ -7,6 +7,7 @@ namespace Pheature\Community\Mezzio;
 use Mezzio\Application;
 use Pheature\Core\Toggle\Read\ChainToggleStrategyFactory;
 use Pheature\Core\Toggle\Read\FeatureFinder;
+use Pheature\Core\Toggle\Read\Toggle;
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Psr11\Toggle\SetStrategyFactory;
 use Pheature\Crud\Psr11\Toggle\CreateFeatureFactory;
@@ -22,6 +23,7 @@ use Pheature\Crud\Psr11\Toggle\PostFeatureFactory;
 use Pheature\Crud\Psr11\Toggle\RemoveFeatureFactory;
 use Pheature\Crud\Psr11\Toggle\RemoveStrategyFactory;
 use Pheature\Crud\Psr11\Toggle\ToggleConfig;
+use Pheature\Crud\Psr11\Toggle\ToggleFactory;
 use Pheature\Crud\Psr7\Toggle\DeleteFeature;
 use Pheature\Crud\Psr7\Toggle\GetFeature;
 use Pheature\Crud\Psr7\Toggle\GetFeatures;
@@ -105,6 +107,7 @@ final class ToggleConfigProvider
                     DeleteFeature::class => DeleteFeatureFactory::class,
                     // Read model
                     FeatureFinder::class => FeatureFinderFactory::class,
+                    Toggle::class => ToggleFactory::class,
                     // Write model
                     FeatureRepository::class => FeatureRepositoryFactory::class,
 
