@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Quality Score][ico-code-quality]][link-code-quality]
+[![Type coverage][ico-psalm]][link-psalm]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Maintainability][ico-maintain]][link-maintain]
 
@@ -30,3 +31,5 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-downloads]: https://packagist.org/packages/pheature/dbal-toggle
 [ico-maintain]: https://api.codeclimate.com/v1/badges/a674ee0aad396e24bd7c/maintainability
 [link-maintain]: https://codeclimate.com/github/pheature-flags/dbal-toggle/maintainability
+[ico-psalm]: https://shepherd.dev/github/pheature-flags/dbal-toggle/coverage.svg
+[link-psalm]: https://shepherd.dev/github/pheature-flags/dbal-toggle
