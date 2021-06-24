@@ -7,6 +7,12 @@
     "authors": [
         {
             "name": "kpicaza"
+        },
+        {
+            "name": "pcs289"
+        },
+        {
+            "name": "xserrat"
         }
     ],
     "require": {
@@ -57,7 +63,7 @@
     },
     "extra": {
         "laminas": {
-            "config-provider": "Pheature\\Test\\Dbal\\Toggle\\Container\\ConfigProvider"
+            "config-provider": "Pheature\\Dbal\\Toggle\\Container\\ConfigProvider"
         }
     }
 }
