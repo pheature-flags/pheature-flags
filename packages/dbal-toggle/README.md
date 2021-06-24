@@ -3,6 +3,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
+[![Maintainability][ico-maintain]][link-maintain]
 
 ## Installation
 
@@ -27,3 +28,5 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-packagist]: https://packagist.org/packages/pheature/dbal-toggle
 [ico-downloads]: https://img.shields.io/packagist/dt/pheature/dbal-toggle.svg?style=flat-square
 [link-downloads]: https://packagist.org/packages/pheature/dbal-toggle
+[ico-maintain]: https://api.codeclimate.com/v1/badges/a674ee0aad396e24bd7c/maintainability
+[link-maintain]: https://codeclimate.com/github/pheature-flags/dbal-toggle/maintainability
