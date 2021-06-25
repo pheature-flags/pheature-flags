@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Pheature\Model\Toggle\Container;
 
 use Pheature\Model\Toggle\SegmentFactory;
+use Pheature\Model\Toggle\SegmentFactoryFactory;
 use Pheature\Model\Toggle\StrategyFactory;
+use Pheature\Model\Toggle\StrategyFactoryFactory;
 
 final class ConfigProvider
 {
@@ -17,8 +19,8 @@ final class ConfigProvider
         return [
             'dependencies' => [
                 'factories' => [
-                    StrategyFactory::class => \Pheature\Crud\Psr11\Toggle\StrategyFactory::class,
-                    SegmentFactory::class => \Pheature\Crud\Psr11\Toggle\SegmentFactory::class,
+                    StrategyFactory::class => StrategyFactoryFactory::class,
+                    SegmentFactory::class => SegmentFactoryFactory::class,
                 ],
             ],
         ];
