@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace Pheature\Crud\Psr11\Toggle;
 
 use Pheature\Core\Toggle\Read\ToggleStrategyFactory;
-use Pheature\Model\Toggle\SegmentFactory as ModelSegmentFactory;
+use Pheature\Model\Toggle\SegmentFactory;
 use Psr\Container\ContainerInterface;
-use Pheature\Core\Toggle\Read\ChainToggleStrategyFactory as ReadToggleStrategyFactory;
+use Pheature\Core\Toggle\Read\ChainToggleStrategyFactory;
 
-class ChainToggleStrategyFactory
+class ChainToggleStrategyFactoryFactory
 {
-    public function __invoke(ContainerInterface $container): ReadToggleStrategyFactory
+    public function __invoke(ContainerInterface $container): ChainToggleStrategyFactory
     {
-        /** @var ModelSegmentFactory $segmentFactory */
-        $segmentFactory = $container->get(ModelSegmentFactory::class);
+        /** @var SegmentFactory $segmentFactory */
+        $segmentFactory = $container->get(SegmentFactory::class);
         /** @var ToggleConfig $toggleConfig */
         $toggleConfig = $container->get(ToggleConfig::class);
 
@@ -33,9 +33,9 @@ class ChainToggleStrategyFactory
     }
 
     public static function create(
-        ModelSegmentFactory $segmentFactory,
+        SegmentFactory $segmentFactory,
         ToggleStrategyFactory ...$toggleStrategyFactories
-    ): ReadToggleStrategyFactory {
-        return new ReadToggleStrategyFactory($segmentFactory, ...$toggleStrategyFactories);
+    ): ChainToggleStrategyFactory {
+        return new ChainToggleStrategyFactory($segmentFactory, ...$toggleStrategyFactories);
     }
 }
