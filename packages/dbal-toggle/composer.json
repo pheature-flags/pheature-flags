@@ -19,10 +19,10 @@
         "php": "^7.4|^8.0",
         "doctrine/dbal": ">=2.6 || ^3.0.0",
         "pheature/toggle-core": "^0.1.1",
-        "pheature/toggle-model": "^0.1.1",
-        "pheature/toggle-crud": "^0.1.1"
+        "pheature/toggle-model": "^0.1.1"
     },
     "require-dev": {
+        "icanhazstring/composer-unused": "^0.7.5",
         "infection/infection": "^0.23.0",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
@@ -45,6 +45,7 @@
     },
     "scripts": {
         "check-all": [
+            "@unused",
             "@cs-check",
             "@test",
             "@inspect",
