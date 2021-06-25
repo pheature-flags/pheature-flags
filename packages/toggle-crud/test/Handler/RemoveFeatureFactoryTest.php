@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Pheature\Test\Crud\Psr11\Toggle;
+namespace Pheature\Test\Crud\Toggle\Handler;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Psr11\Toggle\RemoveFeatureFactory;
+use Pheature\Crud\Toggle\Handler\RemoveFeatureFactory;
 use Pheature\Crud\Toggle\Handler\RemoveFeature;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;

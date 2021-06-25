@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Test\Crud\Psr11\Toggle;
+namespace Pheature\Test\Crud\Toggle\Handler;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Psr11\Toggle\SetStrategyFactory;
+use Pheature\Crud\Toggle\Handler\SetStrategyFactory;
 use Pheature\Crud\Toggle\Handler\SetStrategy;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;

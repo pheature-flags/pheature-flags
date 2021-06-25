@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Pheature\Test\Crud\Toggle\Container;
 
-use Pheature\Crud\Psr11\Toggle\CreateFeatureFactory;
-use Pheature\Crud\Psr11\Toggle\DisableFeatureFactory;
-use Pheature\Crud\Psr11\Toggle\EnableFeatureFactory;
-use Pheature\Crud\Psr11\Toggle\RemoveFeatureFactory;
-use Pheature\Crud\Psr11\Toggle\RemoveStrategyFactory;
-use Pheature\Crud\Psr11\Toggle\SetStrategyFactory;
+use Pheature\Crud\Toggle\Handler\CreateFeatureFactory;
+use Pheature\Crud\Toggle\Handler\DisableFeatureFactory;
+use Pheature\Crud\Toggle\Handler\EnableFeatureFactory;
+use Pheature\Crud\Toggle\Handler\RemoveFeatureFactory;
+use Pheature\Crud\Toggle\Handler\RemoveStrategyFactory;
+use Pheature\Crud\Toggle\Handler\SetStrategyFactory;
 use Pheature\Crud\Toggle\Container\ConfigProvider;
 use Pheature\Crud\Toggle\Handler\CreateFeature;
 use Pheature\Crud\Toggle\Handler\DisableFeature;
