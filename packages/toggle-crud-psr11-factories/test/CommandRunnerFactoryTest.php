@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Pheature\Test\Crud\Psr11\Toggle;
 
+use Exception;
 use Pheature\Core\Toggle\Read\FeatureFinder;
 use Pheature\Crud\Psr11\Toggle\CommandRunnerFactory;
 use Pheature\Sdk\CommandRunner;
 use Pheature\Test\Community\Mezzio\Fixtures\TestContainerFactory;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
 final class CommandRunnerFactoryTest extends TestCase
@@ -18,7 +20,16 @@ final class CommandRunnerFactoryTest extends TestCase
     {
         $this->expectException(NotFoundExceptionInterface::class);
 
-        $emptyContainer = TestContainerFactory::create();
+        $notFoundException = new class() extends Exception implements NotFoundExceptionInterface {
+        };
+
+        /** @var ContainerInterface|MockObject $emptyContainer */
+        $emptyContainer = $this->createMock(ContainerInterface::class);
+        $emptyContainer
+            ->expects($this->once())
+            ->method('get')
+            ->with(FeatureFinder::class)
+            ->willThrowException($notFoundException);
 
         $commandRunnerFactory = new CommandRunnerFactory();
         $commandRunnerFactory->__invoke($emptyContainer);
@@ -28,7 +39,14 @@ final class CommandRunnerFactoryTest extends TestCase
     {
         /** @var FeatureFinder|MockObject $featureFinder */
         $featureFinder = $this->createMock(FeatureFinder::class);
-        $container = TestContainerFactory::create([FeatureFinder::class => $featureFinder]);
+
+        /** @var ContainerInterface|MockObject $container */
+        $container = $this->createMock(ContainerInterface::class);
+        $container
+            ->expects($this->once())
+            ->method('get')
+            ->with(FeatureFinder::class)
+            ->willReturn($featureFinder);
 
         $commandRunnerFactory = new CommandRunnerFactory();
         $actual = $commandRunnerFactory->__invoke($container);
