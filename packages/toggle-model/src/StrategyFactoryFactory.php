@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Crud\Psr11\Toggle;
+namespace Pheature\Model\Toggle;
 
 use Pheature\Core\Toggle\Read\ToggleStrategyFactory;
-use Pheature\Model\Toggle\StrategyFactory as ModelStrategyFactory;
+use Pheature\Model\Toggle\StrategyFactory;
 use Psr\Container\ContainerInterface;
 
-final class StrategyFactory
+final class StrategyFactoryFactory
 {
     public function __invoke(ContainerInterface $container): ToggleStrategyFactory
     {
-        return new ModelStrategyFactory();
+        return new StrategyFactory();
     }
 }
