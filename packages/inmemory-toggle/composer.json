@@ -43,6 +43,7 @@
     },
     "scripts": {
         "check-all": [
+            "composer unused",
             "@cs-check",
             "@test",
             "@inspect",

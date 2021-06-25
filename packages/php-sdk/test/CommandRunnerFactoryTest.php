@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Test\Crud\Psr11\Toggle;
+namespace Pheature\Test\Sdk;
 
 use Exception;
 use Pheature\Core\Toggle\Read\FeatureFinder;
-use Pheature\Crud\Psr11\Toggle\CommandRunnerFactory;
 use Pheature\Sdk\CommandRunner;
-use Pheature\Test\Community\Mezzio\Fixtures\TestContainerFactory;
+use Pheature\Sdk\CommandRunnerFactory;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;

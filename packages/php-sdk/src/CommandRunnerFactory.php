@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Crud\Psr11\Toggle;
+namespace Pheature\Sdk;
 
 use Pheature\Core\Toggle\Read\FeatureFinder;
 use Pheature\Core\Toggle\Read\Toggle;
