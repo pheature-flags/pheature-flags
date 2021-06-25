@@ -24,6 +24,7 @@
     },
     "require-dev": {
         "doctrine/dbal": ">=2.6 || ^3.0.0",
+        "icanhazstring/composer-unused": "^0.7.5",
         "infection/infection": "^0.23.0",
         "pheature/dbal-toggle": "^0.1.1",
         "pheature/inmemory-toggle": "^0.1.1",
@@ -49,6 +50,7 @@
     },
     "scripts": {
         "check-all": [
+            "composer unused --excludePackage=symfony/framework-bundle ",
             "@cs-check",
             "@test",
             "@inspect",
