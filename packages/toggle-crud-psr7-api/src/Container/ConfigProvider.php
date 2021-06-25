@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Psr7\Toggle\Container;
 
-use Pheature\Crud\Psr11\Toggle\DeleteFeatureFactory;
-use Pheature\Crud\Psr11\Toggle\GetFeatureFactory;
-use Pheature\Crud\Psr11\Toggle\GetFeaturesFactory;
-use Pheature\Crud\Psr11\Toggle\PatchFeatureFactory;
-use Pheature\Crud\Psr11\Toggle\PostFeatureFactory;
+use Pheature\Crud\Psr7\Toggle\DeleteFeatureFactory;
+use Pheature\Crud\Psr7\Toggle\GetFeatureFactory;
+use Pheature\Crud\Psr7\Toggle\GetFeaturesFactory;
+use Pheature\Crud\Psr7\Toggle\PatchFeatureFactory;
+use Pheature\Crud\Psr7\Toggle\PostFeatureFactory;
 use Pheature\Crud\Psr7\Toggle\DeleteFeature;
 use Pheature\Crud\Psr7\Toggle\GetFeature;
 use Pheature\Crud\Psr7\Toggle\GetFeatures;

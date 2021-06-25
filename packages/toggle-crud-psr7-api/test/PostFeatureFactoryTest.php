@@ -1,9 +1,9 @@
 <?php
 
-namespace Pheature\Test\Crud\Psr11\Toggle;
+namespace Pheature\Test\Crud\Psr7\Toggle;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Psr11\Toggle\PostFeatureFactory;
+use Pheature\Crud\Psr7\Toggle\PostFeatureFactory;
 use Pheature\Crud\Psr7\Toggle\PostFeature;
 use Pheature\Crud\Toggle\Handler\CreateFeature;
 use PHPUnit\Framework\TestCase;

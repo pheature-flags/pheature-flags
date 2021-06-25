@@ -1,9 +1,9 @@
 <?php
 
-namespace Pheature\Test\Crud\Psr11\Toggle;
+namespace Pheature\Test\Crud\Psr7\Toggle;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Psr11\Toggle\PatchFeatureFactory;
+use Pheature\Crud\Psr7\Toggle\PatchFeatureFactory;
 use Pheature\Crud\Psr7\Toggle\PatchFeature;
 use Pheature\Crud\Toggle\Handler\SetStrategy;
 use Pheature\Crud\Toggle\Handler\DisableFeature;

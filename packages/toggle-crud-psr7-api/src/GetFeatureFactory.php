@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Crud\Psr11\Toggle;
+namespace Pheature\Crud\Psr7\Toggle;
 
 use Pheature\Core\Toggle\Read\FeatureFinder;
-use Pheature\Crud\Psr7\Toggle\GetFeatures;
+use Pheature\Crud\Psr7\Toggle\GetFeature;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 
-final class GetFeaturesFactory
+final class GetFeatureFactory
 {
-    public function __invoke(ContainerInterface $container): GetFeatures
+    public function __invoke(ContainerInterface $container): GetFeature
     {
         /** @var FeatureFinder $featureFinder */
         $featureFinder = $container->get(FeatureFinder::class);
@@ -21,8 +21,8 @@ final class GetFeaturesFactory
         return self::create($featureFinder, $responseFactory);
     }
 
-    public static function create(FeatureFinder $featureFinder, ResponseFactoryInterface $responseFactory): GetFeatures
+    public static function create(FeatureFinder $featureFinder, ResponseFactoryInterface $responseFactory): GetFeature
     {
-        return new GetFeatures($featureFinder, $responseFactory);
+        return new GetFeature($featureFinder, $responseFactory);
     }
 }

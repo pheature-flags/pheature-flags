@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Crud\Psr11\Toggle;
+namespace Pheature\Crud\Psr7\Toggle;
 
-use Pheature\Crud\Psr7\Toggle\PatchFeature;
 use Pheature\Crud\Toggle\Handler\SetStrategy;
 use Pheature\Crud\Toggle\Handler\DisableFeature;
 use Pheature\Crud\Toggle\Handler\EnableFeature;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Pheature\Test\Crud\Psr11\Toggle;
+namespace Pheature\Test\Crud\Psr7\Toggle;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Psr11\Toggle\DeleteFeatureFactory;
+use Pheature\Crud\Psr7\Toggle\DeleteFeatureFactory;
 use Pheature\Crud\Psr7\Toggle\DeleteFeature;
 use Pheature\Crud\Toggle\Handler\RemoveFeature;
 use PHPUnit\Framework\TestCase;
