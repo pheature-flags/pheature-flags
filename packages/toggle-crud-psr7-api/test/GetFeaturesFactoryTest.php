@@ -1,17 +1,17 @@
 <?php
 
-namespace Pheature\Test\Crud\Psr11\Toggle;
+namespace Pheature\Test\Crud\Psr7\Toggle;
 
 use Pheature\Core\Toggle\Read\FeatureFinder;
-use Pheature\Crud\Psr11\Toggle\GetFeatureFactory;
-use Pheature\Crud\Psr7\Toggle\GetFeature;
+use Pheature\Crud\Psr7\Toggle\GetFeaturesFactory;
+use Pheature\Crud\Psr7\Toggle\GetFeatures;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 
-class GetFeatureFactoryTest extends TestCase
+class GetFeaturesFactoryTest extends TestCase
 {
-    public function testItShouldCreateInstanceOfGetFeature(): void
+    public function testItShouldCreateInstanceOfGetFeatures(): void
     {
         $featureFinder = $this->createMock(FeatureFinder::class);
         $responseFactory = $this->createMock(ResponseFactoryInterface::class);
@@ -22,18 +22,18 @@ class GetFeatureFactoryTest extends TestCase
             ->withConsecutive([FeatureFinder::class], [ResponseFactoryInterface::class])
             ->willReturnOnConsecutiveCalls($featureFinder, $responseFactory);
 
-        $getFeatureFactory = new GetFeatureFactory();
+        $getFeaturesFactory = new GetFeaturesFactory();
 
-        $getFeature = $getFeatureFactory->__invoke($container);
-        $this->assertInstanceOf(GetFeature::class, $getFeature);
+        $getFeatures = $getFeaturesFactory->__invoke($container);
+        $this->assertInstanceOf(GetFeatures::class, $getFeatures);
     }
 
-    public function testItShouldCreateInstanceOfGetFeatureStatically(): void
+    public function testItShouldCreateInstanceOfGetFeaturesStatically(): void
     {
         $featureFinder = $this->createMock(FeatureFinder::class);
         $responseFactory = $this->createMock(ResponseFactoryInterface::class);
 
-        $getFeature = GetFeatureFactory::create($featureFinder, $responseFactory);
-        $this->assertInstanceOf(GetFeature::class, $getFeature);
+        $getFeatures = GetFeaturesFactory::create($featureFinder, $responseFactory);
+        $this->assertInstanceOf(GetFeatures::class, $getFeatures);
     }
 }
