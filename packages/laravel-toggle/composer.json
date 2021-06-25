@@ -27,10 +27,10 @@
         "pheature/toggle-crud": "^0.1.1",
         "pheature/toggle-crud-psr7-api": "^0.1.1",
         "pheature/toggle-crud-psr11-factories": "^0.1.1",
-        "pheature/toggle-model": "^0.1.1",
-        "symfony/psr-http-message-bridge": "^2.1"
+        "pheature/toggle-model": "^0.1.1"
     },
     "require-dev": {
+        "icanhazstring/composer-unused": "^0.7.5",
         "infection/infection": "^0.23.0",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
@@ -52,6 +52,7 @@
     },
     "scripts": {
         "check-all": [
+            "@unused",
             "@cs-check",
             "@test",
             "@inspect",
