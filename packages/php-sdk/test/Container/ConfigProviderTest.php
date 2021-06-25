@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Pheature\Test\Sdk\Container;
 
-use Pheature\Crud\Psr11\Toggle\CommandRunnerFactory;
 use Pheature\Sdk\CommandRunner;
+use Pheature\Sdk\CommandRunnerFactory;
 use Pheature\Sdk\Container\ConfigProvider;
 use PHPUnit\Framework\TestCase;
 
