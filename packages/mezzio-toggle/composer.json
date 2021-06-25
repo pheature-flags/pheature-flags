@@ -20,11 +20,7 @@
         "laminas/laminas-diactoros": "^2.6",
         "mezzio/mezzio": "^3.3",
         "mezzio/mezzio-helpers": "^5.4",
-        "pheature/inmemory-toggle": "^0.1.1",
-        "pheature/php-sdk": "^0.1.1",
         "pheature/toggle-core": "^0.1.1",
-        "pheature/toggle-crud": "^0.1.1",
-        "pheature/toggle-crud-psr7-api": "^0.1.1",
         "pheature/toggle-crud-psr11-factories": "^0.1.1",
         "pheature/toggle-model": "^0.1.1"
     },
@@ -36,7 +32,8 @@
         "roave/infection-static-analysis-plugin": "^1.8",
         "squizlabs/php_codesniffer": "^3.4",
         "symfony/var-dumper": "^4.2 || ^5.0",
-        "vimeo/psalm": "^4.4"
+        "vimeo/psalm": "^4.4",
+        "pheature/php-sdk": "^0.1.1"
     },
     "autoload": {
         "psr-4": {

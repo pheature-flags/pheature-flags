@@ -14,9 +14,8 @@ use Pheature\Crud\Psr7\Toggle\GetFeature;
 use Pheature\Crud\Psr7\Toggle\GetFeatures;
 use Pheature\Crud\Psr7\Toggle\PatchFeature;
 use Pheature\Crud\Psr7\Toggle\PostFeature;
+use Pheature\Test\Community\Mezzio\Fixtures\PheatureFlagsConfig;
 use Pheature\Test\Community\Mezzio\Fixtures\TestContainerFactory;
-use Pheature\Test\Crud\Psr11\Toggle\Fixtures\PheatureFlagsConfig;
-use Pheature\Test\Crud\Psr11\Toggle\Fixtures\TestToggleConfigFactory;
 use PHPUnit\Framework\TestCase;
 
 final class RouterDelegatorTest extends TestCase
@@ -34,7 +33,7 @@ final class RouterDelegatorTest extends TestCase
             ->withApiEnabled(true)
             ->withApiPrefix($apiPrefix)
             ->build();
-        $toggleConfig = TestToggleConfigFactory::create($config);
+        $toggleConfig = new ToggleConfig($config);
         $container = TestContainerFactory::create([ToggleConfig::class => $toggleConfig]);
 
         $application = $this->createMock(Application::class);
@@ -60,7 +59,7 @@ final class RouterDelegatorTest extends TestCase
         $config = PheatureFlagsConfig::createDefault()
             ->withApiEnabled(false)
             ->build();
-        $toggleConfig = TestToggleConfigFactory::create($config);
+        $toggleConfig = new ToggleConfig($config);
         $container = TestContainerFactory::create([ToggleConfig::class => $toggleConfig]);
 
         $application = $this->createMock(Application::class);
