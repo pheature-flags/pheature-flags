@@ -5,16 +5,25 @@ declare(strict_types=1);
 namespace Pheature\Test\Model\Toggle\Container;
 
 use Pheature\Model\Toggle\Container\ConfigProvider;
-use Pheature\Test\Model\Toggle\Fixtures\Configuration;
+use Pheature\Model\Toggle\SegmentFactory;
+use Pheature\Model\Toggle\StrategyFactory;
 use PHPUnit\Framework\TestCase;
 
 final class ConfigProviderTest extends TestCase
 {
+    private const EXPECTED_CONFIG = [
+        'dependencies' => [
+            'factories' => [
+                StrategyFactory::class => \Pheature\Crud\Psr11\Toggle\StrategyFactory::class,
+                SegmentFactory::class => \Pheature\Crud\Psr11\Toggle\SegmentFactory::class,
+            ],
+        ],
+    ];
+
     public function testItShouldCreateTheCorrectConfiguration(): void
     {
-        $expected = Configuration::create();
         $actual = (new ConfigProvider())->__invoke();
 
-        self::assertSame($expected, $actual);
+        self::assertSame(self::EXPECTED_CONFIG, $actual);
     }
 }
