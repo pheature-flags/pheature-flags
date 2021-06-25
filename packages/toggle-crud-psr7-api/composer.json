@@ -26,6 +26,7 @@
         "webmozart/assert": "^1.10"
     },
     "require-dev": {
+        "icanhazstring/composer-unused": "^0.7.5",
         "infection/infection": "^0.23.0",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
@@ -47,6 +48,7 @@
     },
     "scripts": {
         "check-all": [
+            "composer unused",
             "@cs-check",
             "@test",
             "@inspect",
