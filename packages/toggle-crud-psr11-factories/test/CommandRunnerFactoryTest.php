@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Test\Community\Mezzio;
+namespace Pheature\Test\Crud\Psr11\Toggle;
 
-use Pheature\Community\Mezzio\CommandRunnerFactory;
 use Pheature\Core\Toggle\Read\FeatureFinder;
+use Pheature\Crud\Psr11\Toggle\CommandRunnerFactory;
 use Pheature\Sdk\CommandRunner;
 use Pheature\Test\Community\Mezzio\Fixtures\TestContainerFactory;
 use PHPUnit\Framework\MockObject\MockObject;

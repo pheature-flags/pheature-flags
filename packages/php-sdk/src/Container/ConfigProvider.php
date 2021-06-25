@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\Sdk\Container;
 
-use Pheature\Community\Mezzio\CommandRunnerFactory;
+use Pheature\Crud\Psr11\Toggle\CommandRunnerFactory;
 use Pheature\Sdk\CommandRunner;
 
 final class ConfigProvider

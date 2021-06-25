@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Community\Mezzio;
+namespace Pheature\Crud\Psr11\Toggle;
 
 use Pheature\Core\Toggle\Read\FeatureFinder;
 use Pheature\Core\Toggle\Read\Toggle;
