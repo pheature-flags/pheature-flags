@@ -21,6 +21,7 @@
         "pheature/toggle-model": "^0.1.1"
     },
     "require-dev": {
+        "icanhazstring/composer-unused": "^0.7.5",
         "infection/infection": "^0.23.0",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
