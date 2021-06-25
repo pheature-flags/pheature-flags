@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\Crud\Psr11\Toggle\Container;
 
-use Pheature\Community\Mezzio\ToggleConfigFactory;
+use Pheature\Crud\Psr11\Toggle\ToggleConfigFactory;
 use Pheature\Crud\Psr11\Toggle\ToggleConfig;
 
 final class ConfigProvider
