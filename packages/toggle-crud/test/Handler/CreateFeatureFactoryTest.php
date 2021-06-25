@@ -1,14 +1,14 @@
 <?php
 
-namespace Pheature\Test\Crud\Psr11\Toggle;
+namespace Pheature\Test\Crud\Toggle\Handler;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Psr11\Toggle\DisableFeatureFactory;
-use Pheature\Crud\Toggle\Handler\DisableFeature;
+use Pheature\Crud\Toggle\Handler\CreateFeatureFactory;
+use Pheature\Crud\Toggle\Handler\CreateFeature;
 use Psr\Container\ContainerInterface;
 use PHPUnit\Framework\TestCase;
 
-class DisableFeatureFactoryTest extends TestCase
+final class CreateFeatureFactoryTest extends TestCase
 {
     public function testItShouldCreateInstanceOfCreateFeature(): void
     {
@@ -19,17 +19,17 @@ class DisableFeatureFactoryTest extends TestCase
             ->with(FeatureRepository::class)
             ->willReturn($featureRepository);
 
-        $disableFeatureFactory = new DisableFeatureFactory();
+        $addStrategyFactory = new CreateFeatureFactory();
 
-        $disableFeatureFactory->__invoke($container);
+        $addStrategyFactory->__invoke($container);
     }
 
     public function testItShouldCreateInstanceOfCreateFeatureStatically(): void
     {
         $featureRepository = $this->createMock(FeatureRepository::class);
 
-        $addStrategy = DisableFeatureFactory::create($featureRepository);
+        $addStrategy = CreateFeatureFactory::create($featureRepository);
 
-        $this->assertInstanceOf(DisableFeature::class, $addStrategy);
+        $this->assertInstanceOf(CreateFeature::class, $addStrategy);
     }
 }

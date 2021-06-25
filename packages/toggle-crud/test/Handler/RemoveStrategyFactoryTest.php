@@ -1,9 +1,9 @@
 <?php
 
-namespace Pheature\Test\Crud\Psr11\Toggle;
+namespace Pheature\Test\Crud\Toggle\Handler;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
-use Pheature\Crud\Psr11\Toggle\RemoveStrategyFactory;
+use Pheature\Crud\Toggle\Handler\RemoveStrategyFactory;
 use Pheature\Crud\Toggle\Handler\RemoveStrategy;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;

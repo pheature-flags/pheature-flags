@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pheature\Crud\Psr11\Toggle;
+namespace Pheature\Crud\Toggle\Handler;
 
 use Pheature\Core\Toggle\Write\FeatureRepository;
 use Pheature\Crud\Toggle\Handler\SetStrategy;
