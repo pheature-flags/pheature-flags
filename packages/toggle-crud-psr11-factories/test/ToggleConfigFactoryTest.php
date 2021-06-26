@@ -15,8 +15,6 @@ use Pheature\Model\Toggle\StrategyFactory;
 use Pheature\Model\Toggle\StrictMatchingSegment;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
-use Psr\Container\NotFoundExceptionInterface;
-use UnexpectedValueException;
 
 final class ToggleConfigFactoryTest extends TestCase
 {
