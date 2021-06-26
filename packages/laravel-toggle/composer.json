@@ -18,7 +18,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "illuminate/support": "^8.37",
-        "laravel/laravel": "^8.5",
+        "laravel/laravel": ">=8.5.17",
         "nyholm/psr7": "^1.4",
         "pheature/dbal-toggle": "^0.1.1",
         "pheature/inmemory-toggle": "^0.1.1",
