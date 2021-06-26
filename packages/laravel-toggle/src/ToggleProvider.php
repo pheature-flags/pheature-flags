@@ -4,19 +4,34 @@ declare(strict_types=1);
 
 namespace Pheature\Community\Laravel;
 
-use Illuminate\Http\Request;
+use Closure;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Nyholm\Psr7\Factory\Psr17Factory;
+use Pheature\Core\Toggle\Read\ChainToggleStrategyFactory;
 use Pheature\Core\Toggle\Read\FeatureFinder;
-use Pheature\Core\Toggle\Read\Toggle;
 use Pheature\Core\Toggle\Write\FeatureRepository;
+use Pheature\Crud\Psr11\Toggle\ChainToggleStrategyFactoryFactory;
 use Pheature\Crud\Psr11\Toggle\FeatureFinderFactory;
 use Pheature\Crud\Psr11\Toggle\FeatureRepositoryFactory;
 use Pheature\Crud\Psr11\Toggle\ToggleConfig;
+use Pheature\Crud\Psr7\Toggle\DeleteFeature;
+use Pheature\Crud\Psr7\Toggle\DeleteFeatureFactory;
+use Pheature\Crud\Psr7\Toggle\GetFeature;
+use Pheature\Crud\Psr7\Toggle\GetFeatureFactory;
+use Pheature\Crud\Psr7\Toggle\GetFeatures;
+use Pheature\Crud\Psr7\Toggle\GetFeaturesFactory;
+use Pheature\Crud\Psr7\Toggle\PatchFeature;
+use Pheature\Crud\Psr7\Toggle\PatchFeatureFactory;
+use Pheature\Crud\Psr7\Toggle\PostFeature;
+use Pheature\Crud\Psr7\Toggle\PostFeatureFactory;
 use Pheature\Dbal\Toggle\Cli\InitSchema;
+use Pheature\Model\Toggle\SegmentFactory;
+use Pheature\Model\Toggle\SegmentFactoryFactory;
+use Pheature\Model\Toggle\StrategyFactory;
+use Pheature\Model\Toggle\StrategyFactoryFactory;
 use Pheature\Sdk\CommandRunner;
-use Psr\Container\ContainerInterface;
-use Illuminate\Support\Facades\Route;
+use Pheature\Sdk\CommandRunnerFactory;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -29,74 +44,44 @@ final class ToggleProvider extends ServiceProvider
      */
     public function register(): void
     {
+        /** @var array<string, mixed>  $configItem */
+        $configItem = config('pheature_flags');
+        $toggleConfig = new ToggleConfig($configItem);
+        $this->app->bind(ToggleConfig::class, fn() => $toggleConfig);
+        $this->app->bind(StrategyFactory::class, Closure::fromCallable(new StrategyFactoryFactory()));
+        $this->app->bind(SegmentFactory::class, Closure::fromCallable(new SegmentFactoryFactory()));
+        foreach ($toggleConfig->strategyTypes() as $strategyType) {
+            $this->app->bind($strategyType['type'], $strategyType['factory_id']);
+        }
+        foreach ($toggleConfig->segmentTypes() as $segmentType) {
+            $this->app->bind($segmentType['type'], $segmentType['factory_id']);
+        }
         $this->app->bind(
-            ToggleConfig::class,
-            function (): ToggleConfig {
-                /** @var array<string, mixed> $config */
-                $config = config('pheature_flags');
-                return new ToggleConfig($config);
-            }
+            ChainToggleStrategyFactory::class,
+            Closure::fromCallable(new ChainToggleStrategyFactoryFactory())
         );
+        $this->app->bind(ResponseFactoryInterface::class, static fn() => new Psr17Factory());
+        $this->app->bind(FeatureRepository::class, Closure::fromCallable(new FeatureRepositoryFactory()));
+        $this->app->bind(FeatureFinder::class, Closure::fromCallable(new FeatureFinderFactory()));
+        if (class_exists(CommandRunner::class)) {
+            $this->app->bind(CommandRunner::class, Closure::fromCallable(new CommandRunnerFactory()));
+        }
 
-        $this->app->bind(
-            ResponseFactoryInterface::class,
-            function () {
-                return new Psr17Factory();
-            }
-        );
-
-        $this->app->bind(
-            FeatureRepository::class,
-            function (ContainerInterface $container): FeatureRepository {
-                $factory = new FeatureRepositoryFactory();
-                return $factory($container);
-            }
-        );
-
-        $this->app->bind(
-            FeatureFinder::class,
-            function (ContainerInterface $container): FeatureFinder {
-                $factory = new FeatureFinderFactory();
-                return $factory($container);
-            }
-        );
-
-        $this->app->bind(
-            CommandRunner::class,
-            function (ContainerInterface $container): CommandRunner {
-                /** @var FeatureFinder $featureFinder */
-                $featureFinder = $container->get(FeatureFinder::class);
-                return new CommandRunner(new Toggle($featureFinder));
-            }
-        );
+        if ($toggleConfig->apiEnabled()) {
+            $this->app->bind(GetFeature::class, Closure::fromCallable(new GetFeatureFactory()));
+            $this->app->bind(GetFeatures::class, Closure::fromCallable(new GetFeaturesFactory()));
+            $this->app->bind(PostFeature::class, Closure::fromCallable(new PostFeatureFactory()));
+            $this->app->bind(PatchFeature::class, Closure::fromCallable(new PatchFeatureFactory()));
+            $this->app->bind(DeleteFeature::class, Closure::fromCallable(new DeleteFeatureFactory()));
+        }
 
         $this->app->extend(
             ServerRequestInterface::class,
-            function (ServerRequestInterface $psrRequest) {
-                /** @var Request $request */
-                $request = $this->app->make('request');
-                /** @var ?\Illuminate\Routing\Route $route */
-                $route = $request->route();
-                if ($route) {
-                    $parameters = $route->parameters();
-                    /**
-                     * @var string $key
-                     * @var mixed $value
-                     */
-                    foreach ($parameters as $key => $value) {
-                        $psrRequest = $psrRequest->withAttribute($key, $value);
-                    }
-                }
-                return $psrRequest;
-            }
+            Closure::fromCallable(new RouteParameterAsPsr7RequestAttribute($this->app))
         );
 
         if ('dbal' === config('pheature_flags.driver')) {
-            $this->commands(
-                [
-                InitSchema::class
-                ]
-            );
+            $this->commands([InitSchema::class]);
         }
     }
 
