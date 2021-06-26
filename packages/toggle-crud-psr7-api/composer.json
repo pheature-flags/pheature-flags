@@ -18,7 +18,6 @@
     "require": {
         "php": "^7.4|^8.0",
         "pheature/toggle-core": "1.0.x-dev",
-        "pheature/toggle-model": "1.0.x-dev",
         "pheature/toggle-crud": "1.0.x-dev",
         "psr/http-factory": "^1.0",
         "psr/http-message": "^1.0",
