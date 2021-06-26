@@ -20,6 +20,8 @@ final class ToggleConfig
     private string $apiPrefix;
     /** @var array<array<string, string>> */
     private array $strategyTypes;
+    /** @var array<array<string, string>> */
+    private array $segmentTypes;
     /** @var array<string, mixed> */
     private array $toggles;
 
@@ -38,6 +40,7 @@ final class ToggleConfig
         $this->apiPrefix = $config['api_prefix'];
         $this->driver = (string) $config['driver'];
         $this->strategyTypes = [];
+        $this->segmentTypes = [];
         $this->toggles = [];
 
         if (array_key_exists('strategy_types', $config)) {
@@ -45,6 +48,13 @@ final class ToggleConfig
             /** @var array<array<string, string>> $strategyTypes */
             $strategyTypes = $config['strategy_types'];
             $this->strategyTypes = $strategyTypes;
+        }
+
+        if (array_key_exists('segment_types', $config)) {
+            Assert::isArray($config['segment_types']);
+            /** @var array<array<string, string>> $segmentTypes */
+            $segmentTypes = $config['segment_types'];
+            $this->segmentTypes = $segmentTypes;
         }
 
         if (array_key_exists('toggles', $config)) {
@@ -87,6 +97,14 @@ final class ToggleConfig
     public function strategyTypes(): array
     {
         return $this->strategyTypes;
+    }
+
+    /**
+     * @return array<array<string, string>>
+     */
+    public function segmentTypes(): array
+    {
+        return $this->segmentTypes;
     }
 
     /**
