@@ -1,4 +1,4 @@
-name: Split Monorepo PHPUnit tests
+name: Split Monorepo pre-push checks
 
 on:
   pull_request:
@@ -40,7 +40,7 @@ jobs:
     outputs:
       matrix: ${{ steps.output_data.outputs.matrix }}
 
-  split_monorepo_phpunit_test:
+  split_monorepo_pre_push_checks:
     needs: provide_packages_json
 
     runs-on: ubuntu-latest
