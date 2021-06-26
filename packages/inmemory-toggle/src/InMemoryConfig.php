@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace Pheature\InMemory\Toggle;
 
-use Exception;
-use Traversable;
+use Webmozart\Assert\Assert;
 
 final class InMemoryConfig
 {
@@ -41,11 +40,33 @@ final class InMemoryConfig
     }
 
     /**
-     * @psalm-suppress UnusedParam
      * @param array<string, mixed> $config
      */
     private function assertConfig(array $config): void
     {
+        foreach ($config as $toggleConfig) {
+            Assert::isArray($toggleConfig);
+            Assert::keyExists($toggleConfig, 'id');
+            Assert::string($toggleConfig['id']);
+            Assert::keyExists($toggleConfig, 'enabled');
+            Assert::boolean($toggleConfig['enabled']);
+            Assert::nullOrIsArray($toggleConfig['strategies']);
+            /** @var array<string, mixed> $strategy */
+            foreach ($toggleConfig['strategies'] ?? [] as $strategy) {
+                Assert::keyExists($strategy, 'strategy_id');
+                Assert::string($strategy['strategy_id']);
+                Assert::keyExists($strategy, 'strategy_type');
+                Assert::string($strategy['strategy_type']);
+                Assert::nullOrIsArray($strategy['segments']);
+                /** @var array<string, mixed> $segment */
+                foreach ($strategy['segments'] ?? [] as $segment) {
+                    Assert::keyExists($segment, 'segment_id');
+                    Assert::string($segment['segment_id']);
+                    Assert::keyExists($segment, 'segment_type');
+                    Assert::string($segment['segment_type']);
+                }
+            }
+        }
     }
 
     /**
