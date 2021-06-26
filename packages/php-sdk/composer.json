@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "pheature/toggle-core": "^0.1.1",
+        "pheature/toggle-core": "1.0.x-dev",
         "psr/container": "^1.0.0|^2.0.0"
     },
     "require-dev": {

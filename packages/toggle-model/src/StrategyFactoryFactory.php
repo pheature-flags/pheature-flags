@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Pheature\Model\Toggle;
 
 use Pheature\Core\Toggle\Read\ToggleStrategyFactory;
-use Pheature\Model\Toggle\StrategyFactory;
 use Psr\Container\ContainerInterface;
 
 final class StrategyFactoryFactory
