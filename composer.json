@@ -14,6 +14,7 @@
     ],
     "require": {
         "doctrine/dbal": ">=2.6 || ^3.0.0",
+        "doctrine/cache": ">=1.4.1 || >=1.3.2 || ^2.0",
         "illuminate/support": "^8.37",
         "nyholm/psr7": "^1.4",
         "pheature/php-sdk": "@dev",
@@ -28,7 +29,8 @@
     },
     "require-dev": {
         "infection/infection": "^0.23.0",
-        "laravel/laravel": "^8.5",
+        "laravel/laravel": ">=8.40",
+        "league/flysystem": ">=1.1.4",
         "mezzio/mezzio": "^3.3",
         "mezzio/mezzio-helpers": "^5.4",
         "phpro/grumphp": "^1.0",
