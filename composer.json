@@ -28,7 +28,7 @@
         "webmozart/assert": "^1.10"
     },
     "require-dev": {
-        "infection/infection": "^0.23.0",
+        "infection/infection": "^0.24.0",
         "laravel/laravel": ">=8.5.17",
         "league/flysystem": ">=1.1.4",
         "mezzio/mezzio": "^3.3",
