@@ -17,12 +17,12 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "pheature/toggle-core": "1.0.x-dev",
+        "pheature/toggle-core": "^0.1.1",
         "psr/container": "^1.0.0|^2.0.0"
     },
     "require-dev": {
         "icanhazstring/composer-unused": "^0.7.5",
-        "infection/infection": "^0.23.0",
+        "infection/infection": "^0.24",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^8.0 || ^9.0",

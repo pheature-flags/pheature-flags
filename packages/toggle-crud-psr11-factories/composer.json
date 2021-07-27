@@ -17,16 +17,16 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "pheature/toggle-core": "1.0.x-dev",
-        "pheature/toggle-model": "1.0.x-dev"
+        "pheature/toggle-core": "^0.1.1",
+        "pheature/toggle-model": "^0.1.1"
     },
     "require-dev": {
         "icanhazstring/composer-unused": "^0.7.5",
-        "infection/infection": "^0.23.0",
-        "pheature/dbal-toggle": "1.0.x-dev",
-        "pheature/inmemory-toggle": "1.0.x-dev",
-        "pheature/php-sdk": "^1.0.x-dev",
-        "pheature/toggle-crud": "1.0.x-dev",
+        "infection/infection": "^0.24",
+        "pheature/dbal-toggle": "^0.1.1",
+        "pheature/inmemory-toggle": "^0.1.1",
+        "pheature/php-sdk": "^0.1.1",
+        "pheature/toggle-crud": "^0.1.1",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^8.0 || ^9.0",
