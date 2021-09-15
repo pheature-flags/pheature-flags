@@ -71,7 +71,6 @@
 - \[toggle-crud-psr7-api\] add codeclimate badge [\#239](https://github.com/pheature-flags/pheature-flags/pull/239) (@kpicaza)
 - \[toggle-crud-psr7-api\] add scrutinizer badge [\#237](https://github.com/pheature-flags/pheature-flags/pull/237) (@kpicaza)
 - \[toggle-crud-psr-7-api\] add codecov badge [\#236](https://github.com/pheature-flags/pheature-flags/pull/236) (@kpicaza)
-- \[toggle-crud-psr-7-api\] add striker mutation badge [\#235](https://github.com/pheature-flags/pheature-flags/pull/235) (@kpicaza)
 
 ## [v0.1.1](https://github.com/pheature-flags/pheature-flags/tree/v0.1.1) (2021-06-20)
 
@@ -219,6 +218,7 @@
 
 **Merged pull requests:**
 
+- \[toggle-crud-psr-7-api\] add striker mutation badge [\#235](https://github.com/pheature-flags/pheature-flags/pull/235) (@kpicaza)
 - \[\#222\] Document symfony bundle [\#229](https://github.com/pheature-flags/pheature-flags/pull/229) (@kpicaza)
 - HOTFIX: set correct service name for set strategy in sf bundle [\#213](https://github.com/pheature-flags/pheature-flags/pull/213) (@kpicaza)
 - \[\#80\] Add psalm type check badge to Toggle CRUD PSR-7 API package [\#193](https://github.com/pheature-flags/pheature-flags/pull/193) (@xserrat)
@@ -226,6 +226,7 @@
 - \[\#183\] add symfony toggle package badges [\#184](https://github.com/pheature-flags/pheature-flags/pull/184) (@kpicaza)
 - \[\#132\] PatchFeatureFactory Static & Test [\#166](https://github.com/pheature-flags/pheature-flags/pull/166) (@pcs289)
 - \[\#130\] GetFeatureFactory Static & Test [\#164](https://github.com/pheature-flags/pheature-flags/pull/164) (@pcs289)
+- \[\#99\] WIP set split tagged action [\#157](https://github.com/pheature-flags/pheature-flags/pull/157) (@kpicaza)
 - add code-quality badge [\#155](https://github.com/pheature-flags/pheature-flags/pull/155) (@kpicaza)
 - add psalm badge [\#150](https://github.com/pheature-flags/pheature-flags/pull/150) (@kpicaza)
 - add jetbrains as a first sponsor [\#149](https://github.com/pheature-flags/pheature-flags/pull/149) (@kpicaza)
