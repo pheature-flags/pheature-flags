@@ -1,11 +1,11 @@
 name: Split Monorepo Dev-Master
 
 on:
-  push:
-    branches:
-      - 1.0.x
-    tags:
-      - '*'
+  workflow_run:
+    workflows:
+      - "generate_split_changelog"
+    types:
+      - completed
 
 jobs:
   provide_packages_json:
@@ -58,8 +58,8 @@ jobs:
           package-directory: 'packages/${{ matrix.package }}'
           split-repository-organization: 'pheature-flags'
           split-repository-name: '${{ matrix.package }}'
-          user-name: ${{ github.event.pusher.name }}
-          user-email: ${{ github.event.pusher.email }}
+          user-name: ${{ github.event.workflow_run.head_commit.author.name }}
+          user-email: ${{ github.event.workflow_run.head_commit.author.email }}
           branch: "1.0.x"
 
       -
@@ -80,6 +80,6 @@ jobs:
           package-directory: 'packages/${{ matrix.package }}'
           split-repository-organization: 'pheature-flags'
           split-repository-name: '${{ matrix.package }}'
-          user-name: ${{ github.event.pusher.name }}
-          user-email: ${{ github.event.pusher.email }}
+          user-name: ${{ github.event.workflow_run.head_commit.author.name }}
+          user-email: ${{ github.event.workflow_run.head_commit.author.email }}
           branch: "1.0.x"
