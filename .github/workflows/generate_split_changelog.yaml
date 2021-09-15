@@ -1,0 +1,114 @@
+name: generate_split_changelog
+on:
+  workflow_run:
+    workflows:
+      - "generate_changelog"
+    types:
+      - completed
+
+jobs:
+  provide_packages_json:
+    # see json juggling: https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#example-6
+    # see https://stackoverflow.com/a/62953566/1348344
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      -
+        uses: actions/checkout@v2
+
+      # required for matrix of packages set
+      -   uses: shivammathur/setup-php@v2
+          with:
+            php-version: 7.4
+            coverage: none
+
+      -   uses: "ramsey/composer-install@v1"
+          env:
+            GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      # get package json list
+      -
+        id: output_data
+        run: echo "::set-output name=matrix::$(vendor/bin/monorepo-builder packages-json)"
+
+    # this step is needed, so the output gets to the next defined job
+    outputs:
+      matrix: ${{ steps.output_data.outputs.matrix }}
+
+  split_monorepo_changelog:
+    needs: provide_packages_json
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Clone pheature-flags/monorepo-changelog-filter"
+        uses: "actions/checkout@v2"
+        with:
+          repository: pheature-flags/monorepo-changelog-filter
+          path: packages/${{ matrix.package }}/tmp
+          ref: issue#1-create-prototype
+
+      - name: "Setup PHP for pheature-flags/monorepo-changelog-filter"
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          coverage: none
+        env:
+          working-directory: packages/${{ matrix.package }}/tmp
+
+      - name: "install script dependencies"
+        run: "composer install"
+        working-directory: packages/${{ matrix.package }}/tmp
+
+      - name: "Create ${{ matrix.package }} Changelog"
+        run: php bin/console changelog:filter monorepo-changelog/${{ matrix.package }} "$(cat ../../../CHANGELOG.md)" > ../CHANGELOG.md && cd ../ && pwd && cat ./CHANGELOG.md
+        working-directory: packages/${{ matrix.package }}/tmp
+
+      - name: Remove temporary folder
+        run: "rm -rf tmp/"
+        working-directory: packages/${{ matrix.package }}
+
+      - name: git status
+        run: "git status && cat packages/${{ matrix.package }}/CHANGELOG.md"
+
+      - name: "Commit changes"
+        uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
+        with:
+          # Determines the way the action fills missing author name and email. Three options are available:
+          # - github_actor -> UserName <UserName@users.noreply.github.com>
+          # - user_info -> Your Display Name <your-actual@email.com>
+          # - github_actions -> github-actions <email associated with the github logo>
+          # Default:
+          default_author: github_actor
+
+          # The name of the user that will be displayed as the author of the commit
+          # Default: depends on the default_author input
+          author_name: ${{ github.event.workflow_run.head_commit.author.name }}
+
+
+          # The email of the user that will be displayed as the author of the commit
+          # Default: depends on the default_author input
+          author_email: ${{ github.event.workflow_run.head_commit.author.email }}
+
+
+          # The message for the commit
+          # Default: 'Commit from GitHub Actions (name of the workflow)'
+          message: '[${{ matrix.package }}] update changelog'
+
+          # The flag used on the pull strategy. Use NO-PULL to avoid the action pulling at all.
+          # Default: '--no-rebase'
+          pull_strategy: '--no-rebase'
+
+          branch: main
+
+          # Whether to use the --signoff option on `git commit` (only `true` and `false` are accepted)
+          # Default: false
+          signoff: true
+
+          push: --force-with-lease

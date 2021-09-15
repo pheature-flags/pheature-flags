@@ -1,11 +1,11 @@
 name: Split Monorepo Dev-Master
 
 on:
-  push:
-    branches:
-      - 1.0.x
-    tags:
-      - '*'
+  workflow_run:
+    workflows:
+      - "generate_split_changelog"
+    types:
+      - completed
 
 jobs:
   provide_packages_json:
