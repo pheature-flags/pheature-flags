@@ -30,7 +30,7 @@
         "symfony/psr-http-message-bridge": "^2.1",
         "webmozart/assert": "^1.10",
         "infection/infection": "^0.23.0",
-        "laravel/laravel": ">=8.5.17",
+        "laravel/framework": "^8.40",
         "league/flysystem": ">=1.1.4",
         "mezzio/mezzio": "^3.3",
         "mezzio/mezzio-helpers": "^5.4",

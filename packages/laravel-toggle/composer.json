@@ -18,20 +18,20 @@
     "require": {
         "php": "^7.4|^8.0",
         "illuminate/support": "^8.37",
-        "laravel/framework": ">=8.5.17",
+        "laravel/framework": "^8.40",
         "nyholm/psr7": "^1.4",
-        "pheature/toggle-core": "1.0.x-dev",
-        "pheature/toggle-model": "1.0.x-dev",
-        "pheature/dbal-toggle": "1.0.x-dev",
-        "pheature/inmemory-toggle": "1.0.x-dev",
-        "pheature/php-sdk": "1.0.x-dev",
-        "pheature/toggle-crud": "1.0.x-dev",
-        "pheature/toggle-crud-psr7-api": "1.0.x-dev",
-        "pheature/toggle-crud-psr11-factories": "1.0.x-dev"
+        "pheature/toggle-core": "^0.1.1",
+        "pheature/toggle-model": "^0.1.1",
+        "pheature/inmemory-toggle": "^0.1.1",
+        "pheature/toggle-crud-psr11-factories": "^0.1.1"
     },
     "require-dev": {
         "icanhazstring/composer-unused": "^0.7.5",
         "infection/infection": "^0.23.0",
+        "pheature/dbal-toggle": "^0.1.1",
+        "pheature/php-sdk": "^0.1.1",
+        "pheature/toggle-crud": "^0.1.1",
+        "pheature/toggle-crud-psr7-api": "^0.1.1",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^8.0 || ^9.0",
@@ -78,5 +78,11 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "suggest": {
+        "pheature/dbal-toggle": "Doctrine DBAL pheature toggle implementation.",
+        "pheature/php-sdk": "Use simplified view model to get evaluted feature toggles.",
+        "pheature/toggle-crud": "Add a CRUD layer to interact with features.",
+        "pheature/toggle-crud-psr7-api": "Add a HTTP API layer to interact with features."
     }
 }
