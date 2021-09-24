@@ -48,6 +48,10 @@ final class ToggleProviderTest extends TestCase
     protected function setUp(): void
     {
         $this->app = Application::getInstance();
+    }
+
+    private function boot(): void
+    {
         $this->app->bind('config', function () {
             return new Repository([
                 'pheature_flags' => require __DIR__ . '/../config/pheature_flags.php'
@@ -62,8 +66,21 @@ final class ToggleProviderTest extends TestCase
         $this->app->registerCoreContainerAliases();
     }
 
+    public function testItShouldNotThrowExceptionWhenConfigIsNotAvailable(): void
+    {
+        $this->app->bind('config', function () {
+            return new Repository([]);
+        });
+
+        $serviceProvider = new ToggleProvider($this->app);
+        $serviceProvider->register();
+
+        self::assertNull(config('pheature_flags'));
+    }
+
     public function testItShouldRegisterPheatureFlagsServicesIncludingDbal(): void
     {
+        $this->boot();
         $this->app->bind(Connection::class, fn() => $this->createMock(Connection::class));
         $this->app->bind('config', function () {
             return new Repository([
@@ -91,6 +108,7 @@ final class ToggleProviderTest extends TestCase
 
     public function testItShouldRegisterPheatureFlagsServicesIncludingAPIenabled(): void
     {
+        $this->boot();
         $this->app->bind(Connection::class, fn() => $this->createMock(Connection::class));
         $this->app->bind('config', function () {
             return new Repository([
@@ -124,6 +142,7 @@ final class ToggleProviderTest extends TestCase
 
     public function testItShouldRegisterPheatureFlagsDefaultServices(): void
     {
+        $this->boot();
         $serviceProvider = new ToggleProvider($this->app);
         $serviceProvider->register();
 
@@ -143,6 +162,7 @@ final class ToggleProviderTest extends TestCase
 
     public function testItShouldBootPheatureFlagsRoutesAndConfig(): void
     {
+        $this->boot();
         $serviceProvider = new ToggleProvider($this->app);
         $serviceProvider->boot();
 

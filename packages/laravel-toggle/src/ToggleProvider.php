@@ -44,8 +44,11 @@ final class ToggleProvider extends ServiceProvider
      */
     public function register(): void
     {
-        /** @var array<string, mixed>  $configItem */
+        /** @var null|array<string, mixed>  $configItem */
         $configItem = config('pheature_flags');
+        if (null === $configItem) {
+            return;
+        }
         $toggleConfig = new ToggleConfig($configItem);
         $this->app->bind(ToggleConfig::class, fn() => $toggleConfig);
         $this->app->bind(StrategyFactory::class, Closure::fromCallable(new StrategyFactoryFactory()));
