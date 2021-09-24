@@ -18,7 +18,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "illuminate/support": "^8.37",
-        "laravel/laravel": ">=8.5.17",
+        "laravel/framework": ">=8.5.17",
         "nyholm/psr7": "^1.4",
         "pheature/toggle-core": "1.0.x-dev",
         "pheature/toggle-model": "1.0.x-dev",
