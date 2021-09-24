@@ -66,26 +66,14 @@ final class ToggleProvider extends ServiceProvider
         $this->app->bind(ResponseFactoryInterface::class, static fn() => new Psr17Factory());
         $this->app->bind(FeatureRepository::class, Closure::fromCallable(new FeatureRepositoryFactory()));
         $this->app->bind(FeatureFinder::class, Closure::fromCallable(new FeatureFinderFactory()));
-        if (class_exists(CommandRunner::class)) {
-            $this->app->bind(CommandRunner::class, Closure::fromCallable(new CommandRunnerFactory()));
-        }
-
-        if ($toggleConfig->apiEnabled()) {
-            $this->app->bind(GetFeature::class, Closure::fromCallable(new GetFeatureFactory()));
-            $this->app->bind(GetFeatures::class, Closure::fromCallable(new GetFeaturesFactory()));
-            $this->app->bind(PostFeature::class, Closure::fromCallable(new PostFeatureFactory()));
-            $this->app->bind(PatchFeature::class, Closure::fromCallable(new PatchFeatureFactory()));
-            $this->app->bind(DeleteFeature::class, Closure::fromCallable(new DeleteFeatureFactory()));
-        }
-
         $this->app->extend(
             ServerRequestInterface::class,
             Closure::fromCallable(new RouteParameterAsPsr7RequestAttribute($this->app))
         );
 
-        if ('dbal' === config('pheature_flags.driver')) {
-            $this->commands([InitSchema::class]);
-        }
+        $this->enableSDK();
+        $this->enableAPI($toggleConfig);
+        $this->enableDBAL();
     }
 
     /**
@@ -119,5 +107,30 @@ final class ToggleProvider extends ServiceProvider
             'prefix' => config('pheature_flags.api_prefix') ?? '',
             'middleware' => config('pheature_flags.middleware') ?? ['api'],
         ];
+    }
+
+    private function enableAPI(ToggleConfig $toggleConfig): void
+    {
+        if ($toggleConfig->apiEnabled()) {
+            $this->app->bind(GetFeature::class, Closure::fromCallable(new GetFeatureFactory()));
+            $this->app->bind(GetFeatures::class, Closure::fromCallable(new GetFeaturesFactory()));
+            $this->app->bind(PostFeature::class, Closure::fromCallable(new PostFeatureFactory()));
+            $this->app->bind(PatchFeature::class, Closure::fromCallable(new PatchFeatureFactory()));
+            $this->app->bind(DeleteFeature::class, Closure::fromCallable(new DeleteFeatureFactory()));
+        }
+    }
+
+    private function enableSDK(): void
+    {
+        if (class_exists(CommandRunner::class)) {
+            $this->app->bind(CommandRunner::class, Closure::fromCallable(new CommandRunnerFactory()));
+        }
+    }
+
+    private function enableDBAL(): void
+    {
+        if ('dbal' === config('pheature_flags.driver')) {
+            $this->commands([InitSchema::class]);
+        }
     }
 }
