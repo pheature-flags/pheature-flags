@@ -22,6 +22,7 @@
 - \[\#266\]\[symfony-toggle\] fix api test in symfony toggle [\#269](https://github.com/pheature-flags/pheature-flags/pull/269) (@kpicaza)
 - \[\#264\]\[toggle-crud\] fix dependency issue in toggle crud [\#268](https://github.com/pheature-flags/pheature-flags/pull/268) (@kpicaza)
 - \[toggle-crud-psr7-api\] fix typo [\#262](https://github.com/pheature-flags/pheature-flags/pull/262) (@kpicaza)
+- \[\#222\] fix sidebar menu names [\#233](https://github.com/pheature-flags/pheature-flags/pull/233) (@kpicaza)
 
 **Closed issues:**
 
@@ -49,6 +50,7 @@
 
 **Merged pull requests:**
 
+- \[\#223\]\[laravel-toggle\] fix dependency and compatibility issues [\#292](https://github.com/pheature-flags/pheature-flags/pull/292) (@kpicaza)
 - add pull request template [\#289](https://github.com/pheature-flags/pheature-flags/pull/289) (@kpicaza)
 - \[\#223\] set missing development versions on composer dev to allow deal… [\#286](https://github.com/pheature-flags/pheature-flags/pull/286) (@kpicaza)
 - \[\#223\] add segment types getter in toggle config [\#285](https://github.com/pheature-flags/pheature-flags/pull/285) (@kpicaza)
@@ -71,6 +73,7 @@
 - \[toggle-crud-psr7-api\] add codeclimate badge [\#239](https://github.com/pheature-flags/pheature-flags/pull/239) (@kpicaza)
 - \[toggle-crud-psr7-api\] add scrutinizer badge [\#237](https://github.com/pheature-flags/pheature-flags/pull/237) (@kpicaza)
 - \[toggle-crud-psr-7-api\] add codecov badge [\#236](https://github.com/pheature-flags/pheature-flags/pull/236) (@kpicaza)
+- \[toggle-crud-psr-7-api\] add striker mutation badge [\#235](https://github.com/pheature-flags/pheature-flags/pull/235) (@kpicaza)
 
 ## [v0.1.1](https://github.com/pheature-flags/pheature-flags/tree/v0.1.1) (2021-06-20)
 
@@ -156,7 +159,6 @@
 - \[monorepo\] maintain commit attribution on split [\#215](https://github.com/pheature-flags/pheature-flags/issues/215)
 - \[toggle-crud\] Allow adding strategiees with segments [\#209](https://github.com/pheature-flags/pheature-flags/issues/209)
 - \[Monorepo\] maintain user reference on split repository commits [\#108](https://github.com/pheature-flags/pheature-flags/issues/108)
-- \[\#222\] fix sidebar menu names [\#233](https://github.com/pheature-flags/pheature-flags/pull/233) (@kpicaza)
 - \[\#222\] document symfony toggle [\#232](https://github.com/pheature-flags/pheature-flags/pull/232) (@kpicaza)
 - \[\#255\] \[mezzio-toggle\] Fix Mezzio Toggle to run as Symfony Toggle [\#226](https://github.com/pheature-flags/pheature-flags/pull/226) (@xserrat)
 - \[\#215\] get commit user in github action [\#216](https://github.com/pheature-flags/pheature-flags/pull/216) (@kpicaza)
@@ -218,7 +220,6 @@
 
 **Merged pull requests:**
 
-- \[toggle-crud-psr-7-api\] add striker mutation badge [\#235](https://github.com/pheature-flags/pheature-flags/pull/235) (@kpicaza)
 - \[\#222\] Document symfony bundle [\#229](https://github.com/pheature-flags/pheature-flags/pull/229) (@kpicaza)
 - HOTFIX: set correct service name for set strategy in sf bundle [\#213](https://github.com/pheature-flags/pheature-flags/pull/213) (@kpicaza)
 - \[\#80\] Add psalm type check badge to Toggle CRUD PSR-7 API package [\#193](https://github.com/pheature-flags/pheature-flags/pull/193) (@xserrat)
@@ -226,7 +227,6 @@
 - \[\#183\] add symfony toggle package badges [\#184](https://github.com/pheature-flags/pheature-flags/pull/184) (@kpicaza)
 - \[\#132\] PatchFeatureFactory Static & Test [\#166](https://github.com/pheature-flags/pheature-flags/pull/166) (@pcs289)
 - \[\#130\] GetFeatureFactory Static & Test [\#164](https://github.com/pheature-flags/pheature-flags/pull/164) (@pcs289)
-- \[\#99\] WIP set split tagged action [\#157](https://github.com/pheature-flags/pheature-flags/pull/157) (@kpicaza)
 - add code-quality badge [\#155](https://github.com/pheature-flags/pheature-flags/pull/155) (@kpicaza)
 - add psalm badge [\#150](https://github.com/pheature-flags/pheature-flags/pull/150) (@kpicaza)
 - add jetbrains as a first sponsor [\#149](https://github.com/pheature-flags/pheature-flags/pull/149) (@kpicaza)
