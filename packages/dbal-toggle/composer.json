@@ -18,8 +18,8 @@
     "require": {
         "php": "^7.4|^8.0",
         "doctrine/dbal": ">=2.6 || ^3.0.0",
-        "pheature/toggle-core": "1.0.x-dev",
-        "pheature/toggle-model": "1.0.x-dev"
+        "pheature/toggle-core": "^0.1.2",
+        "pheature/toggle-model": "^0.1.2"
     },
     "require-dev": {
         "icanhazstring/composer-unused": "^0.7.5",
