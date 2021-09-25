@@ -24,6 +24,7 @@
 - \[toggle-crud-psr7-api\] add codeclimate badge [\#239](https://github.com/pheature-flags/pheature-flags/pull/239) (@kpicaza)
 - \[toggle-crud-psr7-api\] add scrutinizer badge [\#237](https://github.com/pheature-flags/pheature-flags/pull/237) (@kpicaza)
 - \[toggle-crud-psr-7-api\] add codecov badge [\#236](https://github.com/pheature-flags/pheature-flags/pull/236) (@kpicaza)
+- \[toggle-crud-psr-7-api\] add striker mutation badge [\#235](https://github.com/pheature-flags/pheature-flags/pull/235) (@kpicaza)
 
 ## [v0.1.1](https://github.com/pheature-flags/pheature-flags/tree/v0.1.1) (2021-06-20)
 
@@ -63,5 +64,4 @@
 
 **Merged pull requests:**
 
-- \[toggle-crud-psr-7-api\] add striker mutation badge [\#235](https://github.com/pheature-flags/pheature-flags/pull/235) (@kpicaza)
 - \[\#86\] Fix toggle-crud-psr7-api coding standards [\#104](https://github.com/pheature-flags/pheature-flags/pull/104) (@pcs289)
