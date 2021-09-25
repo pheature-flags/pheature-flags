@@ -8,6 +8,10 @@
 
 - \[laravel-toggle\] add QA badges [\#287](https://github.com/pheature-flags/pheature-flags/issues/287)
 
+**Merged pull requests:**
+
+- \[\#223\]\[laravel-toggle\] fix dependency and compatibility issues [\#292](https://github.com/pheature-flags/pheature-flags/pull/292) (@kpicaza)
+
 ## [v0.1.1](https://github.com/pheature-flags/pheature-flags/tree/v0.1.1) (2021-06-20)
 
 [Full Changelog](https://github.com/pheature-flags/pheature-flags/compare/0.1.0...v0.1.1)
