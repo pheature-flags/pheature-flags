@@ -21,6 +21,9 @@ jobs:
     steps:
       -
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          submodules: true
 
       # required for matrix of packages set
       -   uses: shivammathur/setup-php@v2
@@ -52,6 +55,9 @@ jobs:
     steps:
       -
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          submodules: true
 
       - name: "Tests ${{ matrix.package }}"
         run: "cd packages/${{ matrix.package }} && composer update --no-interaction --no-progress --no-suggest && composer check-all && cd ../.."
