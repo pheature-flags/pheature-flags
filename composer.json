@@ -29,7 +29,7 @@
         "symfony/http-kernel": "^5.1.5",
         "symfony/psr-http-message-bridge": "^2.1",
         "webmozart/assert": "^1.10",
-        "infection/infection": "^0.23.0",
+        "infection/infection": "^0.25.1",
         "laravel/framework": "^8.40",
         "league/flysystem": ">=1.1.4",
         "mezzio/mezzio": "^3.3",
