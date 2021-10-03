@@ -31,9 +31,9 @@ body:
     validations:
       required: false
   - type: dropdown
-    id: version
+    id: integration
     attributes:
-      label: Version
+      label: Integration
       description: What integration are you using?
       options:
         - Standalone (Default)
