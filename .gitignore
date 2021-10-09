@@ -1,4 +1,6 @@
 .idea/
+.phpdoc/
+build/
 vendor
 awesome/
 packages/*/vendor

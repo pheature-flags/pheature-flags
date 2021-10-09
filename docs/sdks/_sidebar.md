@@ -7,6 +7,6 @@
     - [JS Client Side SDK](/sdks/js-client-side-sdk)
 - [Contributing](/CONTRIBUTING.md)
 - [HTTP API Docs](https://api.pheatureflags.io)
-- [Internal API Docs](https://pheatureflags.io/api/)
+- [Internal API Docs](https://pheature-flags.github.io/internal-api/)
 - [Security](/security/)
 - [Need More?](#)
