@@ -1,7 +1,10 @@
 # Pheature Flags
 
-[![Test Coverage][ico-coverage]][link-coverage]
+[![Quality Score][ico-code-quality]][link-code-quality]
 [![Type coverage][ico-psalm]][link-psalm]
+[![Test Coverage][ico-coverage]][link-coverage]
+[![Mutation testing badge][ico-mutant]][link-mutant]
+[![CII Best Practices][ico-best-practices]][link-best-practices]
 
 Hi there! Welcome to our project 👋 We are a group of online business professionals who want to learn, grow and enjoy 
 making our jobs a better place. We’re excited that you’re here to learn more about it and grow together 😉 .
@@ -46,7 +49,13 @@ knowledge to the community. For this reason we release all our packages under [B
     <img alt="JetBrains" width="200" src="https://antidotfw.io/images/jetbrains-variant-4.png" style="width:263px !important;height:147px !important"/>
 </a>
 
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/pheature-flags/pheature-flags.svg?style=flat-square
+[link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/pheature-flags/badges/coverage.png?b=1.0.x
 [ico-coverage]: https://codecov.io/gh/pheature-flags/pheature-flags/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106
 [link-coverage]: https://codecov.io/gh/pheature-flags/pheature-flags
 [ico-psalm]: https://shepherd.dev/github/pheature-flags/pheature-flags/coverage.svg
 [link-psalm]: https://shepherd.dev/github/pheature-flags/pheature-flags
+[ico-mutant]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fpheature-flags%2Fpheature-flags%2F1.0.x
+[link-mutant]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/pheature-flags/1.0.x
+[ico-best-practices]: https://bestpractices.coreinfrastructure.org/projects/5303/badge
+[link-best-practices]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/pheature-flags/1.0.x
