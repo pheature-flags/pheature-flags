@@ -129,6 +129,21 @@ INSERT INTO `pheature_toggles` (
 
 > [pheature/dbal-toggle](/packages/dbal-toggle)
 
+### Chain Driver
+
+The Chain Driver allows the storage of feature toggles data into different storage types, out of the box it allows
+using both inmemory and dbal drivers at the same time. You can also define new drivers implementing both
+`Pheature\Core\Toggle\Read\FeatureFinder` and `Pheature\Core\Toggle\Write\FeatureRepository`.
+
+#### Configuration
+
+```yaml
+# config/packages/pheature-flags.yaml
+pheature_flags:
+  driver: "chain"
+  driver_options: ["inmemory", "dbal"]
+```
+
 #### Usage
 
 <span id="inmemory_driver_usage"></span>

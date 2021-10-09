@@ -1,6 +1,4 @@
 grumphp:
-    git_hook_variables:
-        EXEC_GRUMPHP_COMMAND: 'docker run -e "TERM=xterm-256color" --tty=true --rm -v $PWD:/code:cached pheature/pheature-php-dev:latest'
     hooks_dir: .
     hooks_preset: local
     tasks:
