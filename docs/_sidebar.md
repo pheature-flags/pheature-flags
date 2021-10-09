@@ -4,6 +4,7 @@
 - [Packages](/packages/)
 - [SDKs](/sdks/)
 - [Contributing](/CONTRIBUTING.md)
-- [API Docs](https://api.pheatureflags.io)
+- [HTTP API Docs](https://api.pheatureflags.io)
+- [Internal API Docs](https://pheatureflags.io/api/)
 - [Security](/security/)
 - [Need More?](#)
