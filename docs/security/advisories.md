@@ -1,0 +1,5 @@
+# Security Advisories
+
+| Version | CVE          |
+| ------- | ------------------ |
+|   |                 |

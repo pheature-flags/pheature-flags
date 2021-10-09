@@ -12,4 +12,5 @@
 - [SDKs](/sdks/)
 - [Contributing](/CONTRIBUTING.md)
 - [API Docs](https://api.pheatureflags.io)
+- [Security](/security/)
 - [Need More?](#)
