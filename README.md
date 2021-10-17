@@ -1,10 +1,14 @@
-# Pheature Flags
+<div style="text-align: center">
+<img alt="Pheature Flags Logo" src="https://github.com/pheature-flags/pheature-flags/docs/assets/logo-trans.png"/>
 
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Type coverage][ico-psalm]][link-psalm]
 [![Test Coverage][ico-coverage]][link-coverage]
 [![Mutation testing badge][ico-mutant]][link-mutant]
 [![CII Best Practices][ico-best-practices]][link-best-practices]
+
+<h1>Pheature Flags</h1>
+</div>
 
 Hi there! Welcome to our project 👋 We are a group of online business professionals who want to learn, grow and enjoy
 making our jobs a better place. We’re excited that you’re here to learn more about it and grow together 😉 .
@@ -72,4 +76,4 @@ knowledge to the community. For this reason we release all our packages under [B
 [ico-mutant]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fpheature-flags%2Fpheature-flags%2F1.0.x
 [link-mutant]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/pheature-flags/1.0.x
 [ico-best-practices]: https://bestpractices.coreinfrastructure.org/projects/5303/badge
-[link-best-practices]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/pheature-flags/1.0.x
+[link-best-practices]: https://bestpractices.coreinfrastructure.org/projects/5303
