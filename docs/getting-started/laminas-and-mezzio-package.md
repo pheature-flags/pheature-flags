@@ -205,7 +205,7 @@ return [
 To initiate database schema, run the following command:
 
 ```bash
-bin/console pheature:dbal:init-toggle
+vendor/bin/laminas pheature:dbal:init-toggle
 ```
 
 We can insert the following sample features into the database:
