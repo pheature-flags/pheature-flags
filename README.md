@@ -67,6 +67,12 @@ knowledge to the community. For this reason we release all our packages under [B
     <img alt="JetBrains" width="200" src="https://antidotfw.io/images/jetbrains-variant-4.png" style="width:263px !important;height:147px !important"/>
 </a>
 
+* **Tuple**: Thanks for supporting us with the License of the Tuple Pair Programming tool for Open Source Projects
+
+<a href="https://tuple.app/" target="_blank">
+    <img alt="JetBrains" width="200" src="https://tuple.app/img/logo.svg" style="width:263px !important;height:147px !important"/>
+</a>
+
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/pheature-flags/pheature-flags.svg?style=flat-square
 [link-code-quality]: https://scrutinizer-ci.com/g/pheature-flags/pheature-flags/badges/coverage.png?b=1.0.x
 [ico-coverage]: https://codecov.io/gh/pheature-flags/pheature-flags/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106
