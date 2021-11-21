@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Pheature\Core\Toggle\Read\ChainToggleStrategyFactory;
 use Pheature\Core\Toggle\Read\Toggle;
 use Pheature\InMemory\Toggle\InMemoryConfig;
 use Pheature\InMemory\Toggle\InMemoryFeatureFactory;
@@ -19,7 +20,12 @@ $config = include 'config.php';
 $toggle = new Toggle(
     new InMemoryFeatureFinder(
         new InMemoryConfig($config['toggles']),
-        new InMemoryFeatureFactory()
+        new InMemoryFeatureFactory(
+            new ChainToggleStrategyFactory(
+                new \Pheature\Model\Toggle\SegmentFactory(),
+                new \Pheature\Model\Toggle\StrategyFactory()
+            )
+        )
     )
 );
 
