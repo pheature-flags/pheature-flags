@@ -6,6 +6,11 @@
     <arg value="p"/>
     <arg name="colors"/>
 
+    <!-- php compatibility checker config -->
+    <rule ref="PHPCompatibility"/>
+    <config name="installed_paths" value="vendor/phpcompatibility/php-compatibility" />
+    <config name="testVersion" value="7.4-"/>
+
     <!-- inherit rules from: -->
     <rule ref="PSR12"/>
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
