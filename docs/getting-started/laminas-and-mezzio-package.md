@@ -1,5 +1,12 @@
 # Laminas and Mezzio packages
 
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Type coverage][ico-psalm]][link-psalm]
+[![Test Coverage][ico-coverage]][link-coverage]
+[![Mutation testing badge][ico-mutant]][link-mutant]
+[![Total Downloads][ico-downloads]][link-downloads]
+[![Maintainability][ico-maintain]][link-maintain]
+
 ## Toggle package
 
 Feature toggle implementation out of the box for our [Laminas](https://getlaminas.org/) or [Mezzio Framework](https://docs.mezzio.dev/) applications.
@@ -467,3 +474,16 @@ return [
     ]
 ];
 ```
+
+[ico-version]: https://img.shields.io/packagist/v/pheature/mezzio-toggle.svg?style=flat-square
+[link-packagist]: https://packagist.org/packages/pheature/mezzio-toggle
+[ico-downloads]: https://img.shields.io/packagist/dt/pheature/mezzio-toggle.svg?style=flat-square
+[link-downloads]: https://packagist.org/packages/pheature/mezzio-toggle
+[ico-psalm]: https://shepherd.dev/github/pheature-flags/mezzio-toggle/coverage.svg
+[link-psalm]: https://shepherd.dev/github/pheature-flags/mezzio-toggle
+[ico-coverage]: https://codecov.io/gh/pheature-flags/mezzio-toggle/branch/1.0.x/graph/badge.svg?token=DTQIQUZ106
+[link-coverage]: https://codecov.io/gh/pheature-flags/mezzio-toggle
+[ico-mutant]: https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fpheature-flags%2Fmezzio-toggle%2F1.0.x
+[link-mutant]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/mezzio-toggle/1.0.x
+[ico-maintain]: https://api.codeclimate.com/v1/badges/7bf71e6da5ed1f93ea07/maintainability
+[link-maintain]: https://codeclimate.com/github/pheature-flags/mezzio-toggle/maintainability
