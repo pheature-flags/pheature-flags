@@ -1,21 +1,37 @@
 # Changelog
 
-## [v0.1.2](https://github.com/pheature-flags/pheature-flags/tree/v0.1.2) (2021-09-25)
+## [0.3.0](https://github.com/pheature-flags/pheature-flags/tree/0.3.0) (2021-11-21)
 
-[Full Changelog](https://github.com/pheature-flags/pheature-flags/compare/v0.1.1...v0.1.2)
+[Full Changelog](https://github.com/pheature-flags/pheature-flags/compare/v0.1.1...0.3.0)
 
 **Implemented enhancements:**
 
+- \[docs\] Document chain driver for Symfony toggle package [\#310](https://github.com/pheature-flags/pheature-flags/issues/310)
+- \[pheature-flags\] Update issue template for bugs using new issue form in a YAML file [\#300](https://github.com/pheature-flags/pheature-flags/issues/300)
 - \[laravel-toggle\] add QA badges [\#287](https://github.com/pheature-flags/pheature-flags/issues/287)
 - \[pheature-flags\] check each repository separately on pull request [\#278](https://github.com/pheature-flags/pheature-flags/issues/278)
+- \[Symfony-toggle\] Create Toggle CRUD Compiler pass [\#177](https://github.com/pheature-flags/pheature-flags/issues/177)
+- \[Symfony-toggle\] Create ToggleConfig Compiler pass [\#175](https://github.com/pheature-flags/pheature-flags/issues/175)
+- \[Symfony-toggle\] Create FeatureFinder Compiler pass [\#173](https://github.com/pheature-flags/pheature-flags/issues/173)
+- \[Symfony-toggle\] Create DBAL Implementation Compiler pass [\#172](https://github.com/pheature-flags/pheature-flags/issues/172)
+- \[Symfony-toggle\] Create InMemory Implementation Compiler pass [\#171](https://github.com/pheature-flags/pheature-flags/issues/171)
+- \[\#319\] Logo added [\#325](https://github.com/pheature-flags/pheature-flags/pull/325) (@ananya224)
+- \[\#300\]\[pheature-flags\] Replace "Version" to "Integration" [\#303](https://github.com/pheature-flags/pheature-flags/pull/303) (@xserrat)
+- \[\#300\]\[pheature-flags\] Update issue template for bugs using new issue form in a YAML file [\#302](https://github.com/pheature-flags/pheature-flags/pull/302) (@xserrat)
 - \[\#287\] add QA badges to laravel toggle package [\#288](https://github.com/pheature-flags/pheature-flags/pull/288) (@kpicaza)
 - Issue\#223 laravel configuration [\#283](https://github.com/pheature-flags/pheature-flags/pull/283) (@kpicaza)
 
 **Fixed bugs:**
 
+- \[monorepo-submodule\] Submodules are cloned in http mode [\#307](https://github.com/pheature-flags/pheature-flags/issues/307)
+- \[Bug\]: Another test [\#305](https://github.com/pheature-flags/pheature-flags/issues/305)
+- \[Bug\]: Issue example! [\#304](https://github.com/pheature-flags/pheature-flags/issues/304)
 - \[symfony-toggle\] Fix dependency issueswith psr-11 factories [\#266](https://github.com/pheature-flags/pheature-flags/issues/266)
 - \[toggle-crud\] Fix dev dependency issues [\#264](https://github.com/pheature-flags/pheature-flags/issues/264)
 - \[mezzio-toggle\] Make as optional the installation of some pheature packages [\#261](https://github.com/pheature-flags/pheature-flags/issues/261)
+- \[dbal-toggle\] Fix compatibility issues between dbal versions [\#200](https://github.com/pheature-flags/pheature-flags/issues/200)
+- Fix command to initiate the database schema for Mezzio [\#329](https://github.com/pheature-flags/pheature-flags/pull/329) (@xserrat)
+- \[\#307\]\[monorepo-submodule\] Submodules are cloned in http mode [\#306](https://github.com/pheature-flags/pheature-flags/pull/306) (@xserrat)
 - Issue\#261 fix tests [\#280](https://github.com/pheature-flags/pheature-flags/pull/280) (@kpicaza)
 - \[\#261\]\[pheature-flags\] fix dependency issues between some packages an psr-11 package [\#277](https://github.com/pheature-flags/pheature-flags/pull/277) (@kpicaza)
 - \[\#261\] \[mezzio-toggle\] Make as optional the installation of some pheature packages [\#276](https://github.com/pheature-flags/pheature-flags/pull/276) (@xserrat)
@@ -26,6 +42,10 @@
 
 **Closed issues:**
 
+- \[\#319\] Add logo to readme and docs [\#326](https://github.com/pheature-flags/pheature-flags/issues/326)
+- \[pheature-flags\] Create internal API docs [\#316](https://github.com/pheature-flags/pheature-flags/issues/316)
+- \[pheature-flags\] Add security Policy [\#313](https://github.com/pheature-flags/pheature-flags/issues/313)
+- \[pheature-flags\] Complete CII Best Practices [\#312](https://github.com/pheature-flags/pheature-flags/issues/312)
 - \[dbal-toggle\] Add Packagist version badge [\#253](https://github.com/pheature-flags/pheature-flags/issues/253)
 - \[dbal-toggle\] Add Codecov badge [\#252](https://github.com/pheature-flags/pheature-flags/issues/252)
 - \[dbal-toggle\] Add Striker badge [\#251](https://github.com/pheature-flags/pheature-flags/issues/251)
@@ -42,6 +62,11 @@
 - \[toggle-psr11-factories\] Add Codecov badge [\#240](https://github.com/pheature-flags/pheature-flags/issues/240)
 - \[toggle-crud-psr7-api\] Add maintainability badge  [\#238](https://github.com/pheature-flags/pheature-flags/issues/238)
 - \[mezzio-toggle\] Update Mezzio package documentation [\#224](https://github.com/pheature-flags/pheature-flags/issues/224)
+- \[laravel-toggle\] Update Laravel package documentation  [\#223](https://github.com/pheature-flags/pheature-flags/issues/223)
+- \[pheature-flags\] automate changelog [\#202](https://github.com/pheature-flags/pheature-flags/issues/202)
+- Create pheatureflags.io Emails [\#192](https://github.com/pheature-flags/pheature-flags/issues/192)
+- \[symfony-toggle\] Document in detail in the docs site [\#185](https://github.com/pheature-flags/pheature-flags/issues/185)
+- Make public Doctrine Dbal Toggle package [\#84](https://github.com/pheature-flags/pheature-flags/issues/84)
 - Make public In Memory Toggle package [\#83](https://github.com/pheature-flags/pheature-flags/issues/83)
 - Add Infection Mutation testing coverage Badge to Toggle CRUD PSR-7 API package [\#81](https://github.com/pheature-flags/pheature-flags/issues/81)
 - Add Codecov badge to Toggle CRUD PSR-7 API package [\#79](https://github.com/pheature-flags/pheature-flags/issues/79)
@@ -50,6 +75,13 @@
 
 **Merged pull requests:**
 
+- \[\#319\] Add package badges in docs [\#333](https://github.com/pheature-flags/pheature-flags/pull/333) (@kpicaza)
+- \[\#326\] add logo to readme and docs [\#327](https://github.com/pheature-flags/pheature-flags/pull/327) (@kpicaza)
+- \[\#316\] add CII best practices badge [\#318](https://github.com/pheature-flags/pheature-flags/pull/318) (@kpicaza)
+- \[\#316\] create internal api doc [\#317](https://github.com/pheature-flags/pheature-flags/pull/317) (@kpicaza)
+- \[\#313\] add security policy in github [\#315](https://github.com/pheature-flags/pheature-flags/pull/315) (@kpicaza)
+- \[\#313\] add security policy in docs [\#314](https://github.com/pheature-flags/pheature-flags/pull/314) (@kpicaza)
+- \[\#310\] document new chain option in symfony toggle [\#311](https://github.com/pheature-flags/pheature-flags/pull/311) (@kpicaza)
 - \[\#223\]\[laravel-toggle\] fix dependency and compatibility issues [\#292](https://github.com/pheature-flags/pheature-flags/pull/292) (@kpicaza)
 - add pull request template [\#289](https://github.com/pheature-flags/pheature-flags/pull/289) (@kpicaza)
 - \[\#223\] set missing development versions on composer dev to allow deal… [\#286](https://github.com/pheature-flags/pheature-flags/pull/286) (@kpicaza)
@@ -85,7 +117,7 @@
 
 ## [0.0.1](https://github.com/pheature-flags/pheature-flags/tree/0.0.1) (2021-06-19)
 
-[Full Changelog](https://github.com/pheature-flags/pheature-flags/compare/4efde1b91949256bf8d3b3baf7546150ddcc0e90...0.0.1)
+[Full Changelog](https://github.com/pheature-flags/pheature-flags/compare/0.0.0...0.0.1)
 
 **Implemented enhancements:**
 
@@ -97,6 +129,44 @@
 - \[pheature-flags\] install roave infection-static-analysis-plugin [\#206](https://github.com/pheature-flags/pheature-flags/issues/206)
 - \[Symfony-toggle\] Allow multiple driver implementations [\#179](https://github.com/pheature-flags/pheature-flags/issues/179)
 - \[Symfony-toggle\] Create Toggle API Compiler pass [\#178](https://github.com/pheature-flags/pheature-flags/issues/178)
+- \[\#227\]\[pheature-flags\] Add Makefile to run a single precommit check [\#228](https://github.com/pheature-flags/pheature-flags/pull/228) (@xserrat)
+- \[\#219\] update chain toggle strategy factory to fit strategy factory contract [\#220](https://github.com/pheature-flags/pheature-flags/pull/220) (@kpicaza)
+- \[\#217\] add id and type to strategy and segment read models [\#218](https://github.com/pheature-flags/pheature-flags/pull/218) (@kpicaza)
+- \[\#211\] Run GrumPHP used in the pre-commit hook in a Docker container [\#212](https://github.com/pheature-flags/pheature-flags/pull/212) (@xserrat)
+- \[\#206\] install psalm infection plugin [\#207](https://github.com/pheature-flags/pheature-flags/pull/207) (@kpicaza)
+- \[\#178\]\[Symfony-toggle\] Create Toggle API Compiler pass [\#199](https://github.com/pheature-flags/pheature-flags/pull/199) (@xserrat)
+
+**Fixed bugs:**
+
+- \[mezzio-toggle\] Fix Mezzio Toggle to run as Symfony Toggle [\#225](https://github.com/pheature-flags/pheature-flags/issues/225)
+- \[monorepo\] maintain commit attribution on split [\#215](https://github.com/pheature-flags/pheature-flags/issues/215)
+- \[toggle-crud\] Allow adding strategiees with segments [\#209](https://github.com/pheature-flags/pheature-flags/issues/209)
+- \[\#222\] fix sidebar menu names [\#233](https://github.com/pheature-flags/pheature-flags/pull/233) (@kpicaza)
+- \[\#222\] document symfony toggle [\#232](https://github.com/pheature-flags/pheature-flags/pull/232) (@kpicaza)
+- \[\#255\] \[mezzio-toggle\] Fix Mezzio Toggle to run as Symfony Toggle [\#226](https://github.com/pheature-flags/pheature-flags/pull/226) (@xserrat)
+- \[\#215\] get commit user in github action [\#216](https://github.com/pheature-flags/pheature-flags/pull/216) (@kpicaza)
+- HOTFIX: add consistency on serializing segment criteria [\#214](https://github.com/pheature-flags/pheature-flags/pull/214) (@kpicaza)
+- \[\#209\] support adding segments via API [\#210](https://github.com/pheature-flags/pheature-flags/pull/210) (@kpicaza)
+- \[\#200\] fix strategy deserialization [\#205](https://github.com/pheature-flags/pheature-flags/pull/205) (@kpicaza)
+- \[\#200\] Some fixes creating db schema [\#201](https://github.com/pheature-flags/pheature-flags/pull/201) (@kpicaza)
+
+**Closed issues:**
+
+- \[symfony-toggle\] Update Symfony Bundle documentation  [\#222](https://github.com/pheature-flags/pheature-flags/issues/222)
+- Create API docs using slate for Toggle CRUD PSR-7 API [\#74](https://github.com/pheature-flags/pheature-flags/issues/74)
+
+**Merged pull requests:**
+
+- \[\#222\] Document symfony bundle [\#229](https://github.com/pheature-flags/pheature-flags/pull/229) (@kpicaza)
+- HOTFIX: set correct service name for set strategy in sf bundle [\#213](https://github.com/pheature-flags/pheature-flags/pull/213) (@kpicaza)
+
+## [0.0.0](https://github.com/pheature-flags/pheature-flags/tree/0.0.0) (2021-05-13)
+
+[Full Changelog](https://github.com/pheature-flags/pheature-flags/compare/4efde1b91949256bf8d3b3baf7546150ddcc0e90...0.0.0)
+
+**Implemented enhancements:**
+
+- \[Symfony-toggle\] Allow multiple driver implementations [\#179](https://github.com/pheature-flags/pheature-flags/issues/179)
 - \[Symfony-toggle\] Split configuration in different methods for better readability [\#176](https://github.com/pheature-flags/pheature-flags/issues/176)
 - \[Symfony-toggle\] Create FeatureRepository Compiler pass [\#174](https://github.com/pheature-flags/pheature-flags/issues/174)
 - \[Symfony-toggle\] Create SegmentFactory Compiler pass [\#170](https://github.com/pheature-flags/pheature-flags/issues/170)
