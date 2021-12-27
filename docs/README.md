@@ -6,6 +6,7 @@
 [![Test Coverage][ico-coverage]][link-coverage]
 [![Mutation testing badge][ico-mutant]][link-mutant]
 [![CII Best Practices][ico-best-practices]][link-best-practices]
+[![Discord][ico-discord]][link-discord]
 
 <h1>Pheature Flags</h1>
 </div>
@@ -69,3 +70,5 @@ knowledge to the community. For this reason we release all our packages under [B
 [link-mutant]: https://dashboard.stryker-mutator.io/reports/github.com/pheature-flags/pheature-flags/1.0.x
 [ico-best-practices]: https://bestpractices.coreinfrastructure.org/projects/5303/badge
 [link-best-practices]: https://bestpractices.coreinfrastructure.org/projects/5303
+[ico-discord]: https://img.shields.io/badge/Discord-Pheature%20Flags-success?style=flat&logo=discord&logoColor=white
+[link-discord]: https://discord.gg/prRUxfVZAz

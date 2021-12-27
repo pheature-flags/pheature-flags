@@ -4,6 +4,7 @@ Contributions are **welcome** and will be fully **credited**.
 
 We accept contributions via Pull Requests on [Github](https://github.com/pheature-flags/pheature-flags).
 
+We are 100% customercentric and we'd love to hear your experience using Pheature Flags! Join our [Discord community](https://discord.gg/prRUxfVZAz)
 
 ## Pull Requests
 
