@@ -1,9 +1,9 @@
 # Strategy Types
 
-The [pheature/toggle-model](https://github.com/pheature-flags/toggle-model) package gives us three different built-in 
+The [pheature/toggle-model](https://github.com/pheature-flags/toggle-model) package gives us two different built-in 
 strategy policies.
 
-## Build-in Strategies
+## Build-in Strategy Types
 
 * Enable by matching Identity Id:
 The Identity-based matching toggles will be enabled when the given Identity id matches with some item inner segment 
@@ -13,19 +13,14 @@ criteria. These kinds of strategies are useful to develop permission-based toggl
 The segment-based matching toggles will be enabled when given identity criteria matches with available segments 
 criteria. For example, it can be useful to implement release toggles based on the application environment.
 
-* In Collection matching segment:
-The in-collection matching segment will be enabled when given identity criteria matches with some item inner segment 
-criteria. This kind of strategy allows for creating less verbose segment-based strategies than using 
-enable-by-matching criteria strategy types.
-
 > [Available examples](https://github.com/pheature-flags/pheature-flags/tree/1.0.x/examples)
 
-## Custom Strategies
+## Custom Strategy Types
 
-When the Built-in strategies don't fit our requirements we can extend the library functionality by adding custom 
-strategies.
+When the Built-in Strategy Types don't fit our requirements we can extend the library functionality by adding custom 
+Strategy Types.
 
-The only requirement is to implement the  [pheature/toggle-core](https://github.com/pheature-flags/toggle-core)'s
+It requires to implement the  [pheature/toggle-core](https://github.com/pheature-flags/toggle-core)'s
 `Pheature\Core\Toggle\Read\ToggleStrategy` interface.
 
 ```php
@@ -49,7 +44,7 @@ interface ToggleStrategy extends JsonSerializable
 }
 ```
 
-In addition we need a toggle strategy factory implementation, to be able to put our new strategy type in the package flow.
+In addition, we need a toggle strategy factory implementation to be able to put our new strategy type in the package flow.
 
 ```php
 <?php
@@ -63,4 +58,4 @@ interface ToggleStrategyFactory extends WithProcessableFixedTypes
 ```
 
 > We will love to [hear about your experience](https://github.com/pheature-flags/pheature-flags/discussions) with 
-custom strategies. Also, to reference community custom Strategies in the docs.
+custom Strategy Types. Also, to reference community custom Strategy Types in the docs.

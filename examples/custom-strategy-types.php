@@ -11,6 +11,7 @@ use Pheature\Core\Toggle\Read\ToggleStrategyFactory;
 use Pheature\InMemory\Toggle\InMemoryConfig;
 use Pheature\InMemory\Toggle\InMemoryFeatureFactory;
 use Pheature\InMemory\Toggle\InMemoryFeatureFinder;
+use Pheature\Model\Toggle\Identity;
 
 require '../vendor/autoload.php';
 
@@ -82,6 +83,6 @@ $toggle = new Toggle(
     )
 );
 
-if ($toggle->isEnabled('super_cool_rollout_strategy')) {
+if ($toggle->isEnabled('super_cool_rollout_strategy', new Identity('some_id', ['some_criteria']))) {
     echo 'Super Cool Feature^^.' . PHP_EOL;
 }
