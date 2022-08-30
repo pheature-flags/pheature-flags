@@ -63,5 +63,22 @@ return [
                 ]
             ],
         ],
+        'super_cool_segmented_rollout_strategy' => [
+            'id' => 'super_cool_segmented_rollout_strategy',
+            'enabled' => true,
+            'strategies' => [
+                [
+                    'strategy_id' => 'rollout_by_segment',
+                    'strategy_type' => 'enable_by_matching_segment',
+                    'segments' => [
+                        [
+                            'segment_id' => 'super_cool_segment_name',
+                            'segment_type' => 'super_cool_segment',
+                            'criteria' => ['ayo'],
+                        ]
+                    ],
+                ]
+            ],
+        ],
     ],
 ];
