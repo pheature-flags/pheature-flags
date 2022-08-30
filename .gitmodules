@@ -1,36 +1,36 @@
 [submodule "packages/toggle-core"]
 	path = packages/toggle-core
-	url = ../toggle-core.git
+	url = git@github.com:pheature-flags/toggle-core.git
 [submodule "packages/toggle-model"]
 	path = packages/toggle-model
-	url = ../toggle-model.git
+	url = git@github.com:pheature-flags/toggle-model.git
 [submodule "packages/toggle-crud"]
 	path = packages/toggle-crud
-	url = ../toggle-crud.git
+	url = git@github.com:pheature-flags/toggle-crud.git
 [submodule "packages/inmemory-toggle"]
 	path = packages/inmemory-toggle
-	url = ../inmemory-toggle.git
+	url = git@github.com:pheature-flags/inmemory-toggle.git
 [submodule "packages/dbal-toggle"]
 	path = packages/dbal-toggle
-	url = ../dbal-toggle.git
+	url = git@github.com:pheature-flags/dbal-toggle.git
 [submodule "packages/php-sdk"]
 	path = packages/php-sdk
-	url = ../php-sdk.git
+	url = git@github.com:pheature-flags/php-sdk.git
 [submodule "packages/toggle-crud-psr11-factories"]
 	path = packages/toggle-crud-psr11-factories
-	url = ../toggle-crud-psr11-factories.git
+	url = git@github.com:pheature-flags/toggle-crud-psr11-factories.git
 [submodule "packages/toggle-crud-psr7-api"]
 	path = packages/toggle-crud-psr7-api
-	url = ../toggle-crud-psr7-api.git
+	url = git@github.com:pheature-flags/toggle-crud-psr7-api.git
 [submodule "packages/laravel-toggle"]
 	path = packages/laravel-toggle
-	url = ../laravel-toggle.git
+	url = git@github.com:pheature-flags/laravel-toggle.git
 [submodule "packages/symfony-toggle"]
 	path = packages/symfony-toggle
-	url = ../symfony-toggle.git
+	url = git@github.com:pheature-flags/symfony-toggle.git
 [submodule "packages/mezzio-toggle"]
 	path = packages/mezzio-toggle
-	url = ../mezzio-toggle.git
+	url = git@github.com:pheature-flags/mezzio-toggle.git
 [submodule "prototypes/pheature-driven-laravel"]
 	path = prototypes/pheature-driven-laravel
 	url = https://github.com/kpicaza/pheature-driven-laravel.git
