@@ -21,7 +21,7 @@ The Toggle Strategies are the second level control measure in our feature releas
 a toggle will check the [Consumer Identity](#consumer-identity) against the enabled strategies. When one of the strategies
 matches the given identity, then the feature should be enabled, else it should be disabled by default.
 
-The Toggle Strategies can be of two types:
+The Built-in Toggle Strategies can be of two types:
 
 **Based in Consumer Identity**
   
@@ -31,6 +31,8 @@ It will check if the given consumer identity matches against a list of enabled c
 
 It will check if the given identity payload matches with the matching [segment](#segments) criteria.
 
+Anytime we can create a [custom strategies](/development/strategies) to fit our needs.
+
 ### Consumer Identity
 
 The Consumer identity is composed by two parts, the id itself and the consumer payload.The ID, is a unique string that 
@@ -39,6 +41,8 @@ identifies the current request client. The payload is extra data attached to the
 ### Segments
 
 A segment is part of one or more strategies, it defined the criteria that a consumer must have in its payload to enable a feature.
+
+Anytime we can create a [custom segments](/development/segments) to fit our needs.
 
 ### Flow
 

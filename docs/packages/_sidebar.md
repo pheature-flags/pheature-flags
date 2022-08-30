@@ -1,6 +1,7 @@
 <!-- docs/_sidebar.md -->
 - [Getting started](/getting-started/)
 - [Architecture](/architecture/)
+- [Development](/development/)
 - [Packages](/packages/)
     - [Toggle Core](/packages/toggle-core)
     - [Toggle Model](/packages/toggle-model)
