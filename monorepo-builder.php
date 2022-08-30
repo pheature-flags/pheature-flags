@@ -16,14 +16,13 @@ use Symplify\MonorepoBuilder\ValueObject\Option;
 return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
     // default: "<major>.<minor>-dev"
-    $parameters->set(Option::PACKAGE_ALIAS_FORMAT, '<major>.<minor>.x-dev');
-    $parameters->set(Option::DEFAULT_BRANCH_NAME, '1.0.x');
+    $parameters->set(Option::PACKAGE_DIRECTORIES, [__DIR__ . "/packages"]);
 
-    $services = $containerConfigurator->services();
-
-    # release workers - in order to execute
-    $services->set(UpdateReplaceReleaseWorker::class);
-    $services->set(SetCurrentMutualDependenciesReleaseWorker::class);
-    $services->set(TagVersionReleaseWorker::class);
-    $services->set(PushTagReleaseWorker::class);
+//    $services = $containerConfigurator->services();
+//
+//    # release workers - in order to execute
+//    $services->set(UpdateReplaceReleaseWorker::class);
+//    $services->set(SetCurrentMutualDependenciesReleaseWorker::class);
+//    $services->set(TagVersionReleaseWorker::class);
+//    $services->set(PushTagReleaseWorker::class);
 };
