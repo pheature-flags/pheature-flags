@@ -1,10 +1,8 @@
 <!-- docs/_sidebar.md -->
 - [Getting started](/getting-started/)
-    - [Laravel packages](/getting-started/laravel-package)
-    - [Symfony Bundles](/getting-started/symfony-bundle)
-    - [Laminas & Mezzio packages](/getting-started/laminas-and-mezzio-package)
 - [Architecture](/architecture/)
 - [Development](/development/)
+  - [Strategies](/development/strategies)
 - [Packages](/packages/)
 - [SDKs](/sdks/)
 - [Contributing](/CONTRIBUTING.md)

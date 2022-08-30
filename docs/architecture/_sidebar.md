@@ -1,6 +1,7 @@
 <!-- docs/_sidebar.md -->
 - [Getting started](/getting-started/)
 - [Architecture](/architecture/)
+- [Development](/development/)
 - [Packages](/packages/)
 - [SDKs](/sdks/)
 - [Contributing](/CONTRIBUTING.md)

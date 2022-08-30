@@ -7,6 +7,7 @@ use Pheature\Core\Toggle\Read\Toggle;
 use Pheature\InMemory\Toggle\InMemoryConfig;
 use Pheature\InMemory\Toggle\InMemoryFeatureFactory;
 use Pheature\InMemory\Toggle\InMemoryFeatureFinder;
+use Pheature\Model\Toggle\Identity;
 
 require '../vendor/autoload.php';
 
@@ -41,3 +42,13 @@ if (false === $toggle->isEnabled('feature_2')) {
     echo 'The old functionality to be changed when the feature_2 is ready.' . PHP_EOL;
 }
 
+if (
+    $toggle->isEnabled(
+        'release_toggle_based_on_environment',
+        new Identity('some_id', [$_SERVER['APP_ENV'] ?? ''])
+    )
+) {
+    echo 'Feature enabled in dev environment.' . PHP_EOL;
+} else {
+    echo 'Try: APP_ENV=dev php inmemory-release-toggles.php' . PHP_EOL;
+}
