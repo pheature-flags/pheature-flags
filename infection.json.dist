@@ -8,8 +8,8 @@
         "@default": true
     },
     "logs": {
-        "badge": {
-            "branch": "1.0.x"
+        "stryker": {
+            "badge": "1.0.x"
         },
         "text": "infection.log"
     }
