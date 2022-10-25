@@ -244,7 +244,10 @@ class HomePage extends AbstractController
 {% endblock %}
 ```
 
-##### Twig Extension
+### Twig Extension
+
+When you have twig installed you can make use of the Twig extension witch enables two new function on our twig templates:
+`is_featue_enabled` and `is_enabled`.
 
 ```php
 <?php
@@ -302,13 +305,13 @@ class HomePage extends AbstractController
         </div>
     {% endif %}
 
-    {% if is_feature_enabled('some_feature', identity) %}
+    {% if is_enabled('some_feature', identity) %}
         <div>
           <p>This section is only visible with "some_feature" enabled for request located in "barcelona"</p>
         </div>
     {% endif %}
     
-    {% if is_feature_enabled('in_progress_feature', identity) %}
+    {% if is_enabled('in_progress_feature', identity) %}
         <div>
           <p>This is a work in progress section only visible with "in_progress_feature_section" 
             enabled for users with role "ROLE_DEVELOPER"</p>
