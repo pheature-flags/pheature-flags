@@ -244,6 +244,80 @@ class HomePage extends AbstractController
 {% endblock %}
 ```
 
+##### Twig Extension
+
+```php
+<?php
+// src/Controller/HomePage.php
+declare(strict_types=1);
+
+namespace App\Controller;
+
+use Pheature\Model\Toggle\Identity;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class HomePage extends AbstractController
+{
+    #[Route('/', name: 'homepage')]
+    public function index(Request $request): Response
+    {    
+        $user = $this->getUser();
+        // Generate an identity based on any requirements
+        if (null === $user) {
+            $identity = new Identity('anon', [
+                'location' => $request->query->get('location') ?? 'unknown',
+                'role' => 'IS_AUTHENTICATED_ANONYMOUSLY'
+            ]);
+        } else {
+            $identity = new Identity($user->id(), [
+                'location' => $user->location(),
+                'role' => $user->role(),
+            ]);
+        }
+    
+        return $this->render('home/index.html.twig', [
+            'identity' => $identity,
+        ]);
+    }
+}
+```
+
+```twig
+{# templates/home/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Site A - Homepage{% endblock %}
+
+{% block content %}
+    {% if is_feature_enabled('feature') %}
+        <div>
+          <p>Showing "feature": <strong>enabled</strong></p>
+        </div>
+    {% else %}
+        <div>
+          <p>Showing "feature": <strong>disabled</strong></p>
+        </div>
+    {% endif %}
+
+    {% if is_feature_enabled('some_feature', identity) %}
+        <div>
+          <p>This section is only visible with "some_feature" enabled for request located in "barcelona"</p>
+        </div>
+    {% endif %}
+    
+    {% if is_feature_enabled('in_progress_feature', identity) %}
+        <div>
+          <p>This is a work in progress section only visible with "in_progress_feature_section" 
+            enabled for users with role "ROLE_DEVELOPER"</p>
+        </div>      
+    {% endif %}
+{% endblock %}
+```
+
+
 (*) *The security component isn’t required to use the Pheature flags library but highly recommended*
 
 ### CRUD PSR-7 API
