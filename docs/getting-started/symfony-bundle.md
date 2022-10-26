@@ -246,8 +246,7 @@ class HomePage extends AbstractController
 
 ### Twig Extension
 
-When you have twig installed you can make use of the Twig extension witch enables two new function on our twig templates:
-`is_featue_enabled` and `is_enabled`.
+When you have twig installed you can make use of the Twig extension witch enables one new function (`is_feature_enabled`) and two tests (`enabled` and `enabled_for`) on our twig templates:
 
 ```php
 <?php
@@ -295,7 +294,7 @@ class HomePage extends AbstractController
 {% block title %}Site A - Homepage{% endblock %}
 
 {% block content %}
-    {% if is_feature_enabled('feature') %}
+    {% if 'feature' is enabled %}
         <div>
           <p>Showing "feature": <strong>enabled</strong></p>
         </div>
@@ -305,13 +304,13 @@ class HomePage extends AbstractController
         </div>
     {% endif %}
 
-    {% if is_enabled('some_feature', identity) %}
+    {% if 'some_feature' is enabled_for(identity) %}
         <div>
           <p>This section is only visible with "some_feature" enabled for request located in "barcelona"</p>
         </div>
     {% endif %}
     
-    {% if is_enabled('in_progress_feature', identity) %}
+    {% if is_feature_enabled('in_progress_feature', app.user ? app.user.id : 'anon', {location: app.user ? app.user.location : app.request.query.get('location', 'unknown'), role: app.user ? app.user.role : 'IS_AUTHENTICATED_ANONYMOUSLY'} %}
         <div>
           <p>This is a work in progress section only visible with "in_progress_feature_section" 
             enabled for users with role "ROLE_DEVELOPER"</p>
