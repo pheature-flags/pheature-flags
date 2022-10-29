@@ -9,6 +9,7 @@
     - [Toggle CRUD PSR-7 API](/packages/toggle-crud-api)
     - [InMemory Toggle](/packages/inmemory-toggle)
     - [DBAL Toggle](/packages/dbal-toggle)
+    - [Date Segment Types](/packages/datetime-interval-segment-types)
     - [Toggle UI](/packages/toggle-ui)
 - [SDKs](/sdks/)
 - [Contributing](/CONTRIBUTING.md)
