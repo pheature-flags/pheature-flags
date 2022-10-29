@@ -30,11 +30,11 @@ Provides custom segment types based in time intervals.
 
 /** @var Pheature\Core\Toggle\Read\Toggle $toggle */
 // Day 2022-10-29 11:30:00
-$toggle->isEnabled('default_strategy'); // true
+$toggle->isEnabled('default_strategy', new Identity('some_id', [])); // true
 // Day 2022-12-29 11:30:01
-$toggle->isEnabled('default_strategy'); // false
+$toggle->isEnabled('default_strategy', new Identity('some_id', [])); // false
 // Day 2022-10-29 11:29:59
-$toggle->isEnabled('default_strategy'); // false
+$toggle->isEnabled('default_strategy', new Identity('some_id', [])); // false
 
 $config = [
     'toggles' => [
