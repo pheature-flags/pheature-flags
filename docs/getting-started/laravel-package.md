@@ -20,6 +20,32 @@ Install it using [composer package manager](https://getcomposer.org/download/) i
 
 ```bash
 composer require pheature/laravel-toggle
+php artisan vendor:publish --provider="Pheature\Community\Laravel\ToggleProvider"
+php artisan migrate
+
+```
+#### Configuration
+
+```php
+<?php
+// config/pheature-flags.php
+declare(strict_types=1);
+
+use ...;
+
+return [
+    'driver' => 'eloquent',
+    ...,
+];
+```
+
+### Usage
+
+```php
+<?php
+use Pheature\Core\Toggle\Read\Toggle;
+
+app()->get(Toggle::class)->isEnabled('feature_id');
 ```
 
 ### InMemory driver
@@ -36,12 +62,13 @@ current status of a toggle.
 
 We can install it using the [composer package manager](https://getcomposer.org/download/).
 
-```bash
+```php
 composer require pheature/inmemory-toggle
-php artisan vendor:publish --provider="Pheature\Community\Laravel\ToggleProvider"
 ```
 
+
 #### Configuration
+
 
 ```php
 <?php
