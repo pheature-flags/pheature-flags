@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0|^8.1"
+        "php": "~7.4.0|~8.0.0|~8.1.0|~8.2.0"
     },
     "require-dev": {
         "doctrine/dbal": ">=2.6 || ^3.0",
@@ -28,19 +28,19 @@
         "symfony/framework-bundle": "~5.0|~6.0",
         "symfony/http-kernel": "^5.1.5",
         "symfony/psr-http-message-bridge": "^2.1",
-        "webmozart/assert": "^1.10",
+        "webmozart/assert": "^1.11",
         "laravel/framework": "^8.40",
         "league/flysystem": ">=1.1.4",
         "mezzio/mezzio": "^3.3",
         "mezzio/mezzio-helpers": "^5.4",
         "phpro/grumphp": "^1.0",
-        "phpstan/extension-installer": "^1.1",
+        "phpstan/extension-installer": "^1.2",
         "phpstan/phpstan": "^1.0",
-        "phpstan/phpstan-webmozart-assert": "^1.0",
+        "phpstan/phpstan-webmozart-assert": "^1.2",
         "phpunit/phpunit": "^8.0 || ^9.0",
         "squizlabs/php_codesniffer": "^3.4",
-        "symfony/console": "^4.2 || ^5.0",
-        "symfony/var-dumper": "^4.2 || ^5.0",
+        "symfony/console": "^4.2 || ^5.0 || ^6.0",
+        "symfony/var-dumper": "^4.2 || ^5.0 || ^6.0",
         "symplify/monorepo-builder": "^11.1",
         "vimeo/psalm": "^4.4",
         "roave/infection-static-analysis-plugin": "^1.18",
